@@ -112,15 +112,63 @@ p {
     margin: auto 0;
 }
 
-.menu-item a {
+.menu-item a,
+#menu-item-divisions .link-inner {
     text-transform: uppercase;
+}
+
+#menu-item-divisions .link-inner {
+    font-size: .9rem;
+    text-decoration: none;
+    color: var(--color-font);
 }
 
 .menu-item a:hover,
 .menu-item a:active,
-.menu-item a:focus {
+.menu-item a:focus,
+#menu-item-divisions .link-inner:active,
+#menu-item-divisions .link-inner:focus,
+#menu-item-divisions .link-inner:hover {
     color: var(--color-logo-orange);
     transition: 0.2s;
+}
+
+#menu-item-divisions .link-inner:active,
+#menu-item-divisions .link-inner:focus,
+#menu-item-divisions .link-inner:hover {
+    cursor: pointer;
+}
+
+/* === drop down menu === */
+#divisions-drop-down-menu {
+    visibility: hidden;
+
+    max-width: 270px;
+    position: absolute;
+    top: 60px;  right: 35px;
+    background: var(--color-bg-body); 
+    box-shadow: var(--color-shadow) 0 10px 10px;  
+}
+
+#menu-item-divisions:hover #divisions-drop-down-menu {
+    display: block;
+    visibility: visible;
+}
+
+#divisions-drop-down-menu li {
+    list-style: none;
+}
+
+#divisions-drop-down-menu li a {
+    display: block;
+    padding: 2rem 1rem;
+}
+
+#divisions-drop-down-menu li a:active,
+#divisions-drop-down-menu li a:focus,
+#divisions-drop-down-menu li a:hover {
+    color: var(--color-bg-body);
+    background: var(--color-logo-orange);
 }
 
 
@@ -305,6 +353,13 @@ p {
     grid-row: 1;
 }
 
+address p {
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0 0 1rem;
+}
+
 .footer-list li {
     list-style-type: none;
     font-style: normal;
@@ -315,6 +370,10 @@ p {
 .footer-list li:focus:not(#footer-address li),
 .footer-list li:hover:not(#footer-address li) {
     cursor: pointer;
+}
+
+#footer-info-list li a {
+    font-size: 1rem;
 }
 
 #footer-contact-wrapper {
@@ -517,6 +576,7 @@ p {
 @media screen and (max-width: 550px ) {
     #menu-mainmenu {
         display: none;
+        position: relative;
     }
     
     /* === ul.toggle === */
