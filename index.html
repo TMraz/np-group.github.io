@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="https://kit.fontawesome.com/0e1b3c912c.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+        crossorigin="anonymous"></script>
         <script src="js/jquery-3.6.0.js"></script>
         <script src="js/script.js"></script>
     
@@ -19,7 +22,7 @@
             <div id="site-header-inner">
               <div id="site-logo-inner">
                 <a href="#">
-                  <img class="logo-img" src="img/logo_orange.png" alt="np" width="60">
+                  <img class="logo-img" src="img/logo_orange.png" alt="np" width="50">
                 </a>
               </div>
 
@@ -47,20 +50,22 @@
                       </a>
                     </li>
                   </ul>
-
-                  <ul class="toggle active">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
                 </nav>
               </div>
             </div>
           </header>
 
+          <nav id="site-nav-hamburger">
+            <ul id="site-header-toggle" class="toggle">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>    
+          </nav>
+
           <main id="site-main">
             <div id="content-wrap">
-              <div id="site-main-sidebar" class="sidebar active">
+              <div id="site-main-sidebar" class="sidebar">
                 <img src="img/logo_orange.png" width="100">
                 <ul id="menu-sidebarmenu">
                     <li class="menu-item"><a href="#">Home</a></li>
@@ -69,11 +74,10 @@
                     <li class="menu-item"><a href="#">Contact</a></li>
                 </ul>
                 <ul class="social-list">
-                   <li><a href="#" title="Facebook"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
-                   <li><a href="#" title="Instagram"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
-                   <li><a href="#" title="Github"> <i class="fa fa-github" aria-hidden="true"></i> </a> </li>
-                </ul>
-           
+                    <li><a href="#" title="Facebook"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+                    <li><a href="#" title="Instagram"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
+                    <li><a href="#" title="Github"> <i class="fa fa-github" aria-hidden="true"></i> </a> </li>
+                </ul>            
               </div>
               <ul id="division-list">
                 <li id="division-list-item-green" class="list-item">
@@ -82,7 +86,7 @@
                       <img class="logo-img" src="img/logo_green.png" alt="np" width="50">
                     </div>
                     <div class="division-name">
-                      <h2 id="division-name-green" class="division-name-heading">np Green</h2>
+                      <h2 id="division-name-green" class="division-name-heading">motorsport</h2>
                     </div>
                   </header>
 
@@ -105,7 +109,10 @@
                       <img class="logo-img" src="img/logo_red.png" alt="np" width="50">
                     </div>
                     <div class="division-name">
-                      <h2 id="division-name-red" class="division-name-heading">np Red</h2>
+                      <h2 id="division-name-red" class="division-name-heading">
+                        <span>mechanical</span><br>
+                        Development
+                      </h2>
                     </div>
                   </header>
 
@@ -128,7 +135,7 @@
                       <img class="logo-img" src="img/logo_blue.png" alt="np" width="50">
                     </div>
                     <div class="division-name">
-                      <h2 id="division-name-blue" class="division-name-heading">np Blue</h2>
+                      <h2 id="division-name-blue" class="division-name-heading">smartMedic</h2>
                     </div>
                   </header>
 
@@ -141,6 +148,32 @@
 
                   <footer class="division-footer">
                     <a id="division-footer-blue" href="#" class="division-btn">
+                      Contact Us
+                    </a>
+                  </footer>
+                </li>
+                <li id="division-list-item-violet" class="list-item">
+                  <header class="division-header">
+                    <div class="division-logo">
+                      <img class="logo-img" src="img/logo_violet.png" alt="np" width="50">
+                    </div>
+                    <div class="division-name">
+                      <h2 id="division-name-violet" class="division-name-heading">
+                        <span>web</span><br>
+                        Development
+                      </h2>
+                    </div>
+                  </header>
+
+                  <article id="division-article-violet" class="division-article">
+                    <h3 class="division-name-heading">What we do</h3>
+                    <p class="division-p">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam exercitationem dolore nesciunt aut quasi! Placeat, omnis nihil! Laudantium corporis earum exercitationem natus, rerum nihil eaque et voluptatum? Repudiandae, consequuntur officiis.
+                    </p>
+                  </article>
+
+                  <footer class="division-footer">
+                    <a id="division-footer-violet" href="#" class="division-btn">
                       Contact Us
                     </a>
                   </footer>
