@@ -1,0 +1,289 @@
+@import "main.css";
+
+#menu-item-home a {
+    color: var(--color-font);
+}
+
+#menu-item-contact a {
+    color: var(--color-logo-orange);
+    transition: 0.2s;
+}
+
+/* === SITE MAIN === */
+#site-main {
+    height: auto;
+}
+#content-wrap {
+    margin-top: 0;
+}
+
+
+.contact-heading {
+    text-align: center;
+    font-size: 2rem;
+
+    margin: 2rem 0;
+}
+.list-item {
+    box-shadow: none;
+}
+
+/* === contact sections === */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 20px;
+    grid-template-areas: 
+    'motorsport mechanicaldev smartmedic contact-us';
+}
+
+.contact-section {
+    padding: 2rem;    margin: 1rem 0;
+}
+
+.contact-section-heading {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: .8rem;
+}
+
+.division-p {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-bg-footer);
+}
+
+.division-p:last-child {
+    border-bottom: none;
+}
+
+.division-p a {
+    display: block;
+    line-height: 1.8;
+}
+
+.division-p span {
+    font-size: .8rem;
+    line-height: 1.8rem;
+}
+
+#motorsport {
+    grid-column: 1 / span 1;
+    grid-row: 1;
+}
+
+#motorsport > h3 {
+    color: var(--color-logo-orange);
+}
+
+#development {
+    grid-column: 2 / span 1;
+    grid-row: 1;
+}
+#development > h3 {
+    color: var(--color-logo-red);
+}
+
+#smartmedic {
+    grid-column: 3 / span 1;
+    grid-row: 1;
+}
+
+#smartmedic > h3 {
+    color: var(--color-logo-blue);
+}
+
+#webdev {
+    grid-column: 4 / span 1;
+    grid-row: 1;
+}
+
+#webdev > h3 {
+    color: var(--color-logo-black);
+}
+
+.contact-section-heading {
+    opacity: .8;
+}
+
+/* === address/ company sections === */
+.address-wrap {
+    padding: 2rem;  margin: 0 2rem;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+.address {
+    grid-column: 2 / span 1;
+    grid-row: 1;
+    position: relative;
+}
+
+.address::before {
+    content: '\f3c5';
+    font-family: fontawesome;
+    position: absolute;
+    left: -30px;
+}
+
+.company-info {
+    grid-column: 3 / span 1;
+    grid-row: 1;
+    position: relative;
+}
+
+.company-info::before {
+    content: '\f016';
+    font-family: fontawesome;
+    position: absolute;
+    left: -30px;
+}
+
+/* === google map === */
+#map {
+    width: 100%;    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+iframe {
+    width: 100%;    height: 400px;
+}
+
+/* === MEDIA QUERRIES === */
+@media screen and (min-width: 550px ) {
+    #site-main-sidebar,
+    .toggle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1250px ) {
+    #site-main {
+        height: auto;
+    }
+
+    #contact-wrap {
+        width: 90%;   
+    }
+
+    .contact-heading {
+        line-height: 1.5;
+    }
+
+    .contact-section {
+        text-align: center;
+    }
+
+    .contact-section-heading {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr .5fr;
+        column-gap: 20px;
+        grid-template-areas: 
+        'motorsport development smartmedic webdev';
+    } 
+    
+    #motorsport {
+        grid-column: 1 / span 1;
+        grid-row: 1;
+    }
+    
+    #development {
+        grid-column: 2 / span 1;
+        grid-row: 1;
+    }
+    
+    #smartmedic {
+        grid-column: 1 / span 1;
+        grid-row: 2;
+    }
+    
+    #webdev {
+        grid-column: 2 / span 1;
+        grid-row: 2;
+    }
+
+    .address-wrap {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+}
+
+@media screen and (max-width: 750px ) {
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .address-wrap {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .contact-section {
+        width: 100%;
+        padding: 1rem 0;    margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-section:not(:last-child) {
+        border-bottom: 1px solid var(--color-bg-footer);
+    }
+
+    .contact-section:last-child {
+        margin-bottom: 1rem;
+    }
+
+    .division-p-wrapper {
+        width: 100%;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .division-p {
+        margin: .5rem 1rem;
+        border-bottom: none;
+    }
+}
+
+@media screen and (max-width: 450px ) {
+
+    .contact-heading {
+        font-size: .8rem;
+    }
+
+    .contact-section {
+        padding-bottom: 0;
+    }
+    .contact-section-heading {
+        font-size: .8rem;
+    }
+        
+    p,
+    .contact-btn {
+        font-size: .7rem;
+    }
+    
+}
+
+@media screen and (max-width: 400px ) {
+    #site-footer,
+    #site-footer .footer-list a {
+        font-size: .8rem;
+    }
+
+    #footer-bottom p {
+        font-size: .5rem;
+    }
+
+}
