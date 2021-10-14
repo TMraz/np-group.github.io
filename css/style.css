@@ -1,0 +1,249 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap);
+:root {
+    --color-font: rgb(240, 240, 240);
+    --color-logo-orange: hsl(41, 98%, 55%);
+    --color-logo-green: rgb(75, 168, 46);
+    --color-logo-red: hsl(0, 100%, 55%);
+    --color-logo-blue: hsl(205, 90%, 60%);
+    --color-logo-black: hsl(0, 0%, 0%);
+    --color-bg-body: hsl(0, 0%, 100%);
+    --color-bg-sidebar: hsl(0, 0%, 15%);
+    --color-bg-footer: hsl(0, 0%, 79%);
+    --color-shadow: hsl(0, 0%, 79%);
+
+    --ff: 'Montserrat', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    font-size: 100%;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-font);
+    font-family: var(--ff);
+}
+
+/* === GENERAL === */
+
+body {
+    width: 100%;
+    height: 100%;
+    background: rgba(21,21,30,255);
+}
+
+#bg img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;  
+    z-index: -1;  
+}
+
+a {
+    font-size: .9rem;
+    text-decoration: none;
+    color: var(--color-font);
+}
+
+h2 {
+    font-size: 1em;
+}
+
+
+/* === SITE HEADER === */
+
+.site-header {
+    width: 100%;
+    height: 100px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-header .site-logo {
+    width: 120px;
+    height: 100%;
+}
+
+.site-header .site-logo a .logo-img {
+    padding-top: 12px;
+}
+
+/* === site navigation === */
+.site-nav {
+    margin: auto 0;
+}
+.site-nav ul li{
+    display: inline-block;
+    padding: 30px 20px;
+}
+
+.site-nav .nav-item a,
+.site-nav .nav-item span {
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+.site-nav .nav-item:hover a, .site-nav .nav-item:focus a, .site-nav .nav-item:active a,
+.site-nav .nav-item:hover span, .site-nav .nav-item:focus span, .site-nav .nav-item:active span {
+    cursor: pointer;
+    color: var(--color-logo-orange);
+    transition: .3s;
+}
+
+.site-nav #nav-item-home a {
+    color: var(--color-logo-orange);
+}
+
+/* === SITE MAIN === */
+
+/* === division card === */
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.container .card {
+    width: 280px;   height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .1);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+}
+
+.container .card:hover {
+    cursor: pointer;
+}
+
+.container .card .content {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container .card .content img {
+    position: absolute;
+    top: 10px;     right: 10px;
+    font-size: 8em;
+    pointer-events: none;
+    opacity: .5;
+}
+
+.container .card .content h2 {
+    margin: 30px 0;
+    padding: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 600;
+    line-height: 2.2em;
+    opacity: .6;
+}
+
+.container .card .content h2 > span {
+    position: absolute;
+    top: 8px;   left: 19px;
+    font-size: 70%;
+}
+
+.container .card .content p {
+    padding: 0 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.container .card .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;  
+    margin: 15px 10px 10px;
+    background: rgba(255, 255, 255, .05);
+    color: var(--color-font);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    transition-duration: .5s;
+}
+
+.container .card .content .about.motorsport:hover, .container .card .content .about.motorsport:focus, .container .card .content .about.motorsport:active,
+.container .card .content .contact.motorsport:hover, .container .card .content .contact.motorsport:focus, .container .card .content .contact.motorsport:active {
+    background: var(--color-logo-green);
+}
+
+.container .card .content .about.development:hover, .container .card .content .about.development:focus, .container .card .content .about.development:active,
+.container .card .content .contact.development:hover, .container .card .content .contact.development:focus, .container .card .content .contact.development:active {
+    background: var(--color-logo-red);
+}
+
+.container .card .content .about.smartmedic:hover, .container .card .content .about.smartmedic:focus, .container .card .content .about.smartmedic:active,
+.container .card .content .contact.smartmedic:hover, .container .card .content .contact.smartmedic:focus, .container .card .content .contact.smartmedic:active {
+    background: var(--color-logo-blue);
+}
+
+.container .card .content .about.design:hover, .container .card .content .about.design:focus, .container .card .content .about.design:active,
+.container .card .content .contact.design:hover, .container .card .content .contact.design:focus, .container .card .content .contact.design:active  {
+    background: var(--color-logo-black);
+}
+
+.container .card .content .contact {
+    position: absolute;
+    bottom: 0;  left: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0px; margin: 0; 
+    color: var(--color-font);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* === SITE FOOTER === */
+.site-footer #copyright {
+    position: absolute;
+    bottom: 0;  right: 0;
+    padding: 10px 40px;
+}
+
+.site-footer #copyright p {
+    font-size: .8em;
+    color: var(--color-font);
+    opacity: .8;
+}
+
+.site-footer #copyright a {
+    font-size: 1em;
+    color: var(--color-logo-orange);
+}
+
+@media screen and (max-width: 1360px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .container .card {
+        margin-top: 80px;
+    }
+}
