@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    // ** background color change **
+
     $('#bg img').css({opacity: 0});
     $('#bg #img-orange').css({opacity: 1});
 
@@ -32,5 +34,12 @@ $(document).ready(function(){
             opacity: 0
         }, 1000)
     });
+
+   // ** hamburger menu **
+   $('ul.toggle').click(function(){
+        $(this).toggleClass('active')
+        $('.sidebar').toggleClass('active');
+    });
+
 
 });
