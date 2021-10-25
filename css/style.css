@@ -296,7 +296,12 @@ h2 {
     #bg img {
         width: 250%;
         top: 0; left: -750px;
-    }    
+    }   
+    
+    .site-header {
+        padding: 0 30px;
+    }
+    
 }
 
 @media screen and (max-width: 770px ) {
