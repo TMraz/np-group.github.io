@@ -88,7 +88,7 @@ h1 {
 }
 
 .site-nav ul li a {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .site-nav ul li:active a,
@@ -96,11 +96,11 @@ h1 {
 .site-nav ul li:hover a {
     cursor: pointer;
     color: var(--color-logo-orange);
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .site-nav ul.contact a {
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 .site-nav ul:last-child li a {
@@ -111,10 +111,12 @@ h1 {
 section {
     width: 100vw;
     height: 100vh;
+    scroll-snap-align: start;
 }
 
 .container {
     height: 100%;
+    scroll-snap-type: y mandatory;
 }
 
 /* === SITE SECTION - HOME === */
@@ -293,37 +295,20 @@ section {
     background: linear-gradient(#fff, rgb(233, 233, 233));
 }
 
-#contact .container:first-child {
+#contact .container {
     max-width: 1200px;
     height: 60%;
-    padding-top: 5%;
+    padding-top: 13%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-}
-
-#contact .container:last-child {
-    background: #fff;
-    height: 40%;
-}
-
-#contact .container .wrap {
-    max-width: 1200px;
-    padding: 0 50px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-#contact .container .wrap ul li:first-child{
-    font-weight: bold;
 }
 
 #contact .container ul {
     margin: 0 3rem 2rem 0;
     list-style-type: none;
     line-height: 1.5;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #contact .container .contact-data .contact-company ul li:first-child {
@@ -331,56 +316,13 @@ section {
     font-weight: bold;
 }
 
+#contact .container .contact-data h1 {
+    margin-bottom: 5rem;
+}
+
 #contact .container .contact-data .contact-company {
     margin-right: 3rem;
     display: flex;
-}
-
-#contact .container .card {
-    padding: 45px 8px;
-    text-align: center;
-}
-
-#contact .container .card ul {
-    font-size: .9rem;
-    margin-bottom: 2rem;
-}
-
-#contact .container .card ul li {
-    line-height: 1.8;
-}
-
-#contact .container .card ul.ul-frst li:first-child {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-#contact .container .card.motorsport ul.ul-frst li:first-child {
-    color: var(--color-logo-green);
-}
-
-#contact .container .card.development ul.ul-frst li:first-child {
-    color: var(--color-logo-red);
-}
-
-#contact .container .card.smartmedic ul.ul-frst li:first-child {
-    color: var(--color-logo-blue);
-}
-
-#contact .container .card ul.ul-frst li:nth-child(2) {
-    font-weight: bold;
-}
-
-#contact .container .card ul.ul-frst li:nth-child(3),
-#contact .container .card ul.ul-scnd li:nth-child(2) {
-    font-size: .8rem;
-    margin-bottom: .5rem;
-}
-
-#contact .container .card ul.ul-scnd li:first-child {
-    font-weight: bold;
-    font-size: .9rem;
 }
 
 /* === ul.toggle === */
@@ -545,6 +487,7 @@ ul.toggle.active li:nth-of-type(3){
         padding-top: 10%;
 
     }
+
     #contact .container:first-child {
         display: initial;
         padding-bottom: 0;
@@ -611,3 +554,25 @@ ul.toggle.active li:nth-of-type(3){
     }
 }
 
+@media screen and (max-width: 400px) {
+    .site-header .site-nav ul.contact {
+        margin-left: 13%;
+    }
+
+    #home .container {
+        padding-top: 30%;
+    }
+
+    #contact {
+        padding-top: 15%;
+    }
+
+    #contact .container ul {
+        font-size: .7rem;
+        text-align: center;
+    }
+
+    #contact .container .contact-data .contact-company {
+        margin-right: 0;
+    }
+}
