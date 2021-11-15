@@ -1,0 +1,613 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap);
+:root {
+    --color-font: rgb(17, 20, 26);
+    --color-logo-orange: rgb(255, 147, 31);
+    --color-logo-green: rgb(62, 145, 37);
+    --color-logo-red: rgb(219, 52, 52);
+    --color-logo-blue: rgb(69, 119, 155);
+    --color-bg-header: rgb(255, 255, 255);
+    --color-bg-sidebar: rgba(38, 38, 38, 0.95);
+    --color-bg-footer: rgb(201, 201, 201);
+    --color-shadow: rgb(201, 201, 201);
+    --ff: 'Montserrat', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    height: 100vh;
+    font-size: 100%;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-font);
+    font-family: var(--ff);
+}
+
+/* * {outline: 1px solid rgb(153, 51, 144);} */
+
+/* === GENERAL === */
+
+body {
+    width: 100vw;
+    height: 100%;
+}
+
+a {
+    color: var(--color-font);
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* === SITE HEADER === */
+.site-header {
+    width: 100%;
+    height: 80px;
+    background: var(--color-bg-header);
+    padding: 0 70px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.site-logo {
+    margin: auto 0;
+    margin-right: 30px;
+}
+
+.site-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 32px 0;
+    margin: 0 10px;
+}
+
+.site-nav ul li i {
+    padding-right: 5px;
+}
+
+.site-nav ul li a {
+    font-size: 1rem;
+}
+
+.site-nav ul li:active a,
+.site-nav ul li:focus a,
+.site-nav ul li:hover a {
+    cursor: pointer;
+    color: var(--color-logo-orange);
+    transition: 0.2s;
+}
+
+.site-nav ul.contact a {
+    font-size: .8rem;
+}
+
+.site-nav ul:last-child li a {
+    text-transform: uppercase;
+}
+
+/* === SITE SECTION - general === */
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+}
+
+/* === SITE SECTION - HOME === */
+#home {
+    background: linear-gradient(#fff, rgb(233, 233, 233));
+}
+
+#home .container {
+    max-width: 1200px;
+    padding-top: 12%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#home .container .card {
+    width: 280px;
+	height: 400px;
+    margin: 0 auto;
+    padding: 10px;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255);
+	overflow: hidden;
+	backdrop-filter: blur(5px);
+    position: relative;
+    transition: .5s;
+}
+
+#home .container .card:active,
+#home .container .card:focus,
+#home .container .card:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+#home .container .card.motorsport {
+    background-image: url(../img/bg_motorsport.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom 0 left 0;
+    background-size: 130%;
+}
+
+#home .container .card.development {
+    background-image: url(../img/bg_development.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom 12px left -31px;
+    background-size: 130%;
+}
+
+#home .container .card.smartmedic {
+    background-image: url(../img/bg_smartmedic.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom -119px left -2px;
+    background-size: 102%;
+}
+
+#home .container .card.webdev {
+    background-image: url(../img/bg_webdev.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom -20px left -14px;
+    background-size: 115%;
+}
+
+#home .container .card h1 {
+    margin-top: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#home .container .card.motorsport h1 {
+    color: var(--color-logo-green);
+    letter-spacing: .1rem;
+}
+
+#home .container .card.development h1 {
+    color: var(--color-logo-red);
+}
+
+#home .container .card.smartmedic h1 {
+    color: var(--color-logo-blue);
+}
+
+#home .container .card.webdev h1 span {
+    position: absolute;
+    top: 33px;
+    left: 11px;
+    font-size: 1.2rem;
+}
+
+#home .container .card p {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+#home .container .card aside.contact {
+    width: 30px;
+    height: 70px;
+    border-radius: 0 8px 8px 0;
+    position: absolute;
+    top: 190px;
+    left: 0;
+}
+
+#home .container .card.motorsport aside.contact {
+    background-color: var(--color-logo-green);
+}
+
+#home .container .card.development aside.contact {
+    background-color: var(--color-logo-red);
+}
+
+#home .container .card.smartmedic aside.contact {
+    background-color: var(--color-logo-blue);
+}
+
+#home .container .card.webdev aside.contact {
+    background-color: #000;
+}
+
+#home .container .card aside.contact a {
+    display: block;
+    height: 50%;
+    text-align: center;
+}
+
+#home .container .card aside.contact a:hover svg {
+    width: 19px;
+}
+
+#home .container .card > a {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+	box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+}
+
+.container .card > a span {
+    position: absolute;
+    top: 48%;
+    right: 20%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(85, 85, 85);
+    transform: translateY(-50%) rotate(-45deg);
+    border-left: none;
+    border-top: none;
+    transition: .5s;
+}
+
+.container .card > a span::before {
+    content: " ";
+    position: absolute;
+    width: 45px;
+    height: 2.2px;
+    background: rgb(85, 85, 85);
+    transform-origin: right;
+    transform: rotate(45deg) translate(-5px, 31px) scaleX(1);
+    transition: .5s;
+}
+
+.container .card > a:hover span::before {
+    transform: rotate(45deg) translate(-5px, 31px) scaleX(0);
+}
+
+/* === SITE SECTION - CONTACT === */
+#contact {
+    background: linear-gradient(#fff, rgb(233, 233, 233));
+}
+
+#contact .container:first-child {
+    max-width: 1200px;
+    height: 60%;
+    padding-top: 5%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact .container:last-child {
+    background: #fff;
+    height: 40%;
+}
+
+#contact .container .wrap {
+    max-width: 1200px;
+    padding: 0 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact .container .wrap ul li:first-child{
+    font-weight: bold;
+}
+
+#contact .container ul {
+    margin: 0 3rem 2rem 0;
+    list-style-type: none;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+#contact .container .contact-data .contact-company ul li:first-child {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#contact .container .contact-data .contact-company {
+    margin-right: 3rem;
+    display: flex;
+}
+
+#contact .container .card {
+    padding: 45px 8px;
+    text-align: center;
+}
+
+#contact .container .card ul {
+    font-size: .9rem;
+    margin-bottom: 2rem;
+}
+
+#contact .container .card ul li {
+    line-height: 1.8;
+}
+
+#contact .container .card ul.ul-frst li:first-child {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+#contact .container .card.motorsport ul.ul-frst li:first-child {
+    color: var(--color-logo-green);
+}
+
+#contact .container .card.development ul.ul-frst li:first-child {
+    color: var(--color-logo-red);
+}
+
+#contact .container .card.smartmedic ul.ul-frst li:first-child {
+    color: var(--color-logo-blue);
+}
+
+#contact .container .card ul.ul-frst li:nth-child(2) {
+    font-weight: bold;
+}
+
+#contact .container .card ul.ul-frst li:nth-child(3),
+#contact .container .card ul.ul-scnd li:nth-child(2) {
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+
+#contact .container .card ul.ul-scnd li:first-child {
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+/* === ul.toggle === */
+.toggle{
+    position: fixed;
+    top: 15px;  right: 5%;
+    width: 50px;   height: 50px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.toggle li{
+    position: absolute;
+    left: 5%;
+    transform: translateY(-50%);
+    height: 5px;  width: 90%;
+    list-style: none;
+    background: rgb(145, 145, 145);
+    transition: .9s;
+}
+    
+ul.toggle li:nth-of-type(1){
+    top: 20%;
+}
+
+ul.toggle li:nth-of-type(2){
+    top: 50%;
+}
+
+ul.toggle li:nth-of-type(3){
+    top: 80%;
+}
+
+ul.toggle.active li:nth-of-type(1){
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+ul.toggle.active li:nth-of-type(2){
+    left: -100%;
+    opacity: 0;
+}
+
+ul.toggle.active li:nth-of-type(3){
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+} 
+
+/* === sidebar === */
+.sidebar{
+    position: fixed;
+    top: 0;  left: -670px;
+    background: var(--color-bg-sidebar);
+    width: 80vw;   height: 100vh;
+    box-sizing: border-box;
+    padding: 50px 40px;
+    margin: 0 auto;
+    text-align: center;
+    transition: .9s;
+    z-index: 10;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar img{
+    position: relative;
+}
+
+.sidebar ul{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.sidebar ul li{
+    list-style: none;
+    display: block;
+}
+
+.sidebar ul li a{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;  
+    text-transform: uppercase;
+    color: #fff;
+    width: 100%;  
+    padding: 20px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.sidebar ul li:hover a{
+    color: var(--color-logo-orange);
+    transition: .2s;
+}
+
+/* === MEDIA QUERIES === */
+@media screen and (min-width: 670px ) {
+    .sidebar,
+    .toggle {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    #home .container {
+        padding-top: 20%;
+    }
+
+    #contact .container:first-child {
+        padding: 7% 30px 20px;
+    }
+
+    .map iframe {
+        width: 400px;
+    }    
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        padding-bottom: 80px;
+    }
+
+    #contact .container:first-child {
+        padding: 10% 30px 20px;
+    }
+
+}
+
+@media screen and (max-width: 1165px) {
+    section {
+        height: auto;
+    }
+
+    #contact .container .contact-data .contact-company {
+        margin-right: 1rem;
+    }
+
+    #contact .container ul {
+        font-size: 1rem;
+    }
+
+    .map iframe {
+        height: 400px;
+    }    
+}
+
+@media screen and (max-width: 1000px) {
+    .site-header .site-nav .contact li a:last-child {
+        display: none;
+    }
+
+    .site-header .site-nav ul.contact svg {
+        width: 18px;
+    }
+
+    #contact {
+        padding-top: 10%;
+
+    }
+    #contact .container:first-child {
+        display: initial;
+        padding-bottom: 0;
+    }
+
+    #contact .container .contact-data {
+        padding: 0 50px;
+    }
+
+    .map iframe {
+        width: 100%;
+    }
+
+    #contact .container .wrap {
+        flex-wrap: wrap;
+    }
+
+    #contact .container .card {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .site-header {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .site-header .site-menu {
+        display: none;
+    }
+
+    .site-header .site-nav ul.contact svg {
+        width: 20px;
+    }
+
+}
+
+@media screen and (max-width: 560px) {
+    section {
+        height: auto;
+    }
+
+    #home .container {
+        padding-top: 23%;
+    }
+
+    #contact .container ul {
+        font-size: .9rem;
+    }
+
+    #contact .container .contact-data .contact-company ul li:first-child {
+        font-size: .8rem;
+        margin-bottom: .5rem;
+    }
+
+    #contact .container .contact-data h1 {
+        font-size: 1.5rem;
+    }
+
+    #contact .container .card {
+        padding-bottom: 0;
+    }
+}
+
