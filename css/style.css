@@ -179,7 +179,7 @@ section {
     background-image: url(../img/bg_webdev.jpg);
     background-repeat: no-repeat;
     background-position: bottom -20px left -14px;
-    background-size: 115%;
+    background-size: 125%;
 }
 
 #home .container .card h1 {
@@ -301,7 +301,7 @@ section {
     padding-top: 13%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #contact .container ul {
@@ -485,7 +485,6 @@ ul.toggle.active li:nth-of-type(3){
 
     #contact {
         padding-top: 10%;
-
     }
 
     #contact .container:first-child {
@@ -507,6 +506,10 @@ ul.toggle.active li:nth-of-type(3){
 
     #contact .container .card {
         margin: 0 auto;
+    }
+
+    #home .container {
+        justify-content: center;
     }
 }
 
