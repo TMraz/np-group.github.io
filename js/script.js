@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+
     // === hamburger menu ===
     $('ul.toggle').click(function(){
          $(this).toggleClass('active')
@@ -10,7 +12,6 @@ $(document).ready(function(){
         $('.sidebar').toggleClass('active')
         $('ul.toggle').toggleClass('active');
     });
-
  
     
 });
