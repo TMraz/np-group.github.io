@@ -1,0 +1,75 @@
+/* === GENERAL === */
+@import 'breakpoints';
+
+body {
+    height: 100vh;
+    margin: $margin-center-horizontal;
+}
+
+h1 {
+    font-size: $font-size-xl;
+    font-style: italic;
+    font-weight: $font-weight-lg;
+
+    @include sm {
+        font-size: $font-size-md;
+    }
+}
+
+h2 {
+    font-size: $font-size-md;
+    font-weight: $font-weight-sm;
+    margin-bottom: 4rem;
+
+    @include sm {
+        font-size: .8rem;
+    }
+}
+
+a {
+    color: $color-font-light;
+    text-decoration: none;
+    font-size: $base-font-size;
+    font-weight: $font-weight-lg;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    background-color: $color-font;
+    text-transform: uppercase;
+
+    @include sm {
+        font-size: .8rem;
+    }
+}
+
+.container {
+    height: 100%;
+}
+
+.wrap {
+    padding: $padding-xl;
+    margin: $margin-center-horizontal;
+
+    p {
+        font-size: $base-font-size;
+        font-style: italic;
+        font-weight: $font-weight-lg;
+        line-height: $line-heigh-lg;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $color-logo-orange;
+    }
+}
+
+.flex {
+    align-items: center;
+}
+
+img {
+    @include sm {
+        width: 300px;
+    }
+}
+
+
+

@@ -1,0 +1,93 @@
+/* === SITE SECTION - CONTACT === */
+@import 'breakpoints';
+
+#contact {
+    &.container {
+        background: $color-bg-dark;
+        padding: 80px 0;
+    }
+
+    .wrap {
+        @include lg {
+            padding: 0 30px;
+        }
+    }
+
+    ul {
+        margin: 0 3rem 2rem 0;
+        line-height: $line-heigh-md;
+        font-size: 1.3rem;
+
+        @include md {
+            font-size: .8rem;
+        }    
+    }
+
+    .contact-data {
+        .contact {
+            margin-right: 3rem;
+            justify-content: start;
+            position: relative;
+            
+            p {
+                color: rgb(95, 95, 95);
+                position: absolute;
+                transform: rotate(-90deg);  
+                padding-bottom: .5rem;  
+                border-bottom: 1px solid $color-hover;
+
+                @include lg {
+                    display: none;
+                }    
+            }
+
+            &.company {
+                ul {
+                    li:first-child {
+                        font-size: $base-font-size;
+                        font-weight: bold;
+
+                        @include md {
+                            font-size: .8rem;
+                        }                    
+                    }
+                }
+
+                p {
+                    top: 2rem;
+                    left: -80px;
+                    width: 5.5rem;
+                    padding-left: .8rem;               
+                }
+            }
+
+            &.address {
+                p {
+                    top: 3rem;
+                    left: -104px;
+                    width: 8.5rem;
+                    padding-left: 2.8rem;
+                }
+            }
+        }
+
+        h1 {
+            margin-bottom: 5rem;
+
+            @include md {
+                font-size: $font-size-md;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    .map iframe {
+        @include md {
+            max-width: 400px;
+        }
+
+        @include sm {
+            max-width: 320px;
+        }
+    }
+}

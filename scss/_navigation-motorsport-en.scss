@@ -1,0 +1,109 @@
+/* === SITE HEADER === */
+@import 'breakpoints';
+
+header {
+    &.container {
+        height: 80px;
+        background: $color-bg-header-motorsport;
+        position: sticky;
+        top: 0;
+        z-index: 20; 
+
+        @include xl {
+            height: 60px;
+        }
+    }
+
+    .wrap {
+        padding: 0 $padding-xl;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 5;
+
+        @include md {
+            height: 60px;
+        }
+
+        ul.contact {
+            @include breakpoint($bp: 920px) {
+                display: none;
+            }
+        }
+
+        nav {
+            @include md {
+                display: none;
+            }    
+        }
+    }
+
+    ul {
+        li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 32px 10px;
+
+            i {
+                padding-right: 5px;
+            }
+
+            a {
+                font-size: $base-font-size;
+                padding: 32px $base-padding;
+
+                @include xl {
+                    font-size: .8rem;
+                }    
+            }
+
+            @include xl {
+                padding: 22px $base-padding;
+            }
+        }
+    }
+
+
+    nav {
+        text-transform: uppercase;
+        font-weight: $font-weight-lg;
+
+        ul {
+            li {
+                &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+                    cursor: $base-cursor;
+                    background-color: $color-logo-green;
+                    transition: 0.4s;
+    
+                    a {
+                        color: $color-bg;
+                    }
+                } 
+                
+                &:last-child {
+                    a {
+                        font-size: .8rem;
+                    }
+
+                    a.cz {
+                        color: $color-shadow;
+                    }
+                    cursor: $base-cursor;    
+                    a:hover {
+                        color: $color-font;
+                    }
+                }   
+            }
+        }    
+    }
+
+    @include xl {
+        a {
+            img {
+                width: 40px;
+            }
+        }    
+    }
+}
+

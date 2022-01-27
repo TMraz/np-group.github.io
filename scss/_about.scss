@@ -1,0 +1,82 @@
+/* === SITE SECTION - ABOUT === */
+@import 'breakpoints';
+
+#about {
+    &.container {
+        background-color: $color-bg-darker;
+        padding-top: 80px;
+    }
+
+    .wrap {
+        @include xl {
+            padding: 0 30px 50px;
+        }
+    }
+
+    h1 {
+        text-align: center;
+        padding: 1rem 0;
+
+        @include md {
+            font-size: $font-size-md;
+            margin: 0;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        @include md {
+            font-size: .8rem;
+            line-height: $line-heigh-md;
+        }
+    }
+
+    p {
+        padding: 3rem 0 1rem;
+
+        @include md {
+            padding: 2rem 0 1rem;
+        }
+    }
+
+    .card {
+        height: 320px;
+        text-align: center;
+        background: $color-bg;
+        margin-bottom: 5rem;
+
+        &:hover {
+            background: $color-hover;
+
+            .filter {
+                filter: brightness(20%);
+            }
+        }
+
+        h3 {
+            font-style: italic;
+        }
+
+        p {
+            height: 150px;
+            padding: 2rem 1rem;
+            line-height: $line-heigh-md;
+
+            @include md {
+                height: 115px;
+            }
+
+            @include sm {
+                height: 140px;
+            }
+        }
+
+        :last-child {
+            margin-top: -5px;
+        }
+
+        @include xl {
+            margin-bottom: 1rem;
+        }
+    }
+}

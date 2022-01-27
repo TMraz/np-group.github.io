@@ -1,0 +1,231 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap);
+@import 'breakpoints';
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 100%;
+    font-weight: $base-font-weight;
+    line-height: $base-line-heigh;
+    color: $color-font;
+    font-family: $ff;
+    box-sizing: border-box;
+    background: $color-bg;
+    scroll-behavior: smooth;
+}
+
+/* === GENERAL === */
+body {
+    width: 100vw;
+    margin: $margin-center-horizontal;
+}
+
+a {
+    color: $color-font;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-lg;
+}
+
+h2 {
+    font-size: $font-size-md;
+    font-weight: $font-weight-lg;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: $font-weight-xl;
+
+    @include md {
+        font-size: $base-font-size;
+    }
+}
+
+p {
+    @include md {
+        font-size: .8rem;
+    }
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.container {
+    width: 100vw;
+    background-color: $color-bg;
+}
+
+.wrap {
+    padding: 0 30px;
+    margin: $margin-center-horizontal;
+    max-width: 1400px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+	height: 280px;
+    padding: $padding-xl $base-padding;
+    margin: $base-margin;
+	border-radius: 2px;
+    transition: $base-transition;
+}
+
+.site-logo {
+    margin: $margin-center-vertical;
+    margin-right: $margin-xl;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    padding: 20px 26px;
+
+    @include md {
+        padding: 16px 18px;
+    }
+
+    @include breakpoint($bp: 370px) {
+        padding: 14px 16px;
+    }
+
+}
+
+/* === ul.toggle === */
+.toggle{
+    position: fixed;
+    top: 5px;  
+    right: 20px;
+    width: 50px;   
+    height: 50px;
+    z-index: 30;
+    cursor: $base-cursor;
+    display: none;
+
+    @include md {
+        right: 40px;
+    }
+
+    li {
+        position: absolute;
+        left: 5%;
+        transform: translateY(-50%);
+        height: 5px;  width: 90%;
+        background: rgb(145, 145, 145);
+        transition: .9s;
+        padding: 0;
+    }
+
+    @include md {
+        display: initial;
+    }
+}
+
+ul.toggle {
+    li:nth-of-type(1) {
+        top: 20%;
+    }
+
+    li:nth-of-type(2) {
+        top: 50%;
+    }
+
+    li:nth-of-type(3) {
+        top: 80%;
+    }
+
+    &.active {
+        li:nth-of-type(1){
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        li:nth-of-type(2){
+            left: -100%;
+            opacity: 0;
+        }
+
+        li:nth-of-type(3){
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+}
+
+/* === sidebar === */
+.sidebar{
+    position: fixed;
+    top: 0;  left: -670px;
+    background: $color-bg-sidebar;
+    width: 80vw;   height: 100vh;
+    box-sizing: border-box;
+    padding: 50px $padding-xxl;
+    margin: $margin-center-horizontal;
+    text-align: center;
+    transition: .9s;
+    z-index: 10;
+    display: none;
+    &.active {
+        left: 0;
+    }
+
+    ul {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        margin-top: 60px;
+
+        li {
+            display: block;
+
+            &:last-child {
+                width: 100%;
+
+                a {
+                    display: inline;
+                    font-size: .8rem;
+                    padding: 5px;
+                }
+            }
+
+            a {
+                display: inline-block;
+                position: relative;
+                text-decoration: none;  
+                text-transform: uppercase;
+                color: $color-font;
+                width: 100%;  
+                padding: $padding-xl 0;
+                box-sizing: border-box;
+                font-size: 20px;
+
+                &:hover {
+                    color: $color-logo-orange;
+                    transition: .2s;
+                }
+            }
+        }
+    }
+
+    @include md {
+        display: initial;
+    }
+}
+

@@ -1,0 +1,82 @@
+/* === SITE SECTION - CONTACT === */
+@import 'breakpoints';
+
+#contact {
+    &.container {
+        background: $color-bg;
+        padding: 80px 0;
+    }
+
+    .wrap {
+        padding: 50px 0;
+
+        h1 {
+            font-size: 40px;
+            font-weight: $font-weight-xxl;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 90px;
+
+            @include xl {
+                line-height: 1.1;
+                font-size: $font-size-lg;
+            }
+
+            @include lg {
+                font-size: $font-size-md;
+                margin-bottom: 60px;
+            }
+
+            @include md {
+                font-size: 1.2rem;
+            }
+
+            @include breakpoint($bp: 370px) {
+                font-size: 15.5px;
+            }
+
+            span {
+                font-size: 50px;
+
+                @include xl {
+                    font-size: 40px;
+                }   
+                
+                @include lg {
+                    font-size: 30px;
+                }
+
+                @include md {
+                    font-size: 24px;
+                }
+
+                @include breakpoint($bp: 370px) {
+                    font-size: 19px;
+                }    
+            }
+        }
+
+        .wrap-sm {
+            text-align: center;
+
+            a.btn {
+                background-color: $color-logo-green;
+                color: $color-font-light;
+                margin: $margin-center-horizontal;
+
+                @include xl {
+                    font-size: $base-font-size;
+                }
+
+                @include lg {
+                    font-size: 0.8rem;
+                }
+            }    
+        }
+
+        @include lg {
+            padding: 0 30px;
+        }
+    }
+}

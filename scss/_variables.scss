@@ -1,0 +1,63 @@
+// color
+$color-font: rgb(17, 20, 26);
+$color-font-light: rgb(255, 255, 255);
+$color-font-heading-motorsport: rgb(40, 53, 78);
+
+$color-logo-orange: rgb(255, 147, 31);
+$color-logo-green: rgb(99, 141, 20);
+$color-logo-red: rgb(233, 25, 25);
+$color-logo-blue: rgb(52, 139, 202);
+
+$color-bg: rgb(255, 255, 255);
+$color-bg-darker: rgb(248, 248, 248);
+$color-bg-dark: rgb(231, 231, 231);
+
+$color-bg-header: rgba(255, 255, 255, 0.95);
+$color-bg-header-motorsport: rgba(255, 255, 255, 0.2);
+
+$color-bg-sidebar: rgb(255, 255, 255);
+$color-bg-footer: rgb(245, 245, 245);
+$color-shadow: rgb(201, 201, 201);
+$color-card: rgb(238, 238, 238);
+$color-hover: rgb(255, 177, 31);
+
+
+//font 
+$ff: 'Montserrat', sans-serif;
+
+$base-font-size: 1rem;
+$font-size-md: $base-font-size * 1.5;
+$font-size-lg: $base-font-size * 2;
+$font-size-xl: $base-font-size * 2.8;
+
+$base-font-weight: 400;
+$font-weight-sm: 300;
+$font-weight-lg: 500;
+$font-weight-xl: 600;
+$font-weight-xxl: 800;
+
+$base-line-heigh: 1;
+$line-heigh-md: $base-line-heigh * 1.5;
+$line-heigh-lg: $base-line-heigh * 2;
+
+
+// padding
+$base-padding: 10px;
+$padding-lg: $base-padding * 2;
+$padding-xl: $base-padding * 3;
+$padding-xxl: $base-padding * 4;
+
+// margin
+$base-margin: 10px;
+$margin-sm: $base-margin / 2;
+$margin-lg: $base-margin * 2;
+$margin-xl: $base-margin * 3;
+$margin-xxl: $base-margin * 4;
+$margin-center-horizontal: 0 auto;
+$margin-center-vertical: auto 0;
+
+// transition
+$base-transition: .5s;
+
+//cursor
+$base-cursor: pointer;

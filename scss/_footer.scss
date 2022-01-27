@@ -1,0 +1,69 @@
+/* === SITE FOOTER === */
+@import 'breakpoints';
+
+.site-footer {
+    background: $color-bg;
+
+    .flex {
+        justify-content: space-between;
+        gap: 20px;
+        padding: $padding-xxl $padding-xl;
+        font-size: .9rem;
+        line-height: 1.3;
+
+        @include md {
+            font-size: .8rem;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;    
+        }
+    }
+
+    .site-logo {
+        @include md {
+            margin-right: 0;
+        }
+    }
+
+    ul.company-address {
+        li:first-child {
+            font-weight: $font-weight-xl;    
+        }
+    }
+
+    ul.navigation {
+        li {
+            position: relative;
+
+            &:after {
+                content: " ";
+                position: absolute;
+                background-color: $color-font;
+                height: 1px;
+                width: 0;
+                left: 0;
+                bottom: 0;
+                transition: .3s;
+            }
+
+            &:hover {
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        padding: 0;
+        margin: $margin-center-horizontal;
+        font-size: .7rem;
+        opacity: .8;
+        text-align: center;
+        width: 100%;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}

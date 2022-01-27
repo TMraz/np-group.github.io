@@ -1,0 +1,422 @@
+/* === SITE SECTION - ABOUT === */
+@import 'breakpoints';
+
+#about {
+    &.container {
+        background-color: $color-bg-darker;
+        padding-top: 110px;
+
+        @include lg {
+            padding-top: 80px;
+        }
+    }
+
+    .wrap {
+        position: relative;
+        padding-bottom: 90px;
+
+        @include xl {
+            padding: 0 30px;
+            height: 450px;
+        }
+
+        @include lg {
+            height: 350px;
+        }
+
+        @include md {
+            height: auto;
+        }
+    }
+
+    .wrap-sm {
+        width: 50%;
+        margin-bottom: 30px;
+
+        @include md {
+            width: 100%;
+        }
+
+        .line {
+            width: 5px;
+            height: 240px;
+            background-color: $color-logo-green;
+
+            @include xl {
+                height: 227px;
+            }
+
+            @include lg {
+                height: 215px;
+            }
+        }
+
+        h1 {
+            font-weight: $font-weight-xxl;
+            letter-spacing: 0.05em;
+            padding: 1rem 0;
+
+            @include xl {
+                font-size: $font-size-md;
+            }
+
+            @include lg {
+                font-size: $base-font-size;
+            }
+
+            @include md {
+                font-size: 1.2rem;
+            }
+
+            span {
+                font-family: 'Poppins', sans-serif;
+                font-size: 4rem;
+                -webkit-text-fill-color: $color-bg-darker; 
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $color-logo-green;
+                padding-right: 20px;
+
+                @include xl {
+                    font-size: 3rem;
+                }
+
+                @include lg {
+                    font-size: $font-size-lg;
+                }
+            }
+        }
+
+        &.left {  
+            .line {
+                position: absolute;
+                top: -170px;
+                left: 30px;
+            } 
+            
+            h1 {
+                text-align: left;
+
+                span {
+                    padding: 0 20px;
+
+                    @include lg {
+                        padding: 0 10px 0 15px;
+                    }
+                }    
+            }
+        } 
+        
+        &.right {
+            .line {
+                position: absolute;
+                top: -170px;
+                right: 30px;
+            } 
+
+            h1 {
+                margin-right: 10px;
+                text-align: right;
+
+                span {
+                    padding-left: 20px;
+                    padding-right: 10px;
+
+                    @include lg {
+                        padding-left: 10px;
+                    }
+                }    
+            }
+
+            p {
+                margin-left: 100px;
+
+                @include lg {
+                    margin-left: 40px;
+                }
+            }
+        }
+
+        p {
+            width: 508px;
+            font-size: $font-size-md;
+            line-height: $line-heigh-md;
+            padding: 6rem 0 1rem;
+
+            @include xl {
+                width: 340px;
+                font-size: $base-font-size;
+                padding: 5rem 0 1rem;
+            }
+
+            @include lg {
+                width: 283px;
+                font-size: .8rem;
+                padding-top: 4rem;
+            }
+
+            @include md {
+                padding: 2rem 0 1rem;
+                width: 77%;
+            }
+    
+        }
+    }
+
+    .wrap-sm.image {
+        position: relative;
+
+        img {
+            position: relative;
+            z-index: 2;
+            width: 80%;
+
+            // @include xl {
+            //     width: 450px;
+            // }
+            
+            // @include lg {
+            //     width: 350px;
+            // }
+
+            @include md {
+                width: 50%;
+            }
+        }
+
+        .rectangle {
+            position: absolute;
+            background-color: $color-logo-green;
+            width: 90%;
+            height: 304px;
+            z-index: 1;
+
+            @include xl {
+                // width: 528px;
+                height: 240px;
+            }
+
+            @include lg {
+                // width: 375px;
+                height: 170px;
+            }
+
+            @include md {
+                width: 70%;
+                height: 70%;
+            }
+
+        }
+
+        &.right {
+            text-align: right;
+
+            img {
+                border-radius: 290px 0 0 290px;
+                
+                @include breakpoint($bp: 768px) {
+                }
+        
+            }
+
+            .rectangle {
+                top: 0;
+                right: 0;
+
+                @include xl {
+                }  
+                
+                @include md {
+                    top: -155px;
+                }
+            }    
+        }
+
+        &.left {
+            img {
+                border-radius: 0 290px 290px 0;
+            }
+
+            .rectangle {
+                top: 115px;
+                left: 0;
+
+                @include lg {
+                    top: 120px;
+                }
+            }
+
+        }
+    }
+
+    .wrap:first-child {
+        .wrap-sm.left {
+            @include md {
+                margin-bottom: 0;
+            }
+            
+            .line {
+                height: 185px;
+                top: -110px;
+
+                @include xl {
+                    height: 170px;
+                }   
+                
+                @include lg {
+                    top: -80px;
+                    height: 123px;
+                }
+            }             
+        } 
+
+        .wrap-sm.image {
+            &.right {
+                img {
+                    @include md {
+                        margin-top: 0;
+                    }
+                }
+
+                .rectangle {
+                    top: -50px;
+
+                    @include xl {
+                        top: -30px;
+                    }
+
+                    @include md {
+                        top: 45%;
+                    }
+                }
+            }
+        }
+    }
+
+    .wrap:nth-child(2) {
+        .wrap-sm.image.left {
+            height: 50px;
+
+            @include md {
+                height: auto;
+                margin-bottom: 0;
+            }
+
+            .rectangle {
+                top: 155px;
+
+                @include xl {
+                    top: 90px;
+                }
+
+                @include md {
+                    top: 0;
+                }
+            }
+
+            img {
+                margin-top: 20px;
+            }
+        }
+
+        .wrap-sm.right {
+            .line {
+                top: -166px;
+
+                @include md {
+                    top: -30px;
+                    height: 276px;
+                }
+            }
+        }
+    }
+
+    .wrap:nth-child(3) {
+        @include md {
+            // height: 240px;
+        }
+
+        .wrap-sm.left {
+            @include md {
+                margin-bottom: 0;
+            }
+
+            .line {
+                top: -168px;
+
+                @include md {
+                    top: -250px;
+                    height: 293px;
+                }
+            }
+        }
+
+        .wrap-sm.image {
+            &.right {
+                @include md {
+                    margin-bottom: 0;
+                }
+
+                .rectangle {
+                    top: 208px;
+
+                    @include xl {
+                        top: 128px;
+                    }    
+
+                    @include lg {
+                        top: 142px;
+                    }
+
+                    @include md {
+                        top: 45%;
+                    }
+                }    
+            }
+        }
+    }
+
+    .wrap:nth-child(4) {
+        padding-top: 40px;
+
+        .wrap-sm.right {
+            .line {
+                top: -127px;
+
+                @include md {
+                    top: 0;
+                    height: 307px;
+                }
+            }
+        }
+
+        .wrap-sm.image {
+            &.left { 
+                @include md {
+                    margin-bottom: 0;
+                }
+
+                img {
+                    @include md {
+                        margin-top: 20px;
+                    }
+                }   
+
+                .rectangle {
+                    top: 205px;
+
+                    @include xl {
+                        top: 128px;
+                    }    
+
+                    @include lg {
+                        top: 137px;
+                    }
+
+                    @include md {
+                        top: 0;
+                    }
+                }    
+            }
+        }
+    }
+}
