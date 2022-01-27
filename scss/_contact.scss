@@ -49,7 +49,8 @@
 
                         @include md {
                             font-size: .8rem;
-                        }                    
+                            font-weight: $font-weight-lg;
+                       }                    
                     }
                 }
 
