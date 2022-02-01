@@ -1193,6 +1193,7 @@ header nav ul li:active:not(:last-child), header nav ul li:focus:not(:last-child
   line-height: 1.1;
   text-transform: uppercase;
   padding: 50px 0;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
