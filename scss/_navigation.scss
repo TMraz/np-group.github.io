@@ -15,8 +15,7 @@ header {
     }
 
     .wrap {
-        padding: 0 $padding-xl;
-        height: 10%;
+        height: 100%;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -27,13 +26,13 @@ header {
         }
 
         ul.contact {
-            @include breakpoint($bp: 920px) {
+            @include breakpoint($bp: 1200px) {
                 display: none;
             }
         }
 
         nav {
-            @include md {
+            @include lg {
                 display: none;
             }    
         }
@@ -50,12 +49,7 @@ header {
             }
 
             a {
-                font-size: $base-font-size;
                 padding: 32px $base-padding;
-
-                @include xl {
-                    font-size: .8rem;
-                }
             }
 
             @include xl {

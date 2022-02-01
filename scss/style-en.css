@@ -30,6 +30,7 @@ body {
 a {
   color: #11141a;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 h1 {
@@ -66,12 +67,28 @@ ul li {
 .container {
   width: 100vw;
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .wrap {
   padding: 0 30px;
-  margin: 0 auto;
+  width: 98%;
   max-width: 1400px;
+}
+
+@media (max-width: 400px) {
+  .wrap {
+    padding: 0 20px;
+  }
 }
 
 .flex {
@@ -81,6 +98,9 @@ ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -103,6 +123,9 @@ ul li {
 .btn {
   text-transform: uppercase;
   font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  background-color: #638d14;
   letter-spacing: 0.08em;
   padding: 20px 26px;
 }
@@ -131,12 +154,6 @@ ul li {
   display: none;
 }
 
-@media (max-width: 600px) {
-  .toggle {
-    right: 40px;
-  }
-}
-
 .toggle li {
   position: absolute;
   left: 5%;
@@ -150,7 +167,7 @@ ul li {
   padding: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .toggle {
     display: initial;
   }
@@ -248,12 +265,13 @@ ul.toggle.active li:nth-of-type(3) {
   transition: .2s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .sidebar {
     display: initial;
   }
 }
 
+/* === SITE HEADER === */
 /* === SITE HEADER === */
 header.container {
   height: 80px;
@@ -271,8 +289,7 @@ header.container {
 }
 
 header .wrap {
-  padding: 0 30px;
-  height: 10%;
+  height: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -292,13 +309,13 @@ header .wrap {
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1200px) {
   header .wrap ul.contact {
     display: none;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   header .wrap nav {
     display: none;
   }
@@ -315,14 +332,7 @@ header ul li i {
 }
 
 header ul li a {
-  font-size: 1rem;
   padding: 32px 10px;
-}
-
-@media (max-width: 1024px) {
-  header ul li a {
-    font-size: .8rem;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -354,7 +364,7 @@ header nav ul li:last-child a {
   font-size: .8rem;
 }
 
-header nav ul li:last-child a.cz {
+header nav ul li:last-child a.en {
   color: #c9c9c9;
 }
 
@@ -366,6 +376,14 @@ header nav ul li:last-child a:hover {
   header a img {
     width: 40px;
   }
+}
+
+header nav ul li:last-child a.cz {
+  color: #c9c9c9;
+}
+
+header nav ul li:last-child a.en {
+  color: #11141a;
 }
 
 /* === SITE SECTION - HOME === */
@@ -564,12 +582,6 @@ header nav ul li:last-child a:hover {
   padding-top: 80px;
 }
 
-@media (max-width: 1024px) {
-  #about .wrap {
-    padding: 0 30px 50px;
-  }
-}
-
 #about h1 {
   text-align: center;
   padding: 1rem 0;
@@ -584,6 +596,7 @@ header nav ul li:last-child a:hover {
 
 #about h2 {
   text-align: center;
+  padding-bottom: 3rem;
 }
 
 @media (max-width: 600px) {
@@ -666,6 +679,13 @@ header nav ul li:last-child a:hover {
 #contact ul {
   margin: 0 3rem 2rem 0;
   line-height: 1.5;
+}
+
+#contact ul li {
+  font-size: 1.3rem;
+}
+
+#contact ul li a {
   font-size: 1.3rem;
 }
 
@@ -706,6 +726,7 @@ header nav ul li:last-child a:hover {
 @media (max-width: 600px) {
   #contact .contact-data .contact.company ul li:first-child {
     font-size: .8rem;
+    font-weight: 400;
   }
 }
 
@@ -805,6 +826,16 @@ header nav ul li:last-child a:hover {
   width: 100%;
 }
 
+.site-footer .container.copyright {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .site-footer .copyright {
   padding: 0;
   margin: 0 auto;
@@ -816,5 +847,6 @@ header nav ul li:last-child a:hover {
 
 .site-footer .copyright a {
   text-decoration: underline;
+  font-size: .7rem;
 }
 /*# sourceMappingURL=style-en.css.map */

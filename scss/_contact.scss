@@ -16,7 +16,14 @@
     ul {
         margin: 0 3rem 2rem 0;
         line-height: $line-heigh-md;
-        font-size: 1.3rem;
+
+        li {
+            font-size: 1.3rem;
+
+            a {
+                font-size: 1.3rem;
+            }
+        }
 
         @include md {
             font-size: .8rem;

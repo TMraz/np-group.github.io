@@ -54,6 +54,11 @@
         }
     }
 
+    .container.copyright {
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .copyright {
         padding: 0;
         margin: $margin-center-horizontal;
@@ -64,6 +69,7 @@
 
         a {
             text-decoration: underline;
+            font-size: .7rem;
         }
     }
 }
