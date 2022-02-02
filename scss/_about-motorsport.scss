@@ -21,6 +21,10 @@
             grid-template-rows: [row-1] .2fr [row-2] .7fr [row-3] .2fr [row-4] 1fr;
             margin-bottom: 3%;
         }
+
+        @include md {
+            grid-template-rows: [row-1] .2fr [row-2] .7fr [row-3] .2fr [row-4] .6fr;
+        }
     
         .line {
             width: 5px;

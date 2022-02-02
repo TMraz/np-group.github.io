@@ -826,6 +826,18 @@ header nav ul li:last-child a.en {
   width: 100%;
 }
 
+@media (max-width: 800px) {
+  .site-footer ul.navigation li a {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer ul.navigation li a {
+    font-size: .8rem;
+  }
+}
+
 .site-footer .container.copyright {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;

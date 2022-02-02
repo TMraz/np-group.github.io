@@ -51,6 +51,16 @@
                     width: 100%;
                 }
             }
+
+            a { 
+                @include lg {
+                    font-size: .9rem;
+                }
+
+                @include md {
+                    font-size: .8rem;
+                }
+            }
         }
     }
 

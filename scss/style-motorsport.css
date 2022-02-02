@@ -809,6 +809,13 @@ header nav ul li:active:not(:last-child), header nav ul li:focus:not(:last-child
   }
 }
 
+@media (max-width: 600px) {
+  #about .wrap-sm {
+    -ms-grid-rows: [row-1] 0.2fr [row-2] 0.7fr [row-3] 0.2fr [row-4] 0.6fr;
+        grid-template-rows: [row-1] 0.2fr [row-2] 0.7fr [row-3] 0.2fr [row-4] 0.6fr;
+  }
+}
+
 #about .wrap-sm .line {
   width: 5px;
   height: 140px;
@@ -1380,6 +1387,18 @@ header nav ul li:active:not(:last-child), header nav ul li:focus:not(:last-child
 
 .site-footer ul.navigation li:hover:after {
   width: 100%;
+}
+
+@media (max-width: 800px) {
+  .site-footer ul.navigation li a {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer ul.navigation li a {
+    font-size: .8rem;
+  }
 }
 
 .site-footer .container.copyright {
