@@ -7,11 +7,25 @@ $(document).ready(function(){
      });
 
 
-     $('.sidebar .menu-item').click(function(){
+    $('.sidebar .menu-item').click(function(){
         $('.sidebar').toggleClass('active')
         $('ul.toggle').toggleClass('active');
     });
-        
+
+    // === scroll reveal ===
+    ScrollReveal({
+        // reset: true,
+        distance:'60px',
+        duration: 2500,
+        delay: 400
+    });
+
+    ScrollReveal().reveal('.main-title, .post-title, #about .paragraph', { delay: 100, origin: 'left'});
+    ScrollReveal().reveal('.line', { delay: 100});
+    ScrollReveal().reveal('.rectangle, #about .wrap-sm img', { delay: 100, origin: 'right'});
+    ScrollReveal().reveal('#about .card, #contact .contact, #contact .map, #contact .main-title, #contact .btn', { delay: 200, origin: 'bottom'});
+
+
 });
 
 
