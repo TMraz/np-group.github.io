@@ -17,13 +17,13 @@ $(document).ready(function(){
         // reset: true,
         distance:'60px',
         duration: 2500,
-        delay: 400
+        delay: 0
     });
 
-    ScrollReveal().reveal('.main-title, .post-title, #about .paragraph', { delay: 100, origin: 'left'});
-    ScrollReveal().reveal('.line', { delay: 100});
-    ScrollReveal().reveal('.rectangle, #about .wrap-sm img', { delay: 100, origin: 'right'});
-    ScrollReveal().reveal('#about .card, #contact .contact, #contact .map, #contact .main-title, #contact .btn', { delay: 200, origin: 'bottom'});
+    ScrollReveal().reveal('.main-title, .post-title, #about .paragraph', { origin: 'left'});
+    ScrollReveal().reveal('.line', { delay: 600, origin: 'top'});
+    ScrollReveal().reveal('.rectangle, #about .wrap-sm img', { origin: 'right'});
+    ScrollReveal().reveal('#about .card, #contact .contact, #contact .map, #contact .main-title, #contact .btn', { origin: 'bottom'});
 
 
 });
