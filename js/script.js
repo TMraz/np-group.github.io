@@ -21,8 +21,9 @@ $(document).ready(function(){
     });
 
     ScrollReveal().reveal('.main-title, .post-title, #about .paragraph', { origin: 'left'});
-    ScrollReveal().reveal('.line', { delay: 600, origin: 'top'});
+    ScrollReveal().reveal('.line', { delay: 600, origin: 'top', distance: '0'});
     ScrollReveal().reveal('.rectangle, #about .wrap-sm img', { origin: 'right'});
+    ScrollReveal().reveal('.rectangle.left, #about .wrap-sm img.left', { origin: 'left'});
     ScrollReveal().reveal('#about .card, #contact .contact, #contact .map, #contact .main-title, #contact .btn', { origin: 'bottom'});
 
 
