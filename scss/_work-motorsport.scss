@@ -344,6 +344,11 @@
 
                 @include md {
                     margin-top: 20px;
+                    margin-left: 20px;
+                }
+
+                @include sm {
+                    margin-left: 20px;
                 }
 
                 li {
