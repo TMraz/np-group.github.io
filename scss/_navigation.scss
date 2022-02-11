@@ -130,6 +130,10 @@ header {
             top: 80px;
             left: 0;
             background-color: $color-bg;
+
+            @include xl {
+                top: 60px;
+            }
             
             li {
                 display: block;

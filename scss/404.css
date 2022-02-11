@@ -217,7 +217,7 @@ ul.toggle.active li:nth-of-type(3) {
   left: -670px;
   background: white;
   width: 80vw;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 50px 40px;

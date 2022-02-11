@@ -12,9 +12,9 @@ $(document).ready(function(){
         $('ul.toggle').toggleClass('active');
     });
 
-    $('.sidebar .menu-item.division').click(function(){
-        $('.menu-item:not(.menu-item.division)').toggleClass('inactive');
-    });
+    // $('.sidebar .menu-item.division').click(function(){
+    //     $('.menu-item:not(.menu-item.division)').toggleClass('inactive');
+    // });
 
 
     // === scroll reveal ===

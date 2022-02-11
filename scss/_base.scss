@@ -187,7 +187,8 @@ ul.toggle {
     position: fixed;
     top: 0;  left: -670px;
     background: $color-bg-sidebar;
-    width: 80vw;   height: 100vh;
+    width: 80vw;   
+    min-height: 100vh;
     box-sizing: border-box;
     padding: 50px $padding-xxl;
     margin: $margin-center-horizontal;

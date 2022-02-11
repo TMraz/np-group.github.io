@@ -219,7 +219,7 @@ ul.toggle.active li:nth-of-type(3) {
   left: -670px;
   background: white;
   width: 80vw;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 50px 40px;
@@ -453,6 +453,12 @@ header nav ul.drop-down {
   top: 80px;
   left: 0;
   background-color: white;
+}
+
+@media (max-width: 1024px) {
+  header nav ul.drop-down {
+    top: 60px;
+  }
 }
 
 header nav ul.drop-down li {
@@ -1860,7 +1866,7 @@ ul.toggle.active li:nth-of-type(3) {
   left: -670px;
   background: white;
   width: 80vw;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 50px 40px;
@@ -2094,6 +2100,12 @@ header nav ul.drop-down {
   top: 80px;
   left: 0;
   background-color: white;
+}
+
+@media (max-width: 1024px) {
+  header nav ul.drop-down {
+    top: 60px;
+  }
 }
 
 header nav ul.drop-down li {
