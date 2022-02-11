@@ -245,6 +245,40 @@ ul.toggle.active li:nth-of-type(3) {
   display: block;
 }
 
+.sidebar ul.main-nav > li span.arrow {
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.sidebar ul.main-nav > li span.arrow::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 35px;
+  left: 65%;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid #11141a;
+  border-right: 1px solid #11141a;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@media (max-width: 400px) {
+  .sidebar ul.main-nav > li span.arrow::after {
+    left: 80%;
+  }
+}
+
+.sidebar ul.main-nav > li span.arrow.active::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 .sidebar ul.main-nav > li.inactive {
   display: none;
 }
@@ -260,9 +294,14 @@ ul.toggle.active li:nth-of-type(3) {
   color: white;
 }
 
-.sidebar ul.main-nav > li:active:not(:last-child) a span, .sidebar ul.main-nav > li:focus:not(:last-child) a span, .sidebar ul.main-nav > li:hover:not(:last-child) a span {
-  -webkit-filter: invert(1);
-          filter: invert(1);
+.sidebar ul.main-nav > li:active:not(:last-child) a span.arrow, .sidebar ul.main-nav > li:focus:not(:last-child) a span.arrow, .sidebar ul.main-nav > li:hover:not(:last-child) a span.arrow {
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.sidebar ul.main-nav > li:active:not(:last-child) a span.arrow::after, .sidebar ul.main-nav > li:focus:not(:last-child) a span.arrow::after, .sidebar ul.main-nav > li:hover:not(:last-child) a span.arrow::after {
+  border-top: 1px solid white;
+  border-right: 1px solid white;
 }
 
 .sidebar ul.main-nav > li:active:not(:last-child) .drop-down li:hover a, .sidebar ul.main-nav > li:active:not(:last-child) .drop-down li:focus a, .sidebar ul.main-nav > li:focus:not(:last-child) .drop-down li:hover a, .sidebar ul.main-nav > li:focus:not(:last-child) .drop-down li:focus a, .sidebar ul.main-nav > li:hover:not(:last-child) .drop-down li:hover a, .sidebar ul.main-nav > li:hover:not(:last-child) .drop-down li:focus a {
@@ -274,6 +313,7 @@ ul.toggle.active li:nth-of-type(3) {
 
 .sidebar ul.main-nav > li:active:not(:last-child) .drop-down li a, .sidebar ul.main-nav > li:focus:not(:last-child) .drop-down li a, .sidebar ul.main-nav > li:hover:not(:last-child) .drop-down li a {
   color: #11141a;
+  font-size: 1rem;
 }
 
 .sidebar ul.main-nav > li:active:not(:last-child) .drop-down li a span, .sidebar ul.main-nav > li:focus:not(:last-child) .drop-down li a span, .sidebar ul.main-nav > li:hover:not(:last-child) .drop-down li a span {
@@ -390,6 +430,27 @@ header nav {
   text-transform: uppercase;
 }
 
+header nav ul.main-nav > li span.arrow {
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+header nav ul.main-nav > li span.arrow::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 35px;
+  right: 13px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid #11141a;
+  border-right: 1px solid #11141a;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 header nav ul.main-nav > li:active:not(:last-child), header nav ul.main-nav > li:focus:not(:last-child), header nav ul.main-nav > li:hover:not(:last-child) {
   cursor: pointer;
   background-color: #ff931f;
@@ -401,9 +462,14 @@ header nav ul.main-nav > li:active:not(:last-child) a, header nav ul.main-nav > 
   color: white;
 }
 
-header nav ul.main-nav > li:active:not(:last-child) a span, header nav ul.main-nav > li:focus:not(:last-child) a span, header nav ul.main-nav > li:hover:not(:last-child) a span {
-  -webkit-filter: invert(1);
-          filter: invert(1);
+header nav ul.main-nav > li:active:not(:last-child) a span.arrow, header nav ul.main-nav > li:focus:not(:last-child) a span.arrow, header nav ul.main-nav > li:hover:not(:last-child) a span.arrow {
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+header nav ul.main-nav > li:active:not(:last-child) a span.arrow::after, header nav ul.main-nav > li:focus:not(:last-child) a span.arrow::after, header nav ul.main-nav > li:hover:not(:last-child) a span.arrow::after {
+  border-top: 1px solid white;
+  border-right: 1px solid white;
 }
 
 header nav ul.main-nav > li:active:not(:last-child) .drop-down li:hover, header nav ul.main-nav > li:active:not(:last-child) .drop-down li:focus, header nav ul.main-nav > li:focus:not(:last-child) .drop-down li:hover, header nav ul.main-nav > li:focus:not(:last-child) .drop-down li:focus, header nav ul.main-nav > li:hover:not(:last-child) .drop-down li:hover, header nav ul.main-nav > li:hover:not(:last-child) .drop-down li:focus {
@@ -416,11 +482,6 @@ header nav ul.main-nav > li:active:not(:last-child) .drop-down li:hover a, heade
 
 header nav ul.main-nav > li:active:not(:last-child) .drop-down li a, header nav ul.main-nav > li:focus:not(:last-child) .drop-down li a, header nav ul.main-nav > li:hover:not(:last-child) .drop-down li a {
   color: #11141a;
-}
-
-header nav ul.main-nav > li:active:not(:last-child) .drop-down li a span, header nav ul.main-nav > li:focus:not(:last-child) .drop-down li a span, header nav ul.main-nav > li:hover:not(:last-child) .drop-down li a span {
-  -webkit-filter: invert(0);
-          filter: invert(0);
 }
 
 header nav ul.main-nav > li:last-child {
@@ -437,6 +498,13 @@ header nav ul.main-nav > li:last-child a.en {
 
 header nav ul.main-nav > li:last-child a:hover {
   color: #11141a;
+}
+
+header nav ul.main-nav span.arrow.active::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 header nav ul.main-nav li.division {

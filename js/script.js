@@ -35,6 +35,7 @@ $(document).ready(function(){
     $('.drop-down').hide();
     $('.main-nav li.division').click(function () {
         $('.drop-down').slideToggle('slow');
+        $('span.arrow').toggleClass('active');
     });
 
     // === accordion ===

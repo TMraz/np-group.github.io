@@ -65,6 +65,29 @@ header {
 
         ul.main-nav {
             & > li {
+
+                span.arrow {
+                    transition: all .5s ease-out;
+
+                    // @include sm {
+                    //     margin-right: 10px;
+                    // }
+                    
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        top: 35px;
+                        right: 13px;
+                        width: 7px;
+                        height: 7px;
+                        border-top: 1px solid $color-font;
+                        border-right: 1px solid $color-font;
+                        transform: rotate(135deg);
+                        transition: all .5s;
+                    }
+                }
+
                 &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
                     cursor: $base-cursor;
                     background-color: $color-logo-orange;
@@ -73,9 +96,16 @@ header {
                     a {
                         color: $color-font-light;
 
-                        span {
-                            filter: invert(1);
-                        }
+                        span.arrow {
+                            transition: all .5s ease-out;
+                                    
+                            &::after {
+                                border-top: 1px solid $color-font-light
+                                ;
+                                border-right: 1px solid $color-font-light;
+                            }
+                        }      
+
                     }
 
                     .drop-down {
@@ -92,10 +122,6 @@ header {
 
                             a {
                                 color: $color-font;
-
-                                span {
-                                    filter: invert(0);
-                                }            
                             }
                         }
                     }
@@ -114,6 +140,13 @@ header {
                         color: $color-font;
                     }
                 }   
+            }
+
+            span.arrow.active {
+                &::after {
+                    transform: rotate(-45deg);
+                    transition: all .5s;
+                }
             }
 
             li.division {

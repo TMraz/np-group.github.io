@@ -210,6 +210,35 @@ ul.toggle {
         & > li {
             display: block;
 
+            span.arrow {
+                transition: all .5s ease-out;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    top: 35px;
+                    left: 65%;
+                    width: 7px;
+                    height: 7px;
+                    border-top: 1px solid $color-font;
+                    border-right: 1px solid $color-font;
+                    transform: rotate(135deg);
+                    transition: all .5s;
+
+                    @include sm {
+                        left: 80%;
+                    }
+                }
+            }
+
+            span.arrow.active {
+                &::after {
+                    transform: rotate(-45deg);
+                    transition: all .5s;
+                }
+            }
+
             &.inactive {
                 display: none;
             }
@@ -222,14 +251,19 @@ ul.toggle {
                 a {
                     color: $color-font-light;
 
-                    span {
-                        filter: invert(1);
-                    }
+                    span.arrow {
+                        transition: all .5s ease-out;
+                                
+                        &::after {
+                            border-top: 1px solid $color-font-light
+                            ;
+                            border-right: 1px solid $color-font-light;
+                        }
+                    }      
                 }
 
                 .drop-down {
-                    li {
-                        
+                    li {                        
                         &:hover, &:focus {
                             a {
                                 background-color: $color-logo-orange;
@@ -240,6 +274,7 @@ ul.toggle {
 
                         a {
                             color: $color-font;
+                            font-size: $base-font-size;
 
                             span {
                                 filter: invert(0);
