@@ -62,18 +62,44 @@ header {
     nav {
         text-transform: uppercase;
 
-        ul {
-            li {
+        ul.main-nav {
+            & > li {
                 &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
                     cursor: $base-cursor;
                     background-color: $color-logo-orange;
                     transition: 0.4s;
     
                     a {
-                        color: $color-bg;
-                    }
-                }   
+                        color: $color-font-light;
 
+                        span {
+                            filter: invert(1);
+                        }
+                    }
+
+                    .drop-down {
+                        li {
+                            &:hover, &:focus {
+                                    background-color: $color-logo-orange;
+                            }
+                            
+                            &:hover, &:focus {
+                                a {
+                                    color: $color-font-light;
+                                }
+                            }
+
+                            a {
+                                color: $color-font;
+
+                                span {
+                                    filter: invert(0);
+                                }            
+                            }
+                        }
+                    }
+                } 
+                
                 &:last-child {
                     a {
                         font-size: .8rem;
@@ -88,7 +114,31 @@ header {
                     }
                 }   
             }
+
+            li.division {
+                position: relative;
+                
+                span {
+                    padding-left: 5px;
+                }
+            }
         } 
+
+        ul.drop-down {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background-color: $color-bg;
+            
+            li {
+                display: block;
+
+                a {
+                    display: block;
+                    padding: 10px;
+                }
+            }
+        }
     }
 
     @include xl {

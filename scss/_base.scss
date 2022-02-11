@@ -68,6 +68,7 @@ ul li {
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .wrap {
@@ -117,6 +118,11 @@ ul li {
     @include breakpoint($bp: 370px) {
         padding: 14px 16px;
     }
+}
+
+.flip {
+    transform: rotate(180deg);
+    transition: .2s;
 }
 
 /* === ul.toggle === */
@@ -193,22 +199,62 @@ ul.toggle {
         left: 0;
     }
 
-    ul {
+    ul.main-nav {
         position: relative;
         text-align: center;
         width: 100%;
         margin-top: 60px;
 
-        li {
+        & > li {
             display: block;
+
+            &.inactive {
+                display: none;
+            }
+
+            &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+                background-color: $color-logo-orange;
+                color: $color-font-light;
+                transition: 0.4s;
+
+                a {
+                    color: $color-font-light;
+
+                    span {
+                        filter: invert(1);
+                    }
+                }
+
+                .drop-down {
+                    li {
+                        
+                        &:hover, &:focus {
+                            a {
+                                background-color: $color-logo-orange;
+                                color: $color-font-light;
+                                transition: 0.4s;
+                            }
+                        }
+
+                        a {
+                            color: $color-font;
+
+                            span {
+                                filter: invert(0);
+                            }        
+                        }
+                    }
+                }
+            }
 
             &:last-child {
                 width: 100%;
+                padding: 20px 0;
 
                 a {
                     display: inline;
                     font-size: .8rem;
-                    padding: 5px;
+                    padding: 10px 5px;
                 }
             }
 
@@ -222,13 +268,12 @@ ul.toggle {
                 padding: $padding-xl 0;
                 box-sizing: border-box;
                 font-size: 20px;
-
-                &:hover {
-                    color: $color-logo-orange;
-                    transition: .2s;
-                }
             }
         }
+    }
+
+    ul.drop-down {
+        background-color: $color-bg;
     }
 
     @include lg {

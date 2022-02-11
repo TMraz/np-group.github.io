@@ -12,10 +12,11 @@
         margin-top: 80px;
         height: 80%;
         background-image: url(../img/bg_motorsport.png);
+        background-attachment: fixed;
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position-x: 57%;
-        
+        background-size: 48%;
+        background-position-y: 80px;
+        background-position-x: 57%;        
 
         h2 {
             font-size: $base-font-size;
