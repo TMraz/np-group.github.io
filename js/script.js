@@ -29,11 +29,7 @@ $(document).ready(function(){
     ScrollReveal().reveal('#work.container', { origin: 'bottom', distance: '0'});
     ScrollReveal().reveal('.right', { origin: 'right', distance: '60px'});
     ScrollReveal().reveal('.left', { origin: 'left', distance: '60px'});
-    // ScrollReveal().reveal('.line:not(#about .wrap .wrap-sm:first-child .line)', { delay: 600, origin: 'top', distance: '400px'});
-    // ScrollReveal().reveal('#about .wrap .wrap-sm:first-child .line, #work.container', { delay: 600, origin: 'top', distance: '0'});
-    // ScrollReveal().reveal('.rectangle, #about .wrap-sm img', { origin: 'right'});
-    // ScrollReveal().reveal('.rectangle.left, #about .wrap-sm img.left', { origin: 'left'});
-    // ScrollReveal().reveal('#about .card, #contact .contact, #contact .map, #contact .main-title, #contact .btn', { origin: 'bottom'});
+    ScrollReveal().reveal('.line:not(first-child)', { origin: 'top', distance: '60px', delay: '800'});
 
     // === drop-down menu ===
     $('.drop-down').hide();
