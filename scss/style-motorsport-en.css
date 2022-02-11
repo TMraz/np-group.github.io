@@ -219,7 +219,8 @@ ul.toggle.active li:nth-of-type(3) {
   left: -670px;
   background: white;
   width: 80vw;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 50px 40px;
@@ -1866,7 +1867,8 @@ ul.toggle.active li:nth-of-type(3) {
   left: -670px;
   background: white;
   width: 80vw;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 50px 40px;
