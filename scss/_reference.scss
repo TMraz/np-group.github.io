@@ -10,9 +10,23 @@
         text-align: center;
         margin-bottom: 100px;
 
+        @include breakpoint($bp: 700px) {
+            margin-bottom: 70px;
+        }
+
         @include md {
             font-size: $font-size-md;
             margin: 0;
+        }
+
+        @include breakpoint($bp: 500px) {
+            margin-bottom: 100px;
+        }
+    }
+
+    .wrap-sm {
+        @include breakpoint($bp: 500px) {
+            margin-bottom: 5rem;
         }
     }
     
@@ -22,12 +36,32 @@
         margin: 0;
         margin-bottom: 5rem;
 
+        @include breakpoint($bp: 700px) {
+            width: 200px;
+            height: 200px;
+        }
+        
+        @include breakpoint($bp: 500px) {
+            margin-bottom: 0;
+        }
+
         &:not(:last-of-type) {
             border-right: 1px solid $color-shadow;
+
+            @include breakpoint($bp: 500px) {
+                border-right: none;
+                border-bottom: 1px solid $color-shadow;
+            }
+    
         }
 
         img {
             object-fit: contain;
+
+
+            @include breakpoint($bp: 700px) {
+                width: 180px;
+            }
         }
         @include xl {
             margin-bottom: 1rem;
