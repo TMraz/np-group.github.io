@@ -316,11 +316,6 @@ ul.toggle.active li:nth-of-type(3) {
   font-size: 1rem;
 }
 
-.sidebar ul.main-nav > li:active:not(:last-child) .drop-down li a span, .sidebar ul.main-nav > li:focus:not(:last-child) .drop-down li a span, .sidebar ul.main-nav > li:hover:not(:last-child) .drop-down li a span {
-  -webkit-filter: invert(0);
-          filter: invert(0);
-}
-
 .sidebar ul.main-nav > li:last-child {
   width: 100%;
   padding: 20px 0;
