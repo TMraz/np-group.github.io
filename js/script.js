@@ -25,9 +25,10 @@ $(document).ready(function(){
         delay: 0
     });
 
-    ScrollReveal().reveal('.main-title, .post-title, #about .flex, #reference .wrap-sm, #contact .contact, .map', { origin: 'bottom'});
+    ScrollReveal().reveal('.main-title, .post-title, .paragraph, #about .flex, #reference .wrap-sm, #contact .contact, .map', { origin: 'bottom'});
     ScrollReveal().reveal('#work.container', { origin: 'bottom', distance: '0'});
-
+    ScrollReveal().reveal('.right', { origin: 'right', distance: '60px'});
+    ScrollReveal().reveal('.left', { origin: 'left', distance: '60px'});
     // ScrollReveal().reveal('.line:not(#about .wrap .wrap-sm:first-child .line)', { delay: 600, origin: 'top', distance: '400px'});
     // ScrollReveal().reveal('#about .wrap .wrap-sm:first-child .line, #work.container', { delay: 600, origin: 'top', distance: '0'});
     // ScrollReveal().reveal('.rectangle, #about .wrap-sm img', { origin: 'right'});
