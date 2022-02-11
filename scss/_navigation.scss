@@ -68,16 +68,12 @@ header {
 
                 span.arrow {
                     transition: all .5s ease-out;
-
-                    // @include sm {
-                    //     margin-right: 10px;
-                    // }
                     
                     &::after {
                         content: "";
                         display: inline-block;
                         position: absolute;
-                        top: 35px;
+                        top: 45%;
                         right: 13px;
                         width: 7px;
                         height: 7px;
@@ -85,6 +81,11 @@ header {
                         border-right: 1px solid $color-font;
                         transform: rotate(135deg);
                         transition: all .5s;
+
+                        @include xl {
+                            top: 41%;
+                            right: 11px;
+                        }
                     }
                 }
 

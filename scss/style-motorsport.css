@@ -434,7 +434,7 @@ header nav ul.main-nav > li span.arrow::after {
   content: "";
   display: inline-block;
   position: absolute;
-  top: 35px;
+  top: 45%;
   right: 13px;
   width: 7px;
   height: 7px;
@@ -444,6 +444,13 @@ header nav ul.main-nav > li span.arrow::after {
           transform: rotate(135deg);
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+@media (max-width: 1024px) {
+  header nav ul.main-nav > li span.arrow::after {
+    top: 41%;
+    right: 11px;
+  }
 }
 
 header nav ul.main-nav > li:active:not(:last-child), header nav ul.main-nav > li:focus:not(:last-child), header nav ul.main-nav > li:hover:not(:last-child) {
