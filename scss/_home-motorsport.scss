@@ -4,19 +4,103 @@
 #home {
     &.container {
         height: 100vh;
+        min-height: 550px;
+        max-height: 1080px;
         background-image: none;
+        position: relative;
     }
 
     .wrap {
         position: relative;
         margin-top: 80px;
-        height: 80%;
-        background-image: url(../img/bg_motorsport.png);
+        max-height: 900px;
+        background-image: url(../img/iStock-140028450.png);
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-size: 48%;
-        background-position-y: 80px;
-        background-position-x: 57%;        
+        background-size: 70%;
+        background-position-y: 45px;
+        background-position-x: 49%;  
+        
+        @include breakpoint($bp: 1440px) {
+            background-size: 79%;
+        }
+
+        @include breakpoint($bp: 1200px) {
+            background-size: 100%;
+        }
+
+        @include lg {
+            background-image: url(../img/iStock-140028450_base.png);
+            background-size: 130%;
+            background-position-y: 190px;
+            padding-top: 59vh;
+        }
+
+        @include breakpoint($bp: 768px) {
+            margin-bottom: 0;
+            padding-top: 71vh;
+            background-position-y: 176px;
+        }
+
+        @include md {
+            background-position-y: 150px;
+            background-size: 162%;
+        }
+        @include breakpoint($bp: 500px) {
+            padding-top: 65vh;
+            padding-bottom: 0;
+        }
+
+        @include sm {
+            background-size: 175%;
+            background-position-y: 160px;
+        }
+
+        @include xs-h {
+            padding-top: 63vh;
+        }
+
+        h1 {
+            display: none;
+            width: 100%;
+            text-align: center;
+            font-size: 88px;
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: .1rem;
+            color: $color-font-heading-motorsport;
+
+            @include lg {
+                display: initial;
+                position: absolute;
+                top: 20px;
+                backdrop-filter: blur(8px);
+            }
+
+            @include breakpoint($bp: 768px) {
+                font-size: 78px;
+            }
+
+            @include md {
+                font-size: 65px;  
+                letter-spacing: .05rem;          
+            }
+
+            @include breakpoint($bp: 500px) {
+                font-size: 50px;  
+            }
+
+            @include sm {
+                letter-spacing: 0; 
+                top: 0;         
+            }
+
+            @include breakpoint($bp: 350px) {
+                font-size: 45px;  
+            }
+        }
+
 
         h2 {
             font-size: $base-font-size;
@@ -25,6 +109,41 @@
             position: absolute;
             top: 53%;
             left: 6%;
+
+            @include breakpoint($bp: 1440px) {
+                top: 50%;
+                left: 11%;
+            }    
+
+            @include breakpoint($bp: 1200px) {
+                max-width: 250px;
+                line-height: 1.5;
+            }  
+            
+            @include lg {
+                position: static;
+                max-width: 100%;
+                font-size: $font-size-md;
+                text-align: center;
+                padding-bottom: 20px;
+                backdrop-filter: blur(8px);
+                background-color: rgba(255, 255, 255, 0.6);
+                font-weight: $font-weight-lg;
+            }  
+
+            @include breakpoint($bp: 768px) {
+                font-size: 1.3rem;
+            }
+            
+            @include breakpoint($bp: 500px) {
+                font-size: $base-font-size;
+            }
+
+            @include breakpoint($bp: 360px) {
+                font-size: .8rem;  
+            }
+
+
         }
 
         .wrap-sm:first-of-type {
@@ -33,24 +152,67 @@
             padding: 40px;
             backdrop-filter: blur(4px);
             position: absolute;
-            bottom: 13%;
-            left: calc(50% - 142px);
+            bottom: 200px;
+            left: calc(50% - 157px);
+
+            @include breakpoint($bp: 1440px) {
+                bottom: 150px;
+            }
+
+            @include lg {
+                position: static;
+            }  
+            
+            @include breakpoint($bp: 768px) {
+                padding: 20px 40px;
+            }            
         }
 
         .btn {
             background-color: $color-logo-green;
             font-weight: $base-font-weight;
             color: $color-font-light;
+
+            @include breakpoint($bp: 500px) {
+                font-size: $base-font-size;  
+            }
         }
 
     }
 
     & > .wrap-sm {
         position: absolute;
-        bottom: 20px;
+        bottom: 50px;
+
+        @include lg {
+            position: static;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+        }
+
+        @include sm {
+            height: 80px;
+        }
 
         &:hover {
             opacity: 0.5;
+        }
+
+        span.arrow {
+            &::after {
+                content: "";
+                top: 45%;
+                right: 0;        
+                width: 15px;
+                height: 15px;
+                border-top: 2px solid $color-logo-green;
+                border-right: 2px solid $color-logo-green;
+
+                @include lg {
+                    position: static;
+                }        
+            }        
         }
     }
 }

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;800;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap);
 @import 'breakpoints';
 
@@ -117,6 +117,29 @@ ul li {
 
     @include breakpoint($bp: 370px) {
         padding: 14px 16px;
+    }
+}
+
+span.arrow {
+    transition: all .5s ease-out;
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 45%;
+        right: 13px;
+        width: 7px;
+        height: 7px;
+        border-top: 1px solid $color-font;
+        border-right: 1px solid $color-font;
+        transform: rotate(135deg);
+        transition: all .5s;
+
+        @include xl {
+            top: 41%;
+            right: 11px;
+        }
     }
 }
 

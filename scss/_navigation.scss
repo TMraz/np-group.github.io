@@ -65,30 +65,6 @@ header {
 
         ul.main-nav {
             & > li {
-
-                span.arrow {
-                    transition: all .5s ease-out;
-                    
-                    &::after {
-                        content: "";
-                        display: inline-block;
-                        position: absolute;
-                        top: 45%;
-                        right: 13px;
-                        width: 7px;
-                        height: 7px;
-                        border-top: 1px solid $color-font;
-                        border-right: 1px solid $color-font;
-                        transform: rotate(135deg);
-                        transition: all .5s;
-
-                        @include xl {
-                            top: 41%;
-                            right: 11px;
-                        }
-                    }
-                }
-
                 &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
                     cursor: $base-cursor;
                     background-color: $color-logo-orange;

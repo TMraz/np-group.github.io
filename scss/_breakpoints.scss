@@ -4,7 +4,14 @@ $breakpoints: (
     "md": 600px,
     "lg": 800px, 
     "xl": 1024px,
+    "xs-h": 600px,
 );
+
+@mixin xs-h {
+    @media (max-height: map-get($breakpoints, "xs-h")) {
+        @content;
+    }
+}
 
 @mixin xs {
     @media (min-width: map-get($breakpoints, "xs")) {

@@ -21,7 +21,7 @@ $(document).ready(function(){
     ScrollReveal({
         // reset: true,
         distance:'40px',
-        duration: 2500,
+        duration: 1500,
         delay: 0
     });
 
