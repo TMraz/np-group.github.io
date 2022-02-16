@@ -70,7 +70,7 @@ $(document).ready(function(){
         $(this).parents('.wrap').find('img.slide-1, img.slide-2').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-3').fadeIn(800);
         $(this).parents('#work.container').addClass('slide-3');
-        $(this).parents('#work .wrap-sm').css('border', '1px solid rgb(17, 20, 26)')
+        $(this).parents('#work.container').removeClass('slide-1 slide-2')
     });
 
     // $('#work .link-4 h2').on('click', function () {

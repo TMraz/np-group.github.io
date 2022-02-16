@@ -1,0 +1,10 @@
+/* === SITE SECTION - HOME === */
+@import 'home-motorsport';
+
+#home {
+    .wrap {
+        .wrap-sm:first-of-type {
+            left: calc(50% - 130px);
+        }
+    }
+}

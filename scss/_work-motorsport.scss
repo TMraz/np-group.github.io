@@ -37,7 +37,7 @@
                     left: -34%;
                     filter: blur(80px);
                 }        
-            }    
+            } 
         } 
     }
 
@@ -262,11 +262,12 @@
         }
 
         .wrap-sm {
-            min-width: 525px;
+            min-width: 500px;
             padding: 20px;
             margin-bottom: 20px; 
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(10px);
 
             @include md {
                 max-width: 100%;

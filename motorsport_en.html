@@ -53,11 +53,7 @@
                     <li class="division">
                         <a href="#home" class="division">
                             Divisions
-                            <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" id="Vrstva_2" viewBox="0 0 330 330" width="10" x="0px" y="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
-                                    <path style="enable-background:new 0 0 330 330;fill:rgb(17, 20, 26);" id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
-                                </svg>
-                            </span>
+                            <span class="arrow"></span>
                         </a>
                         <ul class="drop-down">
                             <li><a href="motorsport.html">Motorsport</a></li>
@@ -88,10 +84,21 @@
         </nav>
     </header>
 
-    <aside class="sidebar">
-        <ul>
+    <aside class="sidebar" id="sidebar">
+        <ul class="main-nav">
             <li class="menu-item"><a href="motorsport_en.html">Home</a></li>
-            <li class="menu-item"><a href="index.html">Divisions</a></li>
+            <li class="menu-item division">
+                <a href="#home" class="division">
+                    Divisions
+                    <span class="arrow"></span>
+                </a>
+                <ul class="drop-down">
+                    <li><a href="motorsport.html">Motorsport</a></li>
+                    <li><a href="404.html">Development</a></li>
+                    <li><a href="404.html">SmartMedic</a></li>
+                    <li><a href="404.html">WebDevelopment</a></li>
+                </ul>
+            </li>
             <li class="menu-item"><a href="index.html#about">About Us</a></li>
             <li class="menu-item"><a href="index.html#contact">Contact</a></li>
             <li>
@@ -115,11 +122,7 @@
 
             <div class="wrap-sm">
                 <a href="#about" class="scroll-down-arrow">
-                    <span class="arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" id="Vrstva_2" viewBox="0 0 330 330" width="20" x="0px" y="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
-                            <path style="enable-background:new 0 0 330 330;fill:rgb(99, 141, 20);" id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
-                        </svg>
-                    </span>
+                    <span class="arrow"></span>
                 </a>
             </div>
         </div>
@@ -128,24 +131,24 @@
             <div class="wrap">
                 <div class="wrap-sm ">
                     <div class="line"></div>
-
-                    <h1 class="main-title"><span>01</span>Reverse Engineering</h1>
+                    <h1>01</h1>
+                    <h2 class="main-title">Reverse Engineering</h2>
 
                     <p class="paragraph">
                         Did you produce build-in design which met your expectations but do not have data for reproduction?<br>
                         We use reverse engineering to collect all data needed for further production.
                     </p>
 
-                    <div class="rectangle"></div>
+                    <div class="rectangle right"></div>
 
-                    <img src="img/image_1.PNG" alt="reverse_engineering_image">
-
+                    <img src="img/image_1.PNG" alt="reverse_engineering_image" class="right">
                 </div>
 
                 <div class="wrap-sm">
                     <div class="line"></div>
+                    <h1>02</h1>
+                    <h2 class="main-title">Design</h2>
 
-                    <h1 class="main-title">Design<span>02</span></h1>
                     <p class="paragraph">
                         Do you struggle above a white paper and need breakthrough solutions which push you 2 steps ahead your rival?
                         <br> 
@@ -155,41 +158,111 @@
                     <div class="rectangle left"></div>
 
                     <img class="left" src="img/image_2.jpg" alt="design_image">
-
                 </div>
 
                 <div class="wrap-sm">
                     <div class="line"></div>
+                    <h1>03</h1>
+                    <h2 class="main-title">Prototyping</h2>
 
-                    <h1 class="main-title"><span>03</span>Prototyping</h1>
                     <p class="paragraph">
                         We have all data for production, what's next? We produce prototype.
                         <br> 
                         By SLS part we ensure everithing is on place. We produce firts article based on documentation and ensure the product meet all your expectations.
                     </p>
 
-                    <div class="rectangle"></div>
+                    <div class="rectangle right"></div>
 
-                    <img src="img/image_3.PNG" alt="prototyping_image">
-
+                    <img src="img/image_3.PNG" alt="prototyping_image" class="right">
                 </div>
 
                 <div class="wrap-sm">
                     <div class="line"></div>
-
-                    <h1 class="main-title">Serial production<span>04</span></h1>
+                    <h1>04</h1>
+                    <h2 class="main-title">Serial Production</h2>
 
                     <p class="paragraph">
                         We prepare documentation for serial production. We offer solutions to increase effectivity and quality of production.
                     </p>
 
-                    <div class="rectangle"></div>
+                    <div class="rectangle left"></div>
 
-                    <img src="img/image_3.PNG" alt="serial_production_image">
-
+                    <img src="img/image_3.PNG" alt="serial_production_image" class="left">
                 </div>
             </div>
         </div>
+
+        <section id="work" class="container">
+            <div class="wrap flex accordion">
+                <img src="img/slide-1.png" alt="reverse_engineering_image" class="slide-1">
+                <img src="img/slide-2.png" alt="design_image" class="slide-2">
+                <img src="img/slide-3.png" alt="prototyping_image" class="slide-3">
+
+                <h1>
+                    We contribute to every<br>
+                    <span>project phase</span>
+                </h1>
+
+                <div class="wrap-md">
+                    <div class="wrap-sm link-1">
+                        <h2 class="flex"> 
+                            <span class="arrow"></span>
+                            Reverse Engineering
+                        </h2>
+                        <ul>
+                            <li>3D Scanning</li>
+                            <li>Material Analysis</li>
+                            <li>Fractography</li>
+                            <li>Chemical Analysis</li>
+                            <li>Tribological Testing of Thin Layers</li>
+                        </ul>
+                    </div>
+    
+                    <div class="wrap-sm link-2">
+                        <h2 class="flex">
+                            <span class="arrow"></span>
+                            Design
+                        </h2>
+                        <ul>
+                            <li>CAD Modeling</li>
+                            <li>FEM Analysis</li>
+                            <li>CFD Analysis</li>
+                            <li>Kinematic Analysis</li>
+                            <li>Tolerance Analysis</li>
+                        </ul>
+                    </div>
+    
+                    <div class="wrap-sm link-3">
+                        <h2 class="flex">
+                            <span class="arrow"></span>
+                            Prototyping
+                        </h2>
+                        <ul>
+                            <li>3D Models</li>
+                            <li>Drawings</li>
+                            <li>3D Printing</li>
+                            <li>Prototype Parts Production</li>
+                            <li>Prototype Parts Testing</li>
+                        </ul>
+                    </div>
+    
+                    <div class="wrap-sm link-4">
+                        <h2 class="flex">
+                            <span class="arrow"></span>
+                            Serial Production
+                        </h2>
+                        <ul>
+                            <li>3D Models</li>
+                            <li>Drawings</li>
+                            <li>3D Printing</li>
+                            <li>Prototype Parts Production</li>
+                            <li>Prototype Parts Testing</li>
+                            <li>PLM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <div id="contact" class="container">
             <div class="wrap flex">
@@ -225,7 +298,7 @@
                 </ul>    
             </div>
             <div class="container copyright">
-                © <time datetime="2000">2021</time> No Problem Group s.r.o. │ <a href="download/obchodni_podminky.pdf" download="obchodni_podminky_NPG" target="_blank">Terms and Conditions</a>
+                © <time datetime="2000">2021 │</time> No Problem Group s.r.o. │ <a href="download/vseobecne_obchodni_podminky_NPG.pdf" download="obchodni_podminky_NPG" target="_blank">Terms and Conditions</a>
             </div>
         </footer>
     

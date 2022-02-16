@@ -17,3 +17,17 @@ header {
         } 
     }
 }
+
+.sidebar {
+    ul.main-nav {
+        & > li {
+            span.arrow {
+                &::after {
+                    @include sm {
+                        left: 86%;
+                    }
+                }
+            }
+        }
+    }
+}

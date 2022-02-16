@@ -1,0 +1,34 @@
+/* === SITE SECTION - WORK === */
+@import 'work-motorsport';
+
+#work {
+
+    .wrap {
+
+        h1 {
+            @include xl {
+                font-size: 55px;
+            }
+
+            @include breakpoint($bp: 900px) {
+                font-size: 40px;
+                left: 20px;
+            }
+
+            @include sm {
+                font-size: 20px;
+            }
+
+            @include breakpoint($bp: 350px) {
+                font-size: 18px;
+                left: 10px;
+            }
+
+            span {
+                @include sm {
+                    font-size: 18px;
+                }    
+            }
+        }
+    }
+}
