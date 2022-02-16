@@ -317,7 +317,6 @@
                     width: 60px;
                     height: 6px;
                     margin-right: 50px;
-                    transition: all .5s ease-out;
 
                     @include sm {
                         margin-right: 10px;
@@ -334,7 +333,7 @@
                         border-right: 2px solid $color-font-light;
                         transform: rotate(45deg);
                         right: 0;
-                        bottom: 0;
+                        top: -6px;
                     }
                 }
             }

@@ -26,3 +26,24 @@ header {
         }
     }
 }
+
+.sidebar {
+    ul.main-nav {
+        & > li {
+            &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+                background-color: $color-logo-green;
+    
+                .drop-down {
+                    li {                        
+                        &:hover, &:focus {
+                            a {
+                                background-color: $color-logo-green;
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
+}

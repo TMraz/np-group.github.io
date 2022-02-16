@@ -84,13 +84,24 @@
         </nav>
     </header>
 
-    <aside class="sidebar">
-        <ul>
+    <aside class="sidebar" id="sidebar">
+        <ul class="main-nav">
             <li class="menu-item"><a href="motorsport.html">Domů</a></li>
-            <li class="menu-item"><a href="index.html">Divize</a></li>
+            <li class="menu-item division">
+                <a href="#home" class="division">
+                    Divize
+                    <span class="arrow"></span>
+                </a>
+                <ul class="drop-down">
+                    <li><a href="motorsport.html">Motorsport</a></li>
+                    <li><a href="404.html">Development</a></li>
+                    <li><a href="404.html">SmartMedic</a></li>
+                    <li><a href="404.html">WebDevelopment</a></li>
+                </ul>
+            </li>
             <li class="menu-item"><a href="index.html#about">O společnosti</a></li>
             <li class="menu-item"><a href="index.html#contact">Kontakt</a></li>
-            <li>
+            <li class="menu-item">
                 <a href="motorsport.html" class="cz">CZ</a>/<a href="motorsport_en.html" class="en">EN</a>
             </li>
         </ul>
