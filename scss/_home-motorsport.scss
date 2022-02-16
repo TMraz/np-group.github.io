@@ -43,13 +43,15 @@
             background-position-y: 176px;
         }
 
-        @include md {
-            background-position-y: 150px;
-            background-size: 162%;
-        }
         @include breakpoint($bp: 500px) {
             padding-top: 65vh;
             padding-bottom: 0;
+        }
+
+        @include md {
+            background-position-y: 150px;
+            background-size: 162%;
+            padding-top: 59vh;
         }
 
         @include sm {
@@ -127,7 +129,7 @@
                 max-width: 100%;
                 font-size: $font-size-md;
                 text-align: center;
-                padding-bottom: 20px;
+                padding: 20px 0;
                 backdrop-filter: blur(8px);
                 background-color: rgba(255, 255, 255, 0.6);
                 font-weight: $font-weight-lg;
