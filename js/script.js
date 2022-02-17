@@ -36,6 +36,10 @@ $(document).ready(function(){
     $('.main-nav li.division').click(function () {
         $('.drop-down').slideToggle('slow');
         $('span.arrow').toggleClass('active');
+        $('.main-nav li.division').siblings().mouseenter(function () {
+            $('.drop-down').slideUp('slow');
+            $('span.arrow').removeClass('active');
+        });
     });
 
     // === accordion ===

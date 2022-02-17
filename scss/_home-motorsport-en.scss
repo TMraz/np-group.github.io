@@ -3,6 +3,12 @@
 
 #home {
     .wrap {
+        background-image: url(../img/iStock-140028450-EN.png);
+
+        @include lg {
+            background-image: url(../img/iStock-140028450_base.png);
+        }
+
         .wrap-sm:first-of-type {
             left: calc(50% - 130px);
         }

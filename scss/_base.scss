@@ -297,7 +297,7 @@ ul.toggle {
 
                         a {
                             color: $color-font;
-                            font-size: $base-font-size;
+                            font-size: 20px;
                         }
                     }
                 }
@@ -330,6 +330,12 @@ ul.toggle {
 
     ul.drop-down {
         background-color: $color-bg;
+
+        li {
+            a {
+                font-size: 20px;
+            }
+        }
     }
 
     @include lg {
