@@ -97,7 +97,8 @@
 
             @include sm {
                 letter-spacing: 0; 
-                top: 0;         
+                top: 65px; 
+                position: fixed;        
             }
 
             @include breakpoint($bp: 350px) {

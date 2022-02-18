@@ -9,6 +9,13 @@ $(document).ready(function(){
         }
     });
 
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 350) {
+            $('#home h1').fadeOut('slow')
+        } else {
+            $('#home h1').fadeIn('slow')
+        }
+    });
 });
 
 
