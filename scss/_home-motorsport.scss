@@ -76,8 +76,8 @@
 
             @include lg {
                 display: initial;
-                position: absolute;
-                top: 20px;
+                position: fixed;
+                top: 80px;
                 left: 0;
                 backdrop-filter: blur(8px);
             }

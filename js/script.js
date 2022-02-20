@@ -55,31 +55,33 @@ $(document).ready(function(){
     });
 
     // === slider ===
-    $('#work img.slide-1, #work img.slide-3').hide();
+    $('#work img.slide-1, #work img.slide-3, #work img.slide-4').hide();
 
     $('#work .link-1 h2').on('click', function () {
-        $(this).parents('.wrap').find('img.slide-2, img.slide-3').fadeOut(200);
+        $(this).parents('.wrap').find('img.slide-2, img.slide-3, img.slide-4').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-1').fadeIn(800);
         $(this).parents('#work.container').addClass('slide-1');
         $(this).parents('#work.container').removeClass('slide-3')
     });
 
     $('#work .link-2 h2').on('click', function () {
-        $(this).parents('.wrap').find('img.slide-1, img.slide-3').fadeOut(200);
+        $(this).parents('.wrap').find('img.slide-1, img.slide-3, img.slide-4').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-2').fadeIn(800);
         $(this).parents('#work.container').removeClass('slide-1 slide-3')
     });
 
     $('#work .link-3 h2').on('click', function () {
-        $(this).parents('.wrap').find('img.slide-1, img.slide-2').fadeOut(200);
+        $(this).parents('.wrap').find('img.slide-1, img.slide-2, img.slide-4').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-3').fadeIn(800);
         $(this).parents('#work.container').addClass('slide-3');
         $(this).parents('#work.container').removeClass('slide-1 slide-2')
     });
 
-    // $('#work .link-4 h2').on('click', function () {
-    //     $(this).parents('.wrap').removeClass('slide-2 slide-3 slide-1').addClass('slide-4')
-    // });
+    $('#work .link-4 h2').on('click', function () {
+        $(this).parents('.wrap').find('img.slide-1, img.slide-2, img.slide-3').fadeOut(200);
+        $(this).parents('.wrap').find('img.slide-4').fadeIn(800);
+        $(this).parents('#work.container').removeClass('slide-1 slide-3')
+    });
 
 
 

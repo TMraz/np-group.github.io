@@ -1,0 +1,167 @@
+/* === SITE SECTION - HOME === */
+@import 'breakpoints';
+
+#home {
+    &.container {
+        background-color: $color-bg-smartmedic;
+        height: calc(100vh - 80px);
+       
+        // @media (min-width: 1400px) {
+        //     height: 100vh;
+        // }
+
+        // @include sm {
+        //     margin-top: -60px;
+        //     background-position: top right;
+        //     background-size: 245%;
+        // }
+    }
+
+    .wrap {
+        height: 100%;
+        padding-left: 50px;
+
+        .intro-slogan {
+            margin-top: 350px;
+            position: relative;
+
+            h1 {
+                color: rgba(40, 53, 78, 0.7);
+                font-size: 244px;
+                font-weight: $font-weight-xxl;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: 0;
+                margin: 0;
+            }    
+
+            h2 {
+                color: $color-font-light;
+                font-size: $font-size-xl;
+                font-weight: $base-font-weight;
+                text-transform: uppercase;
+                letter-spacing: .2rem;
+                position: absolute;
+                bottom: 30px;
+            }  
+        }
+
+    //     @media (min-width: 1400px) {
+    //         display: grid;
+    //         grid-template-columns: [col-1] 1fr;
+    //         grid-template-rows: [row-1] 25%  [row-2] 1fr  [row-3] .5fr [row-4] 1fr;
+    //         padding: 0;
+    //         margin-bottom: 0;
+    //     }
+
+    //     @include xl {
+    //         padding: 310px 10px 30px 10px;
+    //     }
+
+    //     @include lg {
+    //         padding-top: 290px;
+    //     }
+
+    //     @include md {
+    //         padding-top: 200px;
+    //     }
+    }
+
+    .wrap-sm {
+        color: $color-font-light;
+    }
+
+    .wrap-sm.flex {
+        justify-content: start;
+        align-self: start;
+        margin-bottom: 70px;
+    }
+
+    .card {
+        background-color: transparent;
+        width: 250px;
+        height: 240px;
+        overflow: hidden;
+        text-align: center;
+
+        &:first-of-type {
+            h2 {
+                text-align: left;
+            }
+        }
+
+        &:nth-of-type(3) {
+            img {
+                margin-top: 30px;
+            }
+        }
+
+        &:nth-of-type(4) {
+            img {
+                margin-top: 10px;
+            }
+        }
+
+        &:active:not(:first-of-type), &:focus:not(:first-of-type), &:hover:not(:first-of-type) {
+            box-shadow: $color-font-light 0px 1px 3px 1px;
+            border: 1px solid $color-font-light;
+            transition: $base-transition;
+        }
+
+        // @include sm {
+        //     height: 250px;
+        // }
+
+        h2 {
+            text-align: center;
+            font-style: italic;
+            font-size: $base-font-size;
+            font-weight: $base-font-weight;
+            margin-bottom: 30px;
+
+            @include sm {
+                margin-top: $margin-lg;
+            }    
+        }
+    }
+
+    .btn {
+        background-color: $color-hover-smartmedic;
+
+        &:active, &:focus, &:hover {
+            opacity: .9;
+        }
+    }
+
+    //     a {
+    //         font-size: $base-font-size;
+    //         font-weight: 500;
+    //         line-height: $line-heigh-lg;
+    //         letter-spacing: .1rem;
+    //         text-transform: uppercase;
+    //         position: absolute;
+    //         bottom: 30px;
+    //         left: 50%;
+    //         transform: translateX(-50%);
+    //         padding: .5rem 1.5rem;
+    //         background: #000;
+    //         color: $color-font-light;
+    //         backdrop-filter: blur(5px);    
+    //         transition: $base-transition;
+
+    //         @include md {
+    //             bottom: 40px;
+    //         }
+
+    //         @include sm {
+    //             font-size: .8rem;
+    //             padding: .5rem 1rem;
+    //         }
+
+    //         &:active, &:focus, &:hover {
+    //             background-color: rgb(255, 177, 31);
+    //             color: $color-font;
+    //             transition: $base-transition;
+    //         }
+    //     }
+}

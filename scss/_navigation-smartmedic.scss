@@ -1,0 +1,68 @@
+/* === SITE HEADER === */
+@import 'navigation';
+
+header {
+    &.container {
+        background: $color-bg-smartmedic;
+    }
+    span.arrow {
+        &::after {
+            content: "";
+            border-top: 1px solid $color-font-navigation-smartmedic;
+            border-right: 1px solid $color-font-navigation-smartmedic;
+        }
+    }
+
+    ul {
+        li {
+            font-weight: $font-weight-lg;
+
+            a {
+                color: $color-font-navigation-smartmedic;
+            }
+        }
+    }
+    
+    nav {
+        ul.main-nav {
+            & > li {
+                &:last-child {
+                    color: $color-font-navigation-smartmedic;
+                }
+
+                &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+                    background-color: $color-hover-smartmedic;
+
+                    .drop-down {
+                        li {
+                            &:hover, &:focus {
+                                    background-color: $color-hover-smartmedic;
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+
+.sidebar {
+    ul.main-nav {
+        & > li {
+            &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+                background-color: $color-hover-smartmedic;
+    
+                .drop-down {
+                    li {                        
+                        &:hover, &:focus {
+                            a {
+                                background-color: $color-hover-smartmedic;
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
+}

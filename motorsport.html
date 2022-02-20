@@ -58,7 +58,7 @@
                         <ul class="drop-down">
                             <li><a href="motorsport.html">Motorsport</a></li>
                             <li><a href="404.html">Development</a></li>
-                            <li><a href="404.html">SmartMedic</a></li>
+                            <li><a href="smartmedic.html">SmartMedic</a></li>
                             <li><a href="404.html">WebDevelopment</a></li>
                         </ul>
                     </li>
@@ -95,7 +95,7 @@
                 <ul class="drop-down">
                     <li><a href="motorsport.html">Motorsport</a></li>
                     <li><a href="404.html">Development</a></li>
-                    <li><a href="404.html">SmartMedic</a></li>
+                    <li><a href="smartmedic.html">SmartMedic</a></li>
                     <li><a href="404.html">WebDevelopment</a></li>
                 </ul>
             </li>
@@ -162,7 +162,7 @@
 
                     <div class="rectangle left"></div>
 
-                    <img class="left" src="img/image_2.jpg" alt="design_image">
+                    <img class="left" src="img/image_2.png" alt="design_image">
                 </div>
 
                 <div class="wrap-sm">
@@ -178,7 +178,7 @@
 
                     <div class="rectangle right"></div>
 
-                    <img src="img/image_3.PNG" alt="prototyping_image" class="right">
+                    <img src="img/image_3.png" alt="prototyping_image" class="right">
                 </div>
 
                 <div class="wrap-sm">
@@ -192,7 +192,7 @@
 
                     <div class="rectangle left"></div>
 
-                    <img src="img/image_3.PNG" alt="serial_production_image" class="left">
+                    <img src="img/image_4.png" alt="serial_production_image" class="left">
                 </div>
             </div>
         </section>
@@ -202,7 +202,7 @@
                 <img src="img/slide-1.png" alt="reverse_engineering_image" class="slide-1">
                 <img src="img/slide-2.png" alt="design_image" class="slide-2">
                 <img src="img/slide-3.png" alt="prototyping_image" class="slide-3">
-
+                <img src="img/slide-4.png" alt="production_image" class="slide-4">
                 <h1>
                     Vstoupíme do každé <br>
                     <span>fáze projektu</span>
@@ -212,7 +212,7 @@
                     <div class="wrap-sm link-1">
                         <h2 class="flex"> 
                             <span class="arrow"></span>
-                            Reverzní Engineering
+                            Engineering
                         </h2>
                         <ul>
                             <li>3D Scanning</li>
@@ -226,7 +226,7 @@
                     <div class="wrap-sm link-2">
                         <h2 class="flex">
                             <span class="arrow"></span>
-                            Návrh Designu
+                            Design
                         </h2>
                         <ul>
                             <li>CAD modeling</li>
@@ -254,7 +254,7 @@
                     <div class="wrap-sm link-4">
                         <h2 class="flex">
                             <span class="arrow"></span>
-                            Sériová Výroba
+                            Výroba
                         </h2>
                         <ul>
                             <li>3D modely</li>
@@ -318,5 +318,22 @@
     <script src="js/jquery-3.6.0.js"></script>
     <script src="js/script.js"></script>
     <script src="js/script_motorsport.js"></script>
+    <script>
+        var mql = window.matchMedia("screen and (max-width: 768px)")
+            mediaqueryresponse(mql) 
+            mql.addListener(mediaqueryresponse)
+
+        function mediaqueryresponse(mql) {
+            if (mql.matches){
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 350) {
+                        $('#home h1').fadeOut('slow')
+                    } else {
+                        $('#home h1').fadeIn('slow')
+                    }
+                });
+            };
+        }
+    </script>
 </body>
 </html>

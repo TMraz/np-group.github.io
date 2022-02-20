@@ -1,0 +1,55 @@
+/* === SITE SECTION - WORK === */
+@import 'breakpoints';
+.active {
+    background: $color-bg;
+}                
+
+#work {
+    &.container {
+        max-height: 900px;
+        background-color: $color-bg-smartmedic;
+        padding: 80px 0;
+
+        @include breakpoint($bp: 500px) {
+            padding-bottom: 40px;
+        }
+    }
+
+    .slider {
+        width: 1440px;
+        height: 700px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: $base-transition;
+        }
+
+        .nav-manual {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 20;
+
+            .manual-btn {
+                border: 2px solid $color-bg;
+                padding: 5px;
+                margin: 0 5px;
+                border-radius: 10px;
+                cursor: $base-cursor;
+                transition: $base-transition;
+    
+                &:active, &:focus, &:hover {
+                    background: $color-bg;
+                }
+            }    
+        }
+    }
+}
