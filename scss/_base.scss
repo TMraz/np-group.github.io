@@ -241,7 +241,7 @@ ul.toggle {
                     display: inline-block;
                     position: absolute;
                     top: 35px;
-                    left: 65%;
+                    left: 70%;
                     width: 7px;
                     height: 7px;
                     border-top: 1px solid $color-font;
@@ -297,7 +297,7 @@ ul.toggle {
 
                         a {
                             color: $color-font;
-                            font-size: 20px;
+                            font-size: $base-font-size;
                         }
                     }
                 }
@@ -324,6 +324,10 @@ ul.toggle {
                 padding: $padding-xl 0;
                 box-sizing: border-box;
                 font-size: 20px;
+
+                @include sm {
+                    font-size: 18px;
+                }
             }
         }
     }
@@ -334,6 +338,10 @@ ul.toggle {
         li {
             a {
                 font-size: 20px;
+
+                @include lg {
+                    font-size: $base-font-size;
+                }
             }
         }
     }

@@ -14,89 +14,89 @@
         }
     }
 
-    &.container.slide-1 {
-        background-color: rgb(7, 68, 159);
+    // &.container.slide-1 {
+    //     background-color: rgb(7, 68, 159);
 
-        .wrap {
-            &:before {
-                content: "";
-                background-color: rgb(116, 179, 237);
-                width: 900px;
-                height: 400px; 
+    //     .wrap {
+    //         &:before {
+    //             content: "";
+    //             background-color: rgb(116, 179, 237);
+    //             width: 900px;
+    //             height: 400px; 
                 
-                @include breakpoint($bp: 900px) {
-                    width: 800px;
-                    height: 200px;
-                    top: 15%;
-                }
+    //             @include breakpoint($bp: 900px) {
+    //                 width: 800px;
+    //                 height: 200px;
+    //                 top: 15%;
+    //             }
 
-                @include sm {
-                    width: 500px;
-                    height: 100px;
-                    top: 11%;
-                    left: -34%;
-                    filter: blur(80px);
-                }        
-            } 
-        } 
-    }
+    //             @include sm {
+    //                 width: 500px;
+    //                 height: 100px;
+    //                 top: 11%;
+    //                 left: -34%;
+    //                 filter: blur(80px);
+    //             }        
+    //         } 
+    //     } 
+    // }
 
-    &.container.slide-3 {
-        background-color: $color-hover;
+    // &.container.slide-3 {
+    //     background-color: $color-hover;
 
-        .wrap {
-            &:before {
-                content: "";
-                background-color: rgb(242, 249, 166);
-                top: 8%;
-                left: 0;
-                width: 1000px;
-                height: 700px;    
+    //     .wrap {
+    //         &:before {
+    //             content: "";
+    //             background-color: rgb(242, 249, 166);
+    //             top: 8%;
+    //             left: 0;
+    //             width: 1000px;
+    //             height: 700px;    
 
-                @include breakpoint($bp: 900px) {
-                    width: 800px;
-                    height: 200px;
-                }
+    //             @include breakpoint($bp: 900px) {
+    //                 width: 800px;
+    //                 height: 200px;
+    //             }
 
-                @include sm {
-                    width: 500px;
-                    height: 100px;
-                    top: 11%;
-                    left: -34%;
-                    filter: blur(80px);
-                }       
+    //             @include sm {
+    //                 width: 500px;
+    //                 height: 100px;
+    //                 top: 11%;
+    //                 left: -34%;
+    //                 filter: blur(80px);
+    //             }       
     
-            }    
+    //         }    
 
-            h1 {
-                color: $color-font;
-            }
+    //         h1 {
+    //             color: $color-font;
+    //         }
 
-            .wrap-sm {
-                h2 {
-                    color: $color-font;
+    //         .wrap-sm {
+    //             h2 {
+    //                 color: $color-font;
 
-                    span.arrow {
-                        border-top: 2px solid $color-font;
+    //                 span.arrow {
+    //                     border-top: 2px solid $color-font;
 
-                        &::after {
-                            content: "";
-                            border-top: 2px solid $color-font;
-                            border-right: 2px solid $color-font;
-                        }
+    //                     &::after {
+    //                         content: "";
+    //                         border-top: 2px solid $color-font;
+    //                         border-right: 2px solid $color-font;
+    //                     }
     
 
-                    }
-                }
+    //                 }
+    //             }
 
-                ul {
-                    li {
-                        color: $color-font;
-                    }
-                }
-            }
-        }
-    }
+    //             ul {
+    //                 li {
+    //                     color: $color-font;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     .wrap {
         padding: 0;
@@ -104,6 +104,10 @@
         min-height: 800px;
         position: relative;
         transition: 1s;
+
+        @include breakpoint($bp: 650px) {
+            width: 98%;
+        }
 
         @include breakpoint($bp: 500px) {
             min-height: 700px;
@@ -262,7 +266,7 @@
         }
 
         .wrap-sm {
-            min-width: 400px;
+            width: 450px;
             padding: 20px;
             margin-bottom: 20px; 
             position: relative;

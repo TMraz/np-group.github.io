@@ -203,6 +203,7 @@
                 <img src="img/slide-2.png" alt="design_image" class="slide-2">
                 <img src="img/slide-3.png" alt="prototyping_image" class="slide-3">
                 <img src="img/slide-4.png" alt="production_image" class="slide-4">
+
                 <h1>
                     We contribute to every<br>
                     <span>project phase</span>
@@ -219,7 +220,7 @@
                             <li>Material Analysis</li>
                             <li>Fractography</li>
                             <li>Chemical Analysis</li>
-                            <li>Tribological Testing</li>
+                            <li>Tribological Testing of Thin Layers</li>
                         </ul>
                     </div>
     
@@ -318,5 +319,23 @@
     <script src="js/jquery-3.6.0.js"></script>
     <script src="js/script.js"></script>
     <script src="js/script_motorsport.js"></script>
+    <script>
+        var mql = window.matchMedia("screen and (max-width: 768px)")
+            mediaqueryresponse(mql) 
+            mql.addListener(mediaqueryresponse)
+
+        function mediaqueryresponse(mql) {
+            if (mql.matches){
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 350) {
+                        $('#home h1').fadeOut('slow')
+                    } else {
+                        $('#home h1').fadeIn('slow')
+                    }
+                });
+            };
+        }
+    </script>
+
 </body>
 </html>

@@ -283,7 +283,7 @@ ul.toggle.active li:nth-of-type(3) {
   display: inline-block;
   position: absolute;
   top: 35px;
-  left: 65%;
+  left: 70%;
   width: 7px;
   height: 7px;
   border-top: 1px solid #11141a;
@@ -341,7 +341,7 @@ ul.toggle.active li:nth-of-type(3) {
 
 .sidebar ul.main-nav > li:active:not(:last-child) .drop-down li a, .sidebar ul.main-nav > li:focus:not(:last-child) .drop-down li a, .sidebar ul.main-nav > li:hover:not(:last-child) .drop-down li a {
   color: #11141a;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .sidebar ul.main-nav > li:last-child {
@@ -368,12 +368,24 @@ ul.toggle.active li:nth-of-type(3) {
   font-size: 20px;
 }
 
+@media (max-width: 400px) {
+  .sidebar ul.main-nav > li a {
+    font-size: 18px;
+  }
+}
+
 .sidebar ul.drop-down {
   background-color: white;
 }
 
 .sidebar ul.drop-down li a {
   font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .sidebar ul.drop-down li a {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 800px) {

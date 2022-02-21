@@ -283,7 +283,7 @@ ul.toggle.active li:nth-of-type(3) {
   display: inline-block;
   position: absolute;
   top: 35px;
-  left: 65%;
+  left: 70%;
   width: 7px;
   height: 7px;
   border-top: 1px solid #11141a;
@@ -341,7 +341,7 @@ ul.toggle.active li:nth-of-type(3) {
 
 .sidebar ul.main-nav > li:active:not(:last-child) .drop-down li a, .sidebar ul.main-nav > li:focus:not(:last-child) .drop-down li a, .sidebar ul.main-nav > li:hover:not(:last-child) .drop-down li a {
   color: #11141a;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .sidebar ul.main-nav > li:last-child {
@@ -368,12 +368,24 @@ ul.toggle.active li:nth-of-type(3) {
   font-size: 20px;
 }
 
+@media (max-width: 400px) {
+  .sidebar ul.main-nav > li a {
+    font-size: 18px;
+  }
+}
+
 .sidebar ul.drop-down {
   background-color: white;
 }
 
 .sidebar ul.drop-down li a {
   font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .sidebar ul.drop-down li a {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 800px) {
@@ -854,6 +866,12 @@ header nav ul.main-nav li:last-child a.en {
   background-position-x: 49%;
 }
 
+@media (min-width: 2000px) {
+  #home .wrap {
+    background-size: 55%;
+  }
+}
+
 @media (max-width: 1440px) {
   #home .wrap {
     background-size: 79%;
@@ -927,8 +945,8 @@ header nav ul.main-nav li:last-child a.en {
 @media (max-width: 800px) {
   #home .wrap h1 {
     display: initial;
-    position: fixed;
-    top: 80px;
+    position: absolute;
+    top: 20px;
     left: 0;
     -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
@@ -977,17 +995,26 @@ header nav ul.main-nav li:last-child a.en {
   left: 6%;
 }
 
+@media (max-width: 1920px) {
+  #home .wrap h2 {
+    font-size: 1.2rem;
+    top: 51%;
+  }
+}
+
 @media (max-width: 1440px) {
   #home .wrap h2 {
-    top: 50%;
-    left: 11%;
+    top: 44%;
+    left: 8%;
   }
 }
 
 @media (max-width: 1200px) {
   #home .wrap h2 {
-    max-width: 250px;
+    font-size: 1rem;
     line-height: 1.5;
+    top: 78%;
+    left: 2%;
   }
 }
 
@@ -1692,89 +1719,6 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
-#work.container.slide-1 {
-  background-color: #07449f;
-}
-
-#work.container.slide-1 .wrap:before {
-  content: "";
-  background-color: #74b3ed;
-  width: 900px;
-  height: 400px;
-}
-
-@media (max-width: 900px) {
-  #work.container.slide-1 .wrap:before {
-    width: 800px;
-    height: 200px;
-    top: 15%;
-  }
-}
-
-@media (max-width: 400px) {
-  #work.container.slide-1 .wrap:before {
-    width: 500px;
-    height: 100px;
-    top: 11%;
-    left: -34%;
-    -webkit-filter: blur(80px);
-            filter: blur(80px);
-  }
-}
-
-#work.container.slide-3 {
-  background-color: #ffb11f;
-}
-
-#work.container.slide-3 .wrap:before {
-  content: "";
-  background-color: #f2f9a6;
-  top: 8%;
-  left: 0;
-  width: 1000px;
-  height: 700px;
-}
-
-@media (max-width: 900px) {
-  #work.container.slide-3 .wrap:before {
-    width: 800px;
-    height: 200px;
-  }
-}
-
-@media (max-width: 400px) {
-  #work.container.slide-3 .wrap:before {
-    width: 500px;
-    height: 100px;
-    top: 11%;
-    left: -34%;
-    -webkit-filter: blur(80px);
-            filter: blur(80px);
-  }
-}
-
-#work.container.slide-3 .wrap h1 {
-  color: #11141a;
-}
-
-#work.container.slide-3 .wrap .wrap-sm h2 {
-  color: #11141a;
-}
-
-#work.container.slide-3 .wrap .wrap-sm h2 span.arrow {
-  border-top: 2px solid #11141a;
-}
-
-#work.container.slide-3 .wrap .wrap-sm h2 span.arrow::after {
-  content: "";
-  border-top: 2px solid #11141a;
-  border-right: 2px solid #11141a;
-}
-
-#work.container.slide-3 .wrap .wrap-sm ul li {
-  color: #11141a;
-}
-
 #work .wrap {
   padding: 0;
   width: 95%;
@@ -1782,6 +1726,12 @@ header nav ul.main-nav li:last-child a.en {
   position: relative;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+@media (max-width: 650px) {
+  #work .wrap {
+    width: 98%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1989,7 +1939,7 @@ header nav ul.main-nav li:last-child a.en {
 }
 
 #work .wrap .wrap-sm {
-  min-width: 400px;
+  width: 450px;
   padding: 20px;
   margin-bottom: 20px;
   position: relative;
@@ -2114,6 +2064,10 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
+#work .wrap h1 {
+  font-size: 57px;
+}
+
 @media (max-width: 1024px) {
   #work .wrap h1 {
     font-size: 55px;
@@ -2124,6 +2078,25 @@ header nav ul.main-nav li:last-child a.en {
   #work .wrap h1 {
     font-size: 40px;
     left: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  #work .wrap h1 {
+    font-size: 37px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  #work .wrap h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  #work .wrap h1 {
+    font-size: 25px;
   }
 }
 

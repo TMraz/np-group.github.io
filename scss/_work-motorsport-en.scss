@@ -6,6 +6,8 @@
     .wrap {
 
         h1 {
+            font-size: 57px;
+            
             @include xl {
                 font-size: 55px;
             }
@@ -13,6 +15,19 @@
             @include breakpoint($bp: 900px) {
                 font-size: 40px;
                 left: 20px;
+            }
+
+            @include breakpoint($bp: 650px) {
+                font-size: 37px;
+                left: 10px;
+            }
+
+            @include breakpoint($bp: 550px) {
+                font-size: 30px;
+            }
+
+            @include breakpoint($bp: 450px) {
+                font-size: 25px;
             }
 
             @include sm {
