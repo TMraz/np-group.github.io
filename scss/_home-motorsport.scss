@@ -8,6 +8,10 @@
         max-height: 1080px;
         background-image: none;
         position: relative;
+
+        @include tablet {
+            max-height: 1200px;
+        }
     }
 
     .wrap {
@@ -39,6 +43,11 @@
             background-position-y: 190px;
             padding-top: 59vh;
             margin-top: 70px;
+        }
+
+        @include tablet {
+            padding-top: 70vh;
+            max-height: 1010px;
         }
 
         @include breakpoint($bp: 768px) {

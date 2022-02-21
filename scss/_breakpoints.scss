@@ -2,7 +2,7 @@ $breakpoints: (
     "xs": 0,
     "sm": 400px,
     "md": 600px,
-    "lg": 800px, 
+    "lg": 850px,
     "xl": 1024px,
     "xxl": 2000px,
     "xs-h": 600px,
@@ -52,6 +52,12 @@ $breakpoints: (
 
 @mixin  breakpoint($bp: 0) {
     @media (max-width: $bp) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: map-get($breakpoints, "lg")) and (min-height: map-get($breakpoints, "lg")) {
         @content;
     }
 }

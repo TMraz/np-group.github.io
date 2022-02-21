@@ -203,7 +203,7 @@ span.arrow::after {
   padding: 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .toggle {
     display: initial;
   }
@@ -382,13 +382,13 @@ ul.toggle.active li:nth-of-type(3) {
   font-size: 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .sidebar ul.drop-down li a {
     font-size: 1rem;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .sidebar {
     display: initial;
   }

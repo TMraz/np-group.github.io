@@ -203,7 +203,7 @@ span.arrow::after {
   padding: 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .toggle {
     display: initial;
   }
@@ -382,13 +382,13 @@ ul.toggle.active li:nth-of-type(3) {
   font-size: 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .sidebar ul.drop-down li a {
     font-size: 1rem;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .sidebar {
     display: initial;
   }
@@ -439,7 +439,7 @@ header .wrap {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   header .wrap nav {
     display: none;
   }
@@ -597,7 +597,7 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home .wrap {
     padding-top: 290px;
   }
@@ -936,7 +936,7 @@ header nav ul.main-nav li:last-child a.en {
   padding: 80px 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #contact .wrap {
     padding: 0 30px;
   }
@@ -978,7 +978,7 @@ header nav ul.main-nav li:last-child a.en {
   border-bottom: 1px solid #ffb11f;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #contact .contact-data .contact p {
     display: none;
   }
@@ -1092,7 +1092,7 @@ header nav ul.main-nav li:last-child a.en {
   width: 100%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .site-footer ul.navigation li a {
     font-size: .9rem;
   }

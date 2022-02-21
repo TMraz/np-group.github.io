@@ -203,7 +203,7 @@ span.arrow::after {
   padding: 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .toggle {
     display: initial;
   }
@@ -382,13 +382,13 @@ ul.toggle.active li:nth-of-type(3) {
   font-size: 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .sidebar ul.drop-down li a {
     font-size: 1rem;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .sidebar {
     display: initial;
   }
@@ -439,7 +439,7 @@ header .wrap {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   header .wrap nav {
     display: none;
   }
@@ -645,7 +645,7 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home .wrap {
     padding-top: 290px;
   }
@@ -854,6 +854,12 @@ header nav ul.main-nav li:last-child a.en {
   position: relative;
 }
 
+@media (max-width: 850px) and (min-height: 850px) {
+  #home.container {
+    max-height: 1200px;
+  }
+}
+
 #home .wrap {
   position: relative;
   margin-top: 80px;
@@ -884,13 +890,20 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home .wrap {
     background-image: url(../img/iStock-140028450_base.png);
     background-size: 130%;
     background-position-y: 190px;
     padding-top: 59vh;
     margin-top: 70px;
+  }
+}
+
+@media (max-width: 850px) and (min-height: 850px) {
+  #home .wrap {
+    padding-top: 70vh;
+    max-height: 1010px;
   }
 }
 
@@ -942,7 +955,7 @@ header nav ul.main-nav li:last-child a.en {
   color: #28354e;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home .wrap h1 {
     display: initial;
     position: absolute;
@@ -1018,7 +1031,7 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home .wrap h2 {
     position: static;
     max-width: 100%;
@@ -1067,7 +1080,7 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home .wrap .wrap-sm:first-of-type {
     position: static;
   }
@@ -1096,7 +1109,7 @@ header nav ul.main-nav li:last-child a.en {
   bottom: 50px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home > .wrap-sm {
     position: static;
     width: 100%;
@@ -1125,7 +1138,7 @@ header nav ul.main-nav li:last-child a.en {
   border-right: 2px solid #638d14;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home > .wrap-sm span.arrow::after {
     position: static;
   }
@@ -1135,7 +1148,7 @@ header nav ul.main-nav li:last-child a.en {
   background-image: url(../img/iStock-140028450-EN.png);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #home .wrap {
     background-image: url(../img/iStock-140028450_base.png);
   }
@@ -1926,7 +1939,7 @@ header nav ul.main-nav li:last-child a.en {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #work .wrap .wrap-md {
     width: 100%;
   }
@@ -2126,7 +2139,7 @@ header nav ul.main-nav li:last-child a.en {
   padding: 80px 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #contact .wrap {
     padding: 0 30px;
   }
@@ -2168,7 +2181,7 @@ header nav ul.main-nav li:last-child a.en {
   border-bottom: 1px solid #ffb11f;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #contact .contact-data .contact p {
     display: none;
   }
@@ -2376,7 +2389,7 @@ header nav ul.main-nav li:last-child a.en {
   width: 100%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .site-footer ul.navigation li a {
     font-size: .9rem;
   }
