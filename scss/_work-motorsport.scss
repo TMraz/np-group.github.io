@@ -266,12 +266,17 @@
         }
 
         .wrap-sm {
-            width: 450px;
+            width: 430px;
             padding: 20px;
             margin-bottom: 20px; 
             position: relative;
             z-index: 1;
             backdrop-filter: blur(10px);
+
+            @include lg {
+                margin: 0 auto;
+                margin-bottom: 20px; 
+            }
 
             @include md {
                 max-width: 100%;
@@ -322,6 +327,7 @@
                     width: 60px;
                     height: 6px;
                     margin-right: 50px;
+                    margin-left: 0;
 
                     @include sm {
                         margin-right: 10px;
@@ -341,6 +347,12 @@
                         top: -6px;
                     }
                 }
+
+                span.arrow.active {
+                    width: 0px;
+                    margin-left: 20px;
+                }
+
             }
 
             ul {

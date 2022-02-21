@@ -41,10 +41,8 @@ $(document).ready(function(){
     var list = $('.accordion');    
     list.find('.wrap-sm ul').hide();
     list.find('.wrap-sm h2').on('click', function() {
-        $(this).find('span.arrow').css({'width' : '0px', 'margin-left': '20px'});        
-        $(this).closest('.wrap-sm').siblings().find('span.arrow').css({'width' : '60px', 'margin-left': '0px'});
-        // $(this).closest('.wrap-sm').css('border', '1px solid white');
-        // $(this).closest('.wrap-sm').siblings().css('border', 'none');
+        $(this).find('span.arrow').toggleClass('active');             
+        $(this).closest('.wrap-sm').siblings().find('span.arrow').removeClass('active');
         $(this).next().slideToggle('slow');
         $(this).closest('.wrap-sm').siblings().find('ul').stop().slideUp();
     });
@@ -55,27 +53,21 @@ $(document).ready(function(){
     $('#work .link-1 h2').on('click', function () {
         $(this).parents('.wrap').find('img.slide-2, img.slide-3, img.slide-4').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-1').fadeIn(800);
-        // $(this).parents('#work.container').addClass('slide-1');
-        // $(this).parents('#work.container').removeClass('slide-3')
     });
 
     $('#work .link-2 h2').on('click', function () {
         $(this).parents('.wrap').find('img.slide-1, img.slide-3, img.slide-4').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-2').fadeIn(800);
-        // $(this).parents('#work.container').removeClass('slide-1 slide-3')
     });
 
     $('#work .link-3 h2').on('click', function () {
         $(this).parents('.wrap').find('img.slide-1, img.slide-2, img.slide-4').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-3').fadeIn(800);
-        // $(this).parents('#work.container').addClass('slide-3');
-        // $(this).parents('#work.container').removeClass('slide-1 slide-2')
     });
 
     $('#work .link-4 h2').on('click', function () {
         $(this).parents('.wrap').find('img.slide-1, img.slide-2, img.slide-3').fadeOut(200);
         $(this).parents('.wrap').find('img.slide-4').fadeIn(800);
-        // $(this).parents('#work.container').removeClass('slide-1 slide-3')
     });
 
 
