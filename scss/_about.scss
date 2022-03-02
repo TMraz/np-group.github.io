@@ -3,76 +3,154 @@
 
 #about {
     &.container {
-        background-color: $color-bg-darker;
+        background-color: $color-bg;
         padding-top: 80px;
+    }
+
+    .wrap-sm {
+        text-align: center;
     }
 
     h1 {
         text-align: center;
+        display: inline-block;
         padding: 1rem 0;
+        font-size: $font-size-xl;
+        text-transform: uppercase;
+        font-weight: $font-weight-xxl;
+        letter-spacing: .1rem;
+        margin-bottom: 4rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 75px;
+            height: 8px;
+            background-color: $color-hover;
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+
+            @include md {
+                width: 35px;
+                height: 5px;
+                bottom: 10px;
+            }
+        }
 
         @include md {
-            font-size: $font-size-md;
+            font-size: $font-size-lg;
             margin: 0;
         }
-    }
 
-    h2 {
-        text-align: center;
-        padding-bottom: 3rem;
-        
-        @include md {
-            font-size: .8rem;
-            line-height: $line-heigh-md;
+        @include sm {
+            font-size: $font-size-md;
         }
     }
 
     p {
-        padding: 3rem 0 1rem;
+        padding: 2rem 0 1rem;
+        font-size: $font-size-md;
+        color: $color-font;
+        line-height: $line-heigh-md;
+        position: relative;
+        z-index: 2;
 
         @include md {
             padding: 2rem 0 1rem;
+            font-size: $base-font-size;
+        }
+
+        span {
+            color: $color-hover;
+            font-weight: $font-weight-lg;
         }
     }
 
-    .card {
-        height: 320px;
-        text-align: center;
-        background: $color-bg;
-        margin-bottom: 5rem;
+    .quote {
+        width: 80%;
+        background-color: $color-bg-wrap;
+        padding: 20px 70px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        position: relative;
 
-        &:hover {
-            background: $color-hover;
+        @include lg {
+            width: 90%;
+            padding: 20px 40px;
+        }
 
-            .filter {
-                filter: brightness(20%);
+        @include breakpoint($bp: 500px) {
+            width: 100%;
+            padding: 20px;
+        }
+
+        picture {
+            position: absolute;
+            z-index: 1;
+
+            img {
+                @include xl {
+                    width: 60px;
+                }
+
+                @include md {
+                    width: 40px;
+                }
             }
         }
 
-        h3 {
-            font-style: italic;
-        }
+        picture:first-of-type {
+            top: -100px;
+            left: -100px;
 
-        p {
-            height: 150px;
-            padding: 2rem 1rem;
-            line-height: $line-heigh-md;
+            @include xl {
+                top: -70px;
+                left: -50px;
+            }
+
+            @include lg {
+                top: -20px;
+                left: -70px;
+            }
 
             @include md {
-                height: 115px;
-            }
-
-            @include sm {
-                height: 140px;
+                top: 0px;
+                left: -50px;
             }
         }
 
-        :last-child {
-            margin-top: -5px;
+        picture:nth-of-type(2) {
+            bottom: 100px;
+            right: -105px;
+            transform: rotate(180deg);
+
+            @include xl {
+                bottom: 80px;
+                right: -50px;
+            }
+
+            @include breakpoint($bp: 500px) {
+                right: -20px;
+            }
         }
 
-        @include xl {
-            margin-bottom: 1rem;
+        figcaption {
+            font-size: 20px;
+            font-weight: $font-weight-lg;
+            text-align: right;
+            padding-top: 3rem;
+            line-height: $line-heigh-md;
+
+            @include xl {
+                font-size: $base-font-size;
+            }
+
+            @include md {
+                font-size: $base-font-size;
+            }
         }
+
     }
+
 }

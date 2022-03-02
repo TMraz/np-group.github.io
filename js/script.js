@@ -20,7 +20,7 @@ $(document).ready(function(){
         delay: 0
     });
 
-    ScrollReveal().reveal('.main-title, .post-title, .paragraph, #about .flex, #reference .wrap-sm, #contact .contact, .map', { origin: 'bottom'});
+    ScrollReveal().reveal('.main-title, .post-title, .paragraph, #about .flex, #reference, #about .quote picture, figcaption, #contact .wrap-sm .card', { origin: 'bottom'});
     ScrollReveal().reveal('#work.container', { origin: 'bottom', distance: '0'});
     ScrollReveal().reveal('.right', { origin: 'right', distance: '60px'});
     ScrollReveal().reveal('.left', { origin: 'left', distance: '60px'});
