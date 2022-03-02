@@ -21,6 +21,10 @@
             padding: 50px 0;
             text-align: center;
 
+            &::after {
+                display: none;
+            }
+
             @include breakpoint($bp: 900px) {
                 font-size: 30px;
             }
