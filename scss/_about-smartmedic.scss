@@ -3,109 +3,154 @@
 
 #about {
     &.container {
-        background: $color-bg;
-        padding: 80px 0;
+        background-color: $color-bg;
+        padding-top: 80px;
     }
 
     .wrap-sm {
-        width: 420px;
-        height: 600px;
         text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        display: inline-block;
+        padding: 1rem 0;
+        font-size: $font-size-xl;
+        text-transform: uppercase;
+        font-weight: $font-weight-xxl;
+        letter-spacing: .1rem;
+        margin-bottom: 4rem;
         position: relative;
 
-//         @include breakpoint($bp: 1200px) {
-//             padding-bottom: 50px;
-//             grid-template-rows: [row-1] .5fr [row-2] .2fr [row-3] .8fr [row-4] .5fr;
-//         }
-
-//         @include xl {
-//             grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] .5fr [col-4] 2fr [col-5] 2fr;
-//             grid-template-rows: [row-1] 1fr [row-2] .5fr [row-3] 1fr [row-4] 1fr;
-//         }
-
-//         @include breakpoint($bp: 900px) {
-//             grid-template-columns: [col-1] 1fr [col-2] 1fr;
-//             grid-template-rows: [row-1] .5fr [row-2] .2fr [row-3] .8fr [row-4] .1fr [row-5] .8fr [row-6] .8fr;
-//         }
-
-//         @include md {
-//             grid-template-rows: [row-1] .5fr [row-2] .2fr [row-3] 1.5fr [row-4] .1fr [row-5] 1fr [row-6] 1fr;
-//         }
-    
-        h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 200px;
-            -webkit-text-stroke: 1px $color-bg-dark;
-            -webkit-text-fill-color: $color-font-number;
-            font-weight: $font-weight-xxl;
-            padding: 0;
-            margin: 0;
-            line-height: 1;
+        &::after {
+            content: '';
+            width: 75px;
+            height: 8px;
+            background-color: $color-hover;
             position: absolute;
-            top: 0;
-            right: 0;
+            bottom: 5px;
+            left: 0;
 
-            @include xl {
-                font-size: 250px;
-            }
-            
             @include md {
-                font-size: 200px;
-                grid-column: 1 / span 2;
-                justify-self: end;
-            }
-
-            @include breakpoint($bp: 450px) {
-                font-size: 170px;
+                width: 35px;
+                height: 5px;
+                bottom: 10px;
             }
         }
 
-        h2 {
+        @include md {
             font-size: $font-size-lg;
-            font-weight: $base-font-weight;
-            text-align: center;
-            padding-top: 130px;
+            margin: 0;
+        }
 
-            @include breakpoint($bp: 450px) {
-                font-size: $font-size-md;
-                padding-right: 0;
+        @include sm {
+            font-size: $font-size-md;
+        }
+    }
+
+    p {
+        padding: 2rem 0 1rem;
+        font-size: $font-size-md;
+        color: $color-font;
+        line-height: $line-heigh-md;
+        position: relative;
+        z-index: 2;
+
+        @include md {
+            padding: 2rem 0 1rem;
+            font-size: $base-font-size;
+        }
+
+        span {
+            color: $color-hover;
+            font-weight: $font-weight-lg;
+        }
+    }
+
+    .quote {
+        width: 80%;
+        background-color: $color-bg-wrap;
+        padding: 20px 70px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        position: relative;
+
+        @include lg {
+            width: 90%;
+            padding: 20px 40px;
+        }
+
+        @include breakpoint($bp: 500px) {
+            width: 100%;
+            padding: 20px;
+        }
+
+        picture {
+            position: absolute;
+            z-index: 1;
+
+            img {
+                @include xl {
+                    width: 60px;
+                }
+
+                @include md {
+                    width: 40px;
+                }
             }
         }
 
-        p {
-            font-size: $font-size-md;
-            font-weight: $base-font-weight;
-            line-height: $line-heigh-md;
-            text-align: center;
-            padding: 0 20px;
+        picture:first-of-type {
+            top: -100px;
+            left: -100px;
 
             @include xl {
-                font-size: 1.2rem;
-                padding-top: 2rem;
+                top: -70px;
+                left: -50px;
             }
 
-            @include breakpoint($bp: 450px) {
+            @include lg {
+                top: -20px;
+                left: -70px;
+            }
+
+            @include md {
+                top: 0px;
+                left: -50px;
+            }
+        }
+
+        picture:nth-of-type(2) {
+            bottom: 100px;
+            right: -105px;
+            transform: rotate(180deg);
+
+            @include xl {
+                bottom: 80px;
+                right: -50px;
+            }
+
+            @include breakpoint($bp: 500px) {
+                right: -20px;
+            }
+        }
+
+        figcaption {
+            font-size: 20px;
+            font-weight: $font-weight-lg;
+            text-align: right;
+            padding-top: 3rem;
+            line-height: $line-heigh-md;
+
+            @include xl {
+                font-size: $base-font-size;
+            }
+
+            @include md {
                 font-size: $base-font-size;
             }
         }
 
-        img {
-            padding: 80px 0;
-
-            @include breakpoint($bp: 900px) {
-                grid-column: 1 / span 2;
-                grid-row: 5 / span 2; 
-                width:60%;
-            }
-
-            @include breakpoint($bp: 500px) {
-                width: 75%;
-            }
-
-            @include sm {
-                width: 85%;
-            }
-        }
-    
     }
+
 }

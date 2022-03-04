@@ -3,165 +3,239 @@
 
 #home {
     &.container {
-        background-color: $color-bg-smartmedic;
         height: calc(100vh - 80px);
-       
-        // @media (min-width: 1400px) {
-        //     height: 100vh;
-        // }
+        min-height: 700px;
+        max-height: 1080px;
+        background-image: none;
+        background-color: $color-bg-smartmedic;
 
-        // @include sm {
-        //     margin-top: -60px;
-        //     background-position: top right;
-        //     background-size: 245%;
-        // }
+        @include tablet {
+            max-height: 1200px;
+        }
     }
 
     .wrap {
         height: 100%;
-        padding-left: 50px;
+        display: grid;
+        grid-template-columns: [col-1] 60% [col-2] 40%;
+        grid-template-rows: [row-1] 100%;
+        align-items: center;
+        justify-content: center;
 
-        .intro-slogan {
-            margin-top: 350px;
-            position: relative;
-
-            h1 {
-                color: rgba(40, 53, 78, 0.7);
-                font-size: 244px;
-                font-weight: $font-weight-xxl;
-                text-transform: uppercase;
-                position: absolute;
-                bottom: 0;
-                margin: 0;
-            }    
-
-            h2 {
-                color: $color-font-light;
-                font-size: $font-size-xl;
-                font-weight: $base-font-weight;
-                text-transform: uppercase;
-                letter-spacing: .2rem;
-                position: absolute;
-                bottom: 30px;
-            }  
+        @include breakpoint($bp: 900px) {
+            grid-template-rows: [row-1] 60% [row-2] 40%;
         }
 
-    //     @media (min-width: 1400px) {
-    //         display: grid;
-    //         grid-template-columns: [col-1] 1fr;
-    //         grid-template-rows: [row-1] 25%  [row-2] 1fr  [row-3] .5fr [row-4] 1fr;
-    //         padding: 0;
-    //         margin-bottom: 0;
-    //     }
+    }
 
-    //     @include xl {
-    //         padding: 310px 10px 30px 10px;
-    //     }
+    .col-1 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+        padding: 20px;
+        align-items: center;
+        justify-items: center;
+        position: relative;
+        z-index: 2;
 
-    //     @include lg {
-    //         padding-top: 290px;
-    //     }
+        @include breakpoint($bp: 1200px) {
+            padding: 20px 0;
+        }
 
-    //     @include md {
-    //         padding-top: 200px;
-    //     }
+        @media (max-width: 900px) and (max-height: 900px) {
+            margin-top: 120px;
+        }
+
+        @include breakpoint($bp: 900px) {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 1;
+        }
+
+        @include sm {
+            margin-top: 0;
+        }
+
+        // @include breakpoint($bp: 320px) {
+        //     margin-top: 0;
+        // }
+
+    }
+
+    h1 {
+        color: $color-font;
+        font-size: 2.5rem;
+        font-weight: $font-weight-xxl;
+        letter-spacing: .1rem;
+        padding-top: 60px;
+        margin: 0;
+        text-align: center;
+
+        @include breakpoint($bp: 1350px) {
+            font-size: 2.2rem;
+        }
+
+        @include breakpoint($bp: 1200px) {
+            font-size: $font-size-lg;
+        }
+
+        @include xl {
+            font-size: 1.8rem;
+        }
+
+        @include md {
+            font-size: 1.3rem;
+            letter-spacing: .02rem;
+        }
+
+        @include sm {
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        @include breakpoint($bp: 320px) {
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        color: $color-font-light;
+        font-size: 18px;
+        font-weight: $font-weight-sm;
+        text-align: center;
+        padding: 10px 0;
+
+        @include md {
+            font-size: $base-font-size;
+        }
+
+        @include sm{
+            font-size: 0.8rem;
+        }
+
+        @include breakpoint($bp: 320px) {
+            font-size: .8rem;
+        }
+
+    }
+
+    h3 {
+        color: $color-font-light;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-lg;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 30px 0;
+        letter-spacing: .05rem;
+        line-height: $line-heigh-md;
+
+        @include breakpoint($bp: 1350px) {
+            font-size: 1.8rem;
+        }
+
+        @include md {
+            font-size: $font-size-md;
+        }
+
+        @include sm {
+            font-size: 1.3rem;
+            padding: 20px 0;
+        }
+
+        @include breakpoint($bp: 320px) {
+            font-size: $base-font-size;
+        }
+
+
+    }
+
+    .line {
+        background-color: $color-font;
+        width: 5px;
+        height: 120px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+
+        @media (max-width: 900px) and (max-height: 900px) {
+            width: 3px;
+            height: 70px;
+        }
+
+        @include breakpoint($bp: 900px) {
+            height: 70px;
+        }
+    }
+
+    p {
+        color: $color-font;
+        font-size: $font-size-md;
+        font-weight: $base-font-weight;
+        text-align: center;
+        line-height: $line-heigh-md;
+
+        @include breakpoint($bp: 1350px) {
+            font-size: 1.3rem;
+        }
+
+        @include xl {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 900px) and (max-height: 900px) {
+            font-size: $base-font-size;
+            text-align: left;
+        }
+
+        @include sm {
+            font-size: .8rem;
+            text-align: center;
+        }
+
+        // @include breakpoint($bp: 320px) {
+        //     text-align: center;
+        // }
     }
 
     .wrap-sm {
-        color: $color-font-light;
-    }
-
-    .wrap-sm.flex {
-        justify-content: start;
-        align-self: start;
-        margin-bottom: 70px;
-    }
-
-    .card {
-        background-color: transparent;
-        width: 250px;
-        height: 240px;
-        overflow: hidden;
+        margin: 80px;
         text-align: center;
 
-        &:first-of-type {
-            h2 {
-                text-align: left;
-            }
+        @media (max-width: 900px) and (max-height: 900px) {
+            text-align: left;
+            margin: 80px 0;
         }
 
-        &:nth-of-type(3) {
-            img {
-                margin-top: 30px;
-            }
+        @include sm {
+            margin: 40px 0;
+            text-align: center;
         }
 
-        &:nth-of-type(4) {
-            img {
-                margin-top: 10px;
-            }
-        }
-
-        &:active:not(:first-of-type), &:focus:not(:first-of-type), &:hover:not(:first-of-type) {
-            box-shadow: $color-font-light 0px 1px 3px 1px;
-            border: 1px solid $color-font-light;
-            transition: $base-transition;
-        }
-
-        // @include sm {
-        //     height: 250px;
+        // @include breakpoint($bp: 320px) {
+        //     text-align: center;
         // }
 
-        h2 {
-            text-align: center;
-            font-style: italic;
-            font-size: $base-font-size;
-            font-weight: $base-font-weight;
-            margin-bottom: 30px;
+        .btn {
+            border: 3px solid $color-font;
+            background-color: transparent;
+            color: $color-font;
 
+            @media (max-width: 900px) and (max-height: 900px) {
+                font-size: $base-font-size;
+            } 
+            
             @include sm {
-                margin-top: $margin-lg;
-            }    
-        }
+                font-size: .8rem;
+            }
+
+            &:focus, &:hover {
+                border: 3px solid $color-font-light;
+                color: $color-font-light;
+            }
+    
+            a {
+                font-size: $font-size-md;
+                font-weight: $font-weight-lg;
+            }
+        }    
     }
 
-    .btn {
-        background-color: $color-hover-smartmedic;
-
-        &:active, &:focus, &:hover {
-            opacity: .9;
-        }
-    }
-
-    //     a {
-    //         font-size: $base-font-size;
-    //         font-weight: 500;
-    //         line-height: $line-heigh-lg;
-    //         letter-spacing: .1rem;
-    //         text-transform: uppercase;
-    //         position: absolute;
-    //         bottom: 30px;
-    //         left: 50%;
-    //         transform: translateX(-50%);
-    //         padding: .5rem 1.5rem;
-    //         background: #000;
-    //         color: $color-font-light;
-    //         backdrop-filter: blur(5px);    
-    //         transition: $base-transition;
-
-    //         @include md {
-    //             bottom: 40px;
-    //         }
-
-    //         @include sm {
-    //             font-size: .8rem;
-    //             padding: .5rem 1rem;
-    //         }
-
-    //         &:active, &:focus, &:hover {
-    //             background-color: rgb(255, 177, 31);
-    //             color: $color-font;
-    //             transition: $base-transition;
-    //         }
-    //     }
 }

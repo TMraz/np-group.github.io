@@ -24,7 +24,7 @@ $(document).ready(function(){
     ScrollReveal().reveal('#work.container', { origin: 'bottom', distance: '0'});
     ScrollReveal().reveal('.right', { origin: 'right', distance: '60px'});
     ScrollReveal().reveal('.left', { origin: 'left', distance: '60px'});
-    ScrollReveal().reveal('.line:not(first-child)', { origin: 'top', distance: '60px', delay: '800'});
+    ScrollReveal().reveal('.line:not(first-child, .nojs)', { origin: 'top', distance: '60px', delay: '800'});
 
     // === drop-down menu ===
     $('.drop-down').hide();
