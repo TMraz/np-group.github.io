@@ -1,156 +1,197 @@
 /* === SITE SECTION - ABOUT === */
-@import 'about';
+@import 'base';
 
 #about {
     &.container {
-        background-color: $color-bg;
-        padding-top: 80px;
+        height: auto;
+        background-image: none;
+        background-color: $color-bg-smartmedic;
+
+        @include sm {
+            position: relative;
+            z-index: 2;
+        }
     }
 
-    .wrap-sm {
-        text-align: center;
+    .wrap {
+        height: 100%;
+        display: grid;
+        grid-template-columns: [col-1] 60% [col-2] 40%;
+        grid-template-rows: [row-1] 100%;
+        align-items: start;
+        justify-content: start;
+
+        @include breakpoint($bp: 900px) {
+            grid-template-rows: [row-1] 60% [row-2] 40%;
+        }
     }
 
-    h1 {
-        text-align: center;
-        display: inline-block;
-        padding: 1rem 0;
-        font-size: $font-size-xl;
-        text-transform: uppercase;
-        font-weight: $font-weight-xxl;
-        letter-spacing: .1rem;
-        margin-bottom: 4rem;
-        position: relative;
+    .col-1 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+        padding: 20px;
+        align-items: start;
+        justify-items: start;
 
-        &::after {
-            content: '';
-            width: 75px;
-            height: 8px;
-            background-color: $color-hover;
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-
-            @include md {
-                width: 35px;
-                height: 5px;
-                bottom: 10px;
-            }
+        @include breakpoint($bp: 1200px) {
+            padding: 20px 0;
         }
 
-        @include md {
-            font-size: $font-size-lg;
-            margin: 0;
+        @media (max-width: 900px) and (max-height: 900px) {
+            // margin-top: 120px;
+        }
+
+        @include breakpoint($bp: 900px) {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 1;
         }
 
         @include sm {
-            font-size: $font-size-md;
+            margin-top: 0;
         }
     }
 
-    p {
-        padding: 2rem 0 1rem;
-        font-size: $font-size-md;
+    .wrap-sm {
+        background-color: $color-bg-smartmedic;
+    }
+
+    h1 {
         color: $color-font;
-        line-height: $line-heigh-md;
-        position: relative;
-        z-index: 2;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-lg;
+        padding-top: 80px;
+        padding-bottom: 2rem;
+        margin: 0;
+        text-align: left;
+        background-color: $color-bg-smartmedic;
+
+        @include breakpoint($bp: 1350px) {
+            font-size: 2.2rem;
+        }
+
+        @include breakpoint($bp: 1200px) {
+            font-size: $font-size-lg;
+        }
+
+        @include xl {
+            font-size: 1.8rem;
+        }
+
+        @include breakpoint($bp: 900px) {
+            width: 60%;
+        }
 
         @include md {
-            padding: 2rem 0 1rem;
+            font-size: 1.3rem;
+            letter-spacing: .02rem;
+        }
+
+        @include sm {
+            font-size: 1.1rem;
+            width: 100%;
+        }
+
+        @include breakpoint($bp: 320px) {
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        color: $color-font;
+        font-size: $font-size-md;
+        font-weight: $font-weight-xl;
+        text-align: left;
+        padding: 20px 0;
+        background-color: $color-bg-smartmedic;
+
+        @include breakpoint($bp: 900px) {
+            width: 60%;
+        }
+
+        @include md {
             font-size: $base-font-size;
         }
 
-        span {
-            color: $color-hover;
-            font-weight: $font-weight-lg;
-        }
-    }
-
-    .quote {
-        width: 80%;
-        background-color: $color-bg-wrap;
-        padding: 20px 70px;
-        margin: 0 auto;
-        margin-bottom: 50px;
-        position: relative;
-
-        @include lg {
-            width: 90%;
-            padding: 20px 40px;
-        }
-
-        @include breakpoint($bp: 500px) {
+        @include sm{
+            font-size: 0.8rem;
             width: 100%;
-            padding: 20px;
         }
 
-        picture {
-            position: absolute;
-            z-index: 1;
-
-            img {
-                @include xl {
-                    width: 60px;
-                }
-
-                @include md {
-                    width: 40px;
-                }
-            }
+        @include breakpoint($bp: 320px) {
+            font-size: .8rem;
         }
-
-        picture:first-of-type {
-            top: -100px;
-            left: -100px;
-
-            @include xl {
-                top: -70px;
-                left: -50px;
-            }
-
-            @include lg {
-                top: -20px;
-                left: -70px;
-            }
-
-            @include md {
-                top: 0px;
-                left: -50px;
-            }
-        }
-
-        picture:nth-of-type(2) {
-            bottom: 100px;
-            right: -105px;
-            transform: rotate(180deg);
-
-            @include xl {
-                bottom: 80px;
-                right: -50px;
-            }
-
-            @include breakpoint($bp: 500px) {
-                right: -20px;
-            }
-        }
-
-        figcaption {
-            font-size: 20px;
-            font-weight: $font-weight-lg;
-            text-align: right;
-            padding-top: 3rem;
-            line-height: $line-heigh-md;
-
-            @include xl {
-                font-size: $base-font-size;
-            }
-
-            @include md {
-                font-size: $base-font-size;
-            }
-        }
-
     }
 
+
+    p {
+        color: $color-font;
+        font-size: $font-size-md;
+        font-weight: $base-font-weight;
+        text-align: left;
+        line-height: $line-heigh-md;
+        padding: 2rem 0;
+        background-color: $color-bg-smartmedic;
+
+        @include breakpoint($bp: 1350px) {
+            font-size: 1.3rem;
+        }
+
+        @include xl {
+            font-size: 1.2rem;
+        }
+
+        @include breakpoint($bp: 900px) {
+            width: 60%;
+        }
+
+        @media (max-width: 900px) and (max-height: 900px) {
+            font-size: $base-font-size;
+            text-align: left;
+        }
+
+        @include md {
+            padding-top: 0;
+        }
+
+        @include sm {
+            font-size: .8rem;
+            width: 100%;
+        }
+    }
+
+    .line {
+        background-color: $color-font;
+        width: 4px;
+        height: 80px;
+        margin: 0 auto;
+        // animation: grow 3s;
+
+        @include breakpoint($bp: 900px) {
+            height: 70px;
+            margin-left: 30%;
+        }
+
+        @media (max-width: 900px) and (max-height: 900px) {
+            width: 3px;
+            height: 70px;
+        }
+
+        @include sm {
+            margin: 0 auto;
+        }
+
+        // @keyframes grow {
+        //     0% {
+        //         height: 0;
+        //     }
+
+        //     100% {
+        //         height: 70px;
+        //     }
+        // }
+    }
 }
+
+
+  
