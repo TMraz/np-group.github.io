@@ -8,7 +8,6 @@
         max-height: 1080px;
         background-image: none;
         background-color: $color-bg-smartmedic;
-        top: 60px;
 
         @include tablet {
             max-height: 1200px;
@@ -32,10 +31,9 @@
             grid-template-rows: [row-1] 60% [row-2] 40%;
         }
 
-        // @include sm {
-        //     display: flex;
-        //     align-items: start;
-        // }
+        @media (min-width: 901px) and (max-width: 999px) and (min-height: 1201px) {
+            display: initial;
+        }
     }
 
     .col-1 {
@@ -87,6 +85,10 @@
         @include md {
             font-size: 1.3rem;
             letter-spacing: .02rem;
+        }
+
+        @media (max-width: 600px) and (max-height: 900px) {
+            padding-top: 80px;
         }
 
         @include sm {
@@ -146,8 +148,6 @@
         @include breakpoint($bp: 320px) {
             font-size: $base-font-size;
         }
-
-
     }
 
     .line {
@@ -202,14 +202,14 @@
             margin: 80px 0;
         }
 
+        @include breakpoint($bp: 900px) {
+            margin: 80px 0;
+        }
+
         @include sm {
             margin: 40px 0;
             text-align: center;
         }
-
-        // @include breakpoint($bp: 320px) {
-        //     text-align: center;
-        // }
 
         .btn {
             border: 3px solid $color-font;
@@ -238,115 +238,3 @@
 
 }
 
-// #teardown-image {
-//     // &.container {
-//     //     height: calc(100vh - 80px);
-//     //     min-height: 700px;
-//     //     max-height: 1080px;
-//     //     background-image: none;
-//     //     background-color: transparent;
-//     //     position: fixed;
-//     //     z-index: 5;
-//     //     top: 80px;
-
-//     //     @include sm {
-//     //         height: 45vh;
-//     //         min-height: initial;
-//     //         bottom: -68px;
-//     //     }
-//     // }
-
-//     // .wrap {
-//     //     height: 100%;
-//     //     display: grid;
-//     //     grid-template-columns: [col-1] 60% [col-2] 40%;
-//     //     grid-template-rows: [row-1] 60% [row-2] 40%;
-//     //     align-items: center;
-//     //     justify-content: center;
-
-//     //     @include breakpoint($bp: 900px) {
-//     //         grid-template-rows: [row-1] 60% [row-2] 40%;
-//     //     }
-
-//     //     @include sm {
-//     //         display: flex;
-//     //     }
-
-//     // }
-
-//     .col-2 {
-//         grid-column: 2 / span 1;
-//         grid-row: 1 / span 2;
-//         padding: 20px;
-//         align-items: center;
-//         justify-items: center;
-
-//         @include breakpoint($bp: 900px) {
-//             grid-column: 1 / span 2;
-//             grid-row: 2 / span 1;
-//         }
-
-//         img {
-//             @include breakpoint($bp: 1200px) {
-//                 width: 400px;
-//             }
-
-//             @include xl {
-//                 width: 350px;
-//             }
-
-//             @include md {
-//                 width: 250px;
-//             }
-    
-//         }
-
-//         .pos-abs {
-//             position: absolute;
-//             bottom: 15%;
-
-//             @include breakpoint($bp: 900px) {
-//                 bottom: 40px;
-//                 left: calc(50% - 180px);
-//             }
-
-//             @media (max-width: 900px) and (max-height: 900px) {
-//                 bottom: 40px;
-//                 left: 56%;
-//             }
-
-//             @include sm {
-//                 bottom: -90px;
-//                 left: calc(50% - 130px);
-//             }
-
-//             // @include breakpoint($bp: 320px) {
-//             //     bottom: -85px;
-//             //     left: calc(50% - 130px);
-//             // }
-
-//         }
-
-//         #img-2 {
-//             transform: translateY(-50px);
-//         }
-
-//         #img-3 {
-//             transform: translateY(-100px);
-//         }
-
-//         #img-4 {
-//             transform: translateY(-150px);
-//         }
-
-//         #img-5 {
-//             transform: translateY(-200px);
-//         }
-
-//         #img-6 {
-//             transform: translateY(-250px);
-//         }
-
-//     }
-
-// }

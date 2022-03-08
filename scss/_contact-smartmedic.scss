@@ -1,0 +1,107 @@
+/* === SITE SECTION - CONTACT === */
+@import 'contact';
+
+#contact {
+    &.container {
+        background: $color-bg;
+        position: relative;
+        z-index: 2;
+
+        @include sm {
+            padding: 60px 0;
+            z-index: 3;
+        }
+
+        .wrap {
+            margin-bottom: 0;
+        }
+
+        .wrap.flex {
+            flex-direction: column;
+
+            @include sm {
+                padding: 0 5px;
+            }
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: $font-weight-xxl;
+            line-height: 1.1;
+            text-transform: uppercase;
+            padding: 0;
+            text-align: center;
+
+            &::after {
+                display: none;
+            }
+
+            @include breakpoint($bp: 900px) {
+                font-size: 30px;
+            }
+
+            @include breakpoint($bp: 700px) {
+                font-size: 25px;
+            }
+
+            @include breakpoint($bp: 550px) {
+                font-size: 20px;
+            }
+
+            @include breakpoint($bp: 450px) {
+                font-size: 16px;
+            }
+
+            @include breakpoint($bp: 320px) {
+                font-size: 14px;
+            }    
+
+
+            span {
+                font-size: 50px;
+
+                @include breakpoint($bp: 900px) {
+                    font-size: 37px;
+                }
+
+                @include breakpoint($bp: 700px) {
+                    font-size: 31px;
+                }
+
+                @include breakpoint($bp: 550px) {
+                    font-size: 24.5px;
+                }
+
+                @include breakpoint($bp: 450px) {
+                    font-size: 19.8px;
+                }
+
+                @include breakpoint($bp: 320px) {
+                    font-size: 17.3px;
+                }    
+            }
+        }
+
+        h2 {
+            opacity: .7;
+            text-align: center;
+
+            @include lg {
+                font-size: 1.1rem;
+            }
+
+            @include md {
+                font-size: .9rem;
+            }
+        }
+
+        .wrap-sm {
+            padding: 50px 0;
+        }
+
+    }
+
+    .btn {
+        background-color: $color-bg-smartmedic;
+    }
+}

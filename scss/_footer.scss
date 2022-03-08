@@ -3,6 +3,8 @@
 
 .site-footer {
     background: $color-bg;
+    position: relative;
+    z-index: 3;
 
     .flex {
         justify-content: space-between;

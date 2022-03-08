@@ -1,55 +1,122 @@
-/* === SITE SECTION - WORK === */
-@import 'breakpoints';
-.active {
-    background: $color-bg;
-}                
+/* === SITE SECTION - ABOUT === */
+@import 'base';
 
 #work {
     &.container {
-        max-height: 900px;
-        background-color: $color-bg-smartmedic;
-        padding: 80px 0;
+        background-image: none;
+        background-color: $color-bg-smartmedic-work;
+        color: $color-font-light;
+        position: relative;
+        z-index: 2;
 
-        @include breakpoint($bp: 500px) {
-            padding-bottom: 40px;
+        @include sm {
+            z-index: 3;
         }
     }
 
-    .slider {
-        width: 1440px;
-        height: 700px;
-        overflow: hidden;
-        position: relative;
+    .wrap {
+        padding-bottom: 50px;
+    }
 
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            transition: $base-transition;
+    h1 {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-lg;
+        padding-top: 80px;
+        padding-bottom: 2rem;
+        margin: 0;
+        text-align: left;
+
+        @include breakpoint($bp: 1350px) {
+            font-size: 2.2rem;
         }
 
-        .nav-manual {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 20;
-
-            .manual-btn {
-                border: 2px solid $color-bg;
-                padding: 5px;
-                margin: 0 5px;
-                border-radius: 10px;
-                cursor: $base-cursor;
-                transition: $base-transition;
-    
-                &:active, &:focus, &:hover {
-                    background: $color-bg;
-                }
-            }    
+        @include breakpoint($bp: 1200px) {
+            font-size: $font-size-lg;
         }
+
+        @include xl {
+            font-size: 1.8rem;
+        }
+
+        @include md {
+            font-size: 1.3rem;
+            letter-spacing: .02rem;
+        }
+
+        @include sm {
+            font-size: 1.1rem;
+        }
+
+        @include breakpoint($bp: 320px) {
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        font-size: $font-size-md;
+        font-weight: $font-weight-lg;
+        text-align: left;
+        padding: 20px 0;
+
+        @include md {
+            font-size: 1.1rem;
+            padding: 10px 0;
+        }
+
+        @include sm{
+            font-size: 0.8rem;
+        }
+
+        @include breakpoint($bp: 320px) {
+            font-size: .8rem;
+        }
+    }
+
+    p {
+        font-size: 22px;
+        font-weight: $base-font-weight;
+        text-align: left;
+        line-height: $line-heigh-md;
+        padding: 2rem 0;
+
+        @include breakpoint($bp: 1350px) {
+            font-size: 1.3rem;
+        }
+
+        @include md {
+            font-size: $base-font-size;
+            padding: 1rem 0;
+        }
+
+        @include sm {
+            font-size: .8rem;
+        }
+    }
+
+    .flex {
+        align-items: start;
+    }
+
+    .card {
+        min-height: 300px;
+        height: auto;
+
+        @include lg {
+            width: 80%;
+            min-height: 200px;
+            padding: 20px 10px;
+        }
+        
+        @include md {
+            min-height: 150px;
+        }
+
+        @include sm {
+            padding: 10px;
+        }
+
     }
 }
+
+  
