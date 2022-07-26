@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-site-verification" content="iGBGq6TR_ivZjJnGFvkYrUweC_Q2cMSlKLyvN2gM-xU" />
     <title>No Problem Group</title>
-    <meta name="description" content="No Problem Group s.r.o. │ Poskytovatel popredních komplexních technických řešení. Poskytujeme služby v oblasti motorsportu, konstrukce a elektrozařízení. │ www.np-group.cz">
-    <link rel="shortcut icon" href="./img/logo_orange.png" type="image/png">
+    <meta name="description" content="No Problem Group s.r.o. │ Poskytovatel popredních technických řešení. Poskytujeme služby v oblasti engineeringu, konstrukce a elektrozařízení. │ www.np-group.cz">
+    <link rel="shortcut icon" href="./img/NP-main_logo-ico.png" type="image/png">
     <link rel="stylesheet" href="scss/normalize.css">
     <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/scrollreveal"></script>
 
 </head>
@@ -17,10 +19,10 @@
     <header class="container">
         <div class="wrap flex">
             <a href="index.html" class="site-logo">
-                <img src="./img/logo_orange.png" alt="np-group_logo" width="60"> 
+                <img src="./img/NP-main_logo_white.png" alt="np-group_logo" width="100"> 
             </a>
     
-            <ul class="contact">
+            <!-- <ul class="contact">
                 <li>
                     <i>
                         <svg xmlns="http://www.w3.org/2000/svg" id="Vrstva_2" viewBox="0 0 10 10" width="12" x="0px" y="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
@@ -43,11 +45,11 @@
                     </i>
                     <a href="mailto:info@np-group.cz">info@np-group.cz</a>
                 </li>
-            </ul>
+            </ul> -->
     
             <nav>
                 <ul class="main-nav">
-                    <li>
+                    <!-- <li>
                         <a href="#home" class="home">Domů</a>
                     </li>
                     <li class="division">
@@ -57,10 +59,10 @@
                         </a>
                         <ul class="drop-down">
                             <li><a href="motorsport.html">Motorsport</a></li>
-                            <li><a href="smartmedic.html">SmartMedic</a></li>
+                            <li><a href="#">SmartMedic</a></li>
                             <li><a href="#">WebDevelopment</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#about" class="about">O společnosti</a>
                     </li>
@@ -93,7 +95,7 @@
                 </a>
                 <ul class="drop-down">
                     <li><a href="motorsport.html">Motorsport</a></li>
-                    <li><a href="smartmedic.html">SmartMedic</a></li>
+                    <li><a href="#">SmartMedic</a></li>
                     <li><a href="#">WebDevelopment</a></li>
                 </ul>
             </li>
@@ -107,51 +109,26 @@
 
     <main>
         <section id="home" class="container">
-            <div class="wrap flex">
-                <div class="intro-slogan">
-                    <h1>
-                        No Problem Group
-                    </h1>
-                    <h2>
-                        Poskytovatel předních technických řešení
-                    </h2>
-                </div>    
-    
-                <div class="wrap-sm flex">
-                    <div class="card flex motorsport">
-                        <a href="motorsport.html">
-                            <picture>
-                                <img src="img/motorsport_icon.svg" alt="Motorsport" width="135">
-                            </picture>
-    
-                            <h2>Motorsport</h2>
-                        </a>
-                    </div>
-    
-                    <div class="card flex smartmedic">
-                        <a href="#">
-                            <picture>
-                                <img src="img/smartmedic_icon.svg" alt="SmartMedic" width="135">
-                            </picture>
-    
-                            <h2>SmartMedic</h2>
-                        </a>
-                    </div>
-    
-                    <div class="card flex webdev">
-                        <a href="#">
-                            <picture>
-                                <img src="img/webdev_icon.svg" alt="WebDevelopment" width="135">
-                            </picture>
-    
-                            <h2>WebDevelopment</h2>
-                        </a>
-                    </div>
+            <div id="intro-slider" class="wrap flex">
+                <div class="image-slider"></div>
+                <input type="range" value="50" max="100">
+
+                <div id="intro-tech" class="intro-slogan pos-abs">
+                    <h1>NP - TECH</h1>
+                    <h2>Poskytovatel předních technických řešení</h2>
+                    <button class="btn" role="button"><span class="text">zjistit více</span></button>
                 </div>
+    
+                <div id="intro-fitness" class="intro-slogan pos-abs">
+                    <h1>np - fitness</h1>
+                    <h2>Poskytovatel předních fitness řešení</h2>
+                    <button class="btn" role="button"><span class="text">zjistit více</span></button>
+                    <div class="cover"></div>
+                </div>    
             </div>
         </section>
 
-        <section id="about" class="container">
+        <!-- <section id="about" class="container">
             <div class="wrap">
                 <div class="wrap-sm">
                     <h1 class="main-title">O společnosti</h1>
@@ -189,7 +166,7 @@
                 </figure>
 
             </div>
-        </section>
+        </section> -->
 
         <section id="reference" class="container">
             <div class="wrap flex">
@@ -205,8 +182,7 @@
                     <img src="img/brainspin-logo-black.png" alt="brainspin-logo" width="200" class="brainspin">
                 </div>
             </div>
-
-        </section>
+        </section> 
 
         <section id="contact" class="container">
             <div class="wrap">
@@ -218,7 +194,7 @@
 
                 <div class="wrap-sm flex">
                     <div class="card">
-                        <img src="img/phone_icon.svg" alt="phone_icon" width="125">
+                        <!-- <img src="img/phone_icon.svg" alt="phone_icon" width="125"> -->
     
                         <h2>Volejte</h2>
     
@@ -236,7 +212,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="img/email_icon.svg" alt="email_icon" width="125">
+                        <!-- <img src="img/email_icon.svg" alt="email_icon" width="125"> -->
     
                         <h2>Email</h2>
     
@@ -252,7 +228,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="img/location_icon.svg" alt="address_icon" width="125">
+                        <!-- <img src="img/location_icon.svg" alt="address_icon" width="125"> -->
     
                         <h2>Adresa</h2>
     
@@ -265,13 +241,14 @@
                     </div>
 
                     <div class="card contact-company">
-                        <img src="img/company_icon.svg" alt="company_icon" width="125">
+                        <!-- <img src="img/company_icon.svg" alt="company_icon" width="125"> -->
     
                         <h2>No Problem Group s.r.o.</h2>
     
                         <ul class="contact-company">
                             <li>IČO: 11981954</li>
                             <li>DIČ (VAT): CZ11981954</li>
+                            <li>DUNS: 496883576</li>
                             <li>Značka: C 357470 vedená u Městského soudu v Praze</li>
                         </ul>
                     </div>  
@@ -280,9 +257,9 @@
         </section>
 
         <footer class="site-footer container">
-            <div class="wrap flex">
+            <!-- <div class="wrap flex">
                 <a href="#home" class="site-logo">
-                    <img src="./img/logo_orange.png" alt="np-group_logo" width="50"> 
+                    <img src="./img/noproblem-full_logo.png" alt="np-group_logo" width="300"> 
                 </a>        
     
                 <ul class="company-address">
@@ -294,6 +271,7 @@
                 <ul class="company-data">
                     <li>IČO: 11981954</li>
                     <li>DIČ (VAT): CZ11981954</li>
+                    <li>DUNS: 496883576</li>
                     <li>Značka: C 357470</li>
                 </ul>
                 <ul class="navigation">
@@ -302,11 +280,11 @@
                     <li><a href="#about">O společnosti</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>    
-            </div>
+            </div> -->
             <div class="container copyright">
-                © <time datetime="2000">2021 │</time> No Problem Group s.r.o. │ <a href="download/vseobecne_obchodni_podminky_NPG.pdf" download="obchodni_podminky_NPG" target="_blank">Obchodní podmínky</a>
+                No Problem Group s.r.o. © <time datetime="2000"> 2021 │</time> <a href="download/vseobecne_obchodni_podminky_NPG.pdf" download="obchodni_podminky_NPG" target="_blank">Obchodní podmínky</a>
             </div>
-        </footer>
+        </footer> 
 
     </main>
 

@@ -1,8 +1,10 @@
 // color
 $color-font: rgb(17, 20, 26);
+$color-font-title: rgba(34, 34, 34, 1);
 $color-font-light: rgb(255, 255, 255);
 $color-font-number: rgb(238, 238, 238);
 $color-font-heading-motorsport: rgb(40, 53, 78);
+$color-font-hover: #2B2D42;
 
 $color-logo-orange: rgb(255, 147, 31);
 $color-logo-green: rgb(99, 141, 20);
@@ -13,8 +15,6 @@ $color-bg: rgb(255, 255, 255);
 $color-bg-wrap: rgb(252, 252, 252);
 $color-bg-darker: rgb(248, 248, 248);
 $color-bg-dark: rgb(231, 231, 231);
-$color-bg-smartmedic: rgb(57, 161, 255);
-$color-bg-smartmedic-work: rgb(17, 20, 26);
 
 $color-bg-header: rgba(255, 255, 255, 0.7);
 $color-bg-header-motorsport: rgba(255, 255, 255, 0.2);
@@ -24,7 +24,8 @@ $color-bg-footer: rgb(245, 245, 245);
 $color-shadow: rgb(201, 201, 201);
 $color-shadow-dark: rgba(0, 0, 0, 0.4);
 $color-card: rgb(238, 238, 238);
-$color-hover: rgb(255, 177, 31);
+$color-hover: rgb(162, 163, 165);
+$color-underline: rgb(231, 231, 231);
 
 
 //font 
@@ -63,6 +64,10 @@ $margin-center-vertical: auto 0;
 
 // transition
 $base-transition: .5s;
+$animation-hover: .8s ease;
 
 //cursor
 $base-cursor: pointer;
+$image-handler-with: 50px;
+
+

@@ -3,9 +3,7 @@
 
 #contact {
     &.container {
-        background: url(../img/background_contact.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: $color-bg;
         padding: 80px 0;
 
         @include breakpoint($bp: 720px) {
@@ -23,11 +21,10 @@
     }
 
     .wrap-sm {
-        text-align: center;
+        text-align: left;
     }
 
     h1 {
-        text-align: center;
         display: inline-block;
         padding: 1rem 0;
         font-size: $font-size-xl;
@@ -39,13 +36,13 @@
 
         &::after {
             content: '';
-            width: 75px;
-            height: 8px;
-            background-color: $color-hover;
+            width: 1400px;
+            height: 1px;
+            background-color: rgb(231, 231, 231);
             position: absolute;
-            bottom: 5px;
+            bottom: -20px;
             left: 0;
-
+            
             @include md {
                 width: 35px;
                 height: 5px;
@@ -64,24 +61,25 @@
 
     .card {
         width: 300px;
-        height: 420px;
+        height: 300px;
         background-color: $color-bg;
         text-align: center;
-        box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.25);
+        // box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.25);
 
-        @include md {
-            height: 380px;
-        }
+        // @include md {
+        //     height: 380px;
+        // }
 
-        img {
-            @include md {
-                width: 100px;
-            }
-        }
+//         img {
+//             @include md {
+//                 width: 100px;
+//             }
+//         }
 
 
         h2 {
-            color: $color-font;
+            text-align: center;
+            color: $color-font-title;
             font-size: $font-size-md;
             font-weight: $font-weight-lg;
             text-transform: uppercase;
@@ -148,6 +146,5 @@
                 line-height: $line-heigh-md;
             }    
         }
-
     }
 }

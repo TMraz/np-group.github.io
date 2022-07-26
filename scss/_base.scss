@@ -27,11 +27,6 @@ body {
     margin: $margin-center-horizontal;
 }
 
-main {
-    max-width: 1400px;
-    position: relative;
-}
-
 a {
     color: $color-font;
     text-decoration: none;
@@ -102,19 +97,34 @@ ul li {
     transition: $base-transition;
 }
 
+.pos-abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .site-logo {
     margin: $margin-center-vertical;
     margin-right: $margin-xl;
 }
 
 .btn {
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    font-weight: $font-weight-lg;
+    background-color: transparent;
+    border: 3px solid $color-font-light;
     color: $color-font-light;
-    background-color: $color-logo-green;
-    letter-spacing: 0.08em;
-    padding: 20px 26px;
+    font-size: 1rem;
+    font-weight: $font-weight-lg;
+    letter-spacing: .15em;
+    padding: 18px 35px;
+    text-transform: uppercase;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+
+    &:hover, &:focus, &:active {
+        cursor: pointer;
+        background-color: $color-font-light;
+        transition: $animation-hover;
+        color: $color-font-hover;
+    }
 
     @include md {
         padding: 16px 18px;

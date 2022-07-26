@@ -20,15 +20,15 @@
         margin-right: 5rem;
         position: relative;
 
-        &::after {
-            content: '';
-            width: 35px;
-            height: 5px;
-            background-color: $color-hover;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-        }
+        // &::after {
+        //     content: '';
+        //     width: 35px;
+        //     height: 5px;
+        //     background-color: $color-hover;
+        //     position: absolute;
+        //     bottom: -5px;
+        //     left: 0;
+        // }
 
         @include lg {
             margin-bottom: 50px;
@@ -49,7 +49,7 @@
         margin: 0;
 
         &:not(:last-of-type) {
-            border-right: 1px solid $color-shadow;
+            border-right: 1px solid $color-underline;
 
             @include xl {
                 border-right: none;
@@ -57,7 +57,7 @@
 
             @include breakpoint($bp: 650px) {
                 border-right: none;
-                border-bottom: 1px solid $color-shadow;
+                border-bottom: 1px solid $color-underline;
             }
         }
 
