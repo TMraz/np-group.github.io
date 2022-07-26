@@ -68,17 +68,27 @@ introButtonFitness.addEventListener('mouseleave', function() {
   }, 500)
 })
 
-    // === scroll reveal ===
-    ScrollReveal({
-      // reset: true,
-      distance:'40px',
-      duration: 1500,
-      delay: 0
-  });
+// === scroll reveal ===
+ScrollReveal({
+  // reset: true,
+  distance:'40px',
+  duration: 1500,
+  delay: 0
+});
 
   ScrollReveal().reveal('.main-title, .post-title, .paragraph, #reference, #contact .wrap-sm .card', { origin: 'bottom'});
   // ScrollReveal().reveal('#work.container', { origin: 'bottom', distance: '0'});
   // ScrollReveal().reveal('.right', { origin: 'right', distance: '60px'});
   // ScrollReveal().reveal('.left', { origin: 'left', distance: '60px'});
   // ScrollReveal().reveal('.line:not(first-child)', { origin: 'top', distance: '60px', delay: '800'});
+
+// === on scroll navigation bar change ===
+window.addEventListener('scroll', function () {
+  const navigationBar = document.querySelector('header.container')
+  let windowPosition = window.scrollY 
+
+  console.log(windowPosition)
+
+  navigationBar.classList.toggle('scroll-active', windowPosition)
+})
 

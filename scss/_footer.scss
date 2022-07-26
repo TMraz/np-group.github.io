@@ -95,6 +95,10 @@
         a {
             text-decoration: underline;
             font-size: $base-font-size;
+
+            &:active, &:focus, &:hover {
+                color: $color-hover;
+            }
         }
     }
 }
