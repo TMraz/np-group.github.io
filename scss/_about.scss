@@ -1,60 +1,91 @@
 /* === SITE SECTION - ABOUT === */
 @import 'breakpoints';
 
+/* == root == */
+/*  == border == */
+$border-heigh: 6px; 
+$border-animation-duration: 1s;
+ /* == border animation == */
+@mixin border-animation {
+    animation-duration: $border-animation-duration;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+}
+
+/*  == point == */
+$point-dim: 20px; 
+$point-top: 19.5%;
+$point-top-id2: $point-top + 16.5%;
+$point-top-id3: $point-top + 33%;
+$point-top-id4: $point-top + 49%;
+$point-top-id5: $point-top + 66%;
+$point-left: 71.5%;
+$point-transition-delay: .4s;
+/* == point animation == */
+@mixin point-animation {
+    animation-delay:  $point-transition-delay;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;           
+}
+
+/* == line == */
+$line-top: 21%;
+$line-top-id2: $line-top + 17%;
+$line-top-id3: $line-top + 29%;
+$line-top-id4: $line-top + 50%;
+$line-top-id5: $line-top + 65%;
+$line-left: 73%;
+
+/* == line animation == */
+@mixin line-animation {
+    animation-name: line-animation;
+    animation-delay:  $point-transition-delay;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;           
+}
+
+/* == transition == */
+$transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
 #about {
-    &.container {
-        background-color: $color-bg;
-        padding-top: 80px;
+    h2 {
+        color: $color-font-light;
+        font-size: 3rem;
+        font-weight: $font-weight-sm;
+        line-height: $line-heigh-md;
+        padding: $padding-xxl;
+        margin-top: 8rem;
+
+        span {
+            color: $color-hover-highlight;
+            font-weight: $font-weight-lg;
+        }
     }
 
-    .wrap-sm {
-        text-align: center;
-    }
-
-    h1 {
-        text-align: center;
-        display: inline-block;
-        padding: 1rem 0;
+    h3 {
+        color: $color-font-light;
         font-size: $font-size-xl;
-        text-transform: uppercase;
-        font-weight: $font-weight-xxl;
-        letter-spacing: .1rem;
-        margin-bottom: 4rem;
-        position: relative;
+        font-weight: $font-weight-lg;
+        line-height: $line-heigh-md;
+        padding: $padding-xxl;
+    }
 
-        &::after {
-            content: '';
-            width: 75px;
-            height: 8px;
-            background-color: $color-hover;
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-
-            @include md {
-                width: 35px;
-                height: 5px;
-                bottom: 10px;
-            }
-        }
-
-        @include md {
-            font-size: $font-size-lg;
-            margin: 0;
-        }
-
-        @include sm {
-            font-size: $font-size-md;
-        }
+    h4 {
+        color: $color-font-light;
+        font-size: $font-size-md;
+        font-weight: $font-weight-lg;
+        line-height: $line-heigh-md;
+        padding: $padding-xxl;
     }
 
     p {
-        padding: 2rem 0 1rem;
+        padding: $padding-xxl;
         font-size: $font-size-md;
-        color: $color-font;
+        color: $color-font-light;
         line-height: $line-heigh-md;
-        position: relative;
-        z-index: 2;
+        font-weight: $font-weight-sm;
 
         @include md {
             padding: 2rem 0 1rem;
@@ -62,95 +93,731 @@
         }
 
         span {
-            color: $color-hover;
+            color: $color-hover-highlight;
             font-weight: $font-weight-lg;
         }
     }
 
-    .quote {
-        width: 80%;
-        background-color: $color-bg-wrap;
-        padding: 20px 70px;
-        margin: 0 auto;
-        margin-bottom: 50px;
-        position: relative;
+    &.container {
+        margin-top: -80px;
+        background: $color-bg-about;
+        padding-top: 80px;
+    }
 
-        @include lg {
-            width: 90%;
-            padding: 20px 40px;
+    .wrap {
+        & > article {
+            padding: $padding-xl $padding-lg;
+            margin: $margin-xxl*3 0 $margin-xxl;
         }
 
-        @include breakpoint($bp: 500px) {
-            width: 100%;
-            padding: 20px;
-        }
+        & > article:first-of-type {
+            grid-template-columns: [col] auto [col] 60%;
+            grid-template-rows: repeat(2, auto [row]); 
 
-        picture {
-            position: absolute;
-            z-index: 1;
+            h3 {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+                text-align: right;
+                margin-right: 3rem;
+            }
 
-            img {
-                @include xl {
-                    width: 60px;
+            p {
+                grid-column: 2 / span 1;
+                grid-row: 2 / span 1;
+            }
+
+            
+            .grid {
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 2;
+    
+                grid-template-columns: [col] 65% [col] auto;
+                grid-template-rows: [row] (3*$font-size-xl) repeat(5, auto [row]); 
+
+                transition: $transition;
+                transition-duration: 3s;
+                overflow: hidden;
+                position: relative;
+    
+                p {
+                    text-align: right;
+                    font-size: $font-size-md - .4rem;
+                    padding: 0;
+                    margin-top: $font-size-md - 1.2rem;
+                    opacity: 0;
+
+                    &[data-id] {
+                        &.active {
+                            transition: $transition;
+                            transition-duration: 2s;
+                            opacity: 1;
+                        }
+                    }
+
+                    &[data-id="1"], &[data-id="6"] {
+                        &.active {
+                            transition: $transition;
+                            opacity: 1;
+                            transition-delay:  $point-transition-delay;
+                        }
+                    }
+
+                    &[data-id="2"], &[data-id="7"]{
+                        &.active {
+                            transition: $transition;
+                            opacity: 1;
+                            transition-delay:  $point-transition-delay*8;
+                        }
+                    }
+
+                    &[data-id="3"], &[data-id="8"] {
+                        &.active {
+                            transition: $transition;
+                            opacity: 1;
+                            transition-delay:  $point-transition-delay*14;
+                        }
+                    }
+
+                    &[data-id="4"], &[data-id="9"] {
+                        &.active {
+                            transition: $transition;
+                            opacity: 1;
+                            transition-delay:  $point-transition-delay*20;
+                        }
+                    }
+
+                    &[data-id="5"], &[data-id="10"] {
+                        &.active {
+                            transition: $transition;
+                            opacity: 1;
+                            transition-delay:  $point-transition-delay*24;
+                        }
+                    }
+
+                    &[data-year] {
+                        margin-top: 0;
+                        margin-right: $margin-xxl;
+                        font-size: $font-size-md;
+                    }
+
+                    &[data-year="2022"] {
+                        margin-right: $margin-xxl;
+                        font-size: $font-size-md;
+                        font-weight: $font-weight-lg;
+                    }
+                }
+    
+                // p[data-year] {
+                //     margin-right: $margin-xxl;
+                //     font-size: $font-size-md;
+                // }
+
+                // p[data-actualYear] {
+                //     margin-right: $margin-xxl;
+                //     font-size: $font-size-md;
+                //     font-weight: $font-weight-lg;
+                // }
+    
+                .line {
+                    width: 4px;
+                    height: 15%;
+                    background-color: $color-font-light;
+                    position: absolute;
+                    opacity: 0;
+
+                    &.active {
+                        transition-delay: $point-transition-delay*4;
+                        opacity: 1;
+
+                        @include line-animation()          
+                    }
+
+
+                    &[data-id="1"], &[data-id="6"] {
+                        top: $line-top;
+                        left: $line-left;
+
+                        &.active {
+                            animation-name: line-animation;
+                            animation-delay:  $point-transition-delay*4;
+                        }
+                    }
+
+                    &[data-id="2"] {
+                        top: $line-top-id2;
+                        left: $line-left;
+
+                        &.active {
+                            transition-delay: $point-transition-delay*10;
+
+                            animation-name: line-animation;
+                            animation-delay:  $point-transition-delay*10;
+                        }
+                    }
+
+                    &[data-id="3"] {
+                        height: 10%;
+                        top: $line-top-id3;
+                        left: $line-left;
+
+                        &.active {                            
+                            transition-delay: $point-transition-delay*16;
+
+                            animation-name: line-animation-longer;
+                            animation-delay:  $point-transition-delay*16;
+                        }
+                    }
+
+                    &[data-id="4"] {
+                        top: $line-top-id4;
+                        left: $line-left;
+
+                        &.active {
+                            transition-delay: $point-transition-delay*20;
+
+                            animation-name: line-animation;
+                            animation-delay:  $point-transition-delay*20;
+                        }
+                    }
+
+                    &[data-id="5"] {
+                        top: $line-top-id5;
+                        left: $line-left;
+
+                        &.active {
+                            transition-delay: $point-transition-delay*26;
+
+                            animation-name: line-animation;
+                            animation-delay:  $point-transition-delay*26;
+                        }
+                    }
+
+                }
+    
+                .point {
+                    width: $point-dim;
+                    height: $point-dim;
+                    background-color: $color-font-light;
+                    border-radius: 50%;
+                    position: absolute;
+                    opacity: 0;
+
+                    &.active {
+                        transition-delay: 1s;
+                        opacity: 1;
+
+                        @include point-animation()          
+                    }
+    
+                    &[data-id="1"] {
+                        top: $point-top;
+                        left: $point-left;
+                        
+                        &.active {
+                            animation-name: point1-animation;
+                        }
+                    }
+
+                    &[data-id="2"] {
+                        top: $point-top-id2;
+                        left: $point-left;  
+                        transition-delay: $point-transition-delay*8;  
+
+                        &.active {
+                            animation-name: point2-animation;
+                            animation-delay:  $point-transition-delay*8;
+                        }
+                    }
+
+                    &[data-id="3"] {
+                        top: $point-top-id3;
+                        left: $point-left;
+                        transition-delay: $point-transition-delay*14;  
+
+                        &.active {
+                            animation-name: point3-animation;
+                            animation-delay:  $point-transition-delay*14;
+                        }
+                    }
+
+                    &[data-id="4"] {
+                        top: $point-top-id4;
+                        left: $point-left;
+                        transition-delay: $point-transition-delay*20;  
+
+                        &.active {
+                            animation-name: point4-animation;
+                            animation-delay:  $point-transition-delay*20;
+                        }
+                    }
+
+                    &[data-id="5"] {
+                        top: $point-top-id5;
+                        left: $point-left;
+                        transition-delay: $point-transition-delay*24;  
+
+                        &.active {
+                            animation-name: point5-animation;
+                            animation-delay:  $point-transition-delay*24;
+                        }
+                    }
+
+                }
+        
+                p:first-of-type {
+                    grid-column: 1 / span 1;
+                    grid-row: 2 / span 1;
+                }
+    
+                p:nth-of-type(2) {
+                    grid-column: 1 / span 1;
+                    grid-row: 3 / span 1;
+                }
+    
+                p:nth-of-type(3) {
+                    grid-column: 1 / span 1;
+                    grid-row: 4 / span 1;
+                }
+    
+                p:nth-of-type(4) {
+                    grid-column: 1 / span 1;
+                    grid-row: 5 / span 1;
                 }
 
-                @include md {
-                    width: 40px;
+                p:nth-of-type(5) {
+                    grid-column: 1 / span 1;
+                    grid-row: 6 / span 1;
                 }
+        
+                p:nth-of-type(6) {
+                    grid-column: 2 / span 1;
+                    grid-row: 2 / span 1;
+                }
+    
+                p:nth-of-type(7) {
+                    grid-column: 2 / span 1;
+                    grid-row: 3 / span 1;
+                }
+    
+                p:nth-of-type(8) {
+                    grid-column: 2 / span 1;
+                    grid-row: 4 / span 1;
+                }
+    
+                p:nth-of-type(9) {
+                    grid-column: 2 / span 1;
+                    grid-row: 5 / span 1;
+                }
+
+                p:nth-of-type(10) {
+                    grid-column: 2 / span 1;
+                    grid-row: 6 / span 1;
+                }
+    
             }
+        }    
+
+        & > article:nth-of-type(2) {
+            grid-template-columns: repeat(2, 50% [col]);
+            grid-template-rows: repeat(2, auto [row]); 
+            border: 1px solid $color-hover-highlight;
+            padding-bottom: $padding-xl + $padding-xxl;
+            position: relative;
+
+            .box-text.left {
+                grid-column: 1 / span 1;
+                grid-row: 2 / span 1;
+            }
+
+            .box-text.right {
+                grid-column: 2 / span 1;
+                grid-row: 2 / span 1;
+            }
+
+            h3 {
+                grid-column: 1 / span 2;
+                grid-row: 1 / span 1;
+                text-align: left;
+                // margin-right: 3rem;
+            }
+
+            h4 {
+                padding-top: $padding-xl;
+                padding-bottom: 0;
+                text-align: center;
+            }
+
+            p {
+                margin-bottom: $margin-xxl;
+            }
+
+            a {
+                display: inline-block;
+
+            }
+            .btn {
+                border: 1px solid $color-hover-highlight;
+                transition: $transition;
+                transition-duration: .5s;
+                margin-left: $margin-xxl;
+            }
+
+            .btn:hover, .btn:focus, .btn:active {
+                background-color: $color-hover-highlight;
+                
+            }
+
+            &::before {
+                content: '';
+                width: 140px;
+                height: 140px;
+                position: absolute;
+                top: -40px;
+                right: -40px;
+                border: 20px solid darken($color: $color-hover-highlight, $amount: 30);
+                border-left: none;
+                border-bottom: none;
+            }
+
         }
 
-        picture:first-of-type {
-            top: -100px;
-            left: -100px;
+        & > article:nth-of-type(3) {
+            grid-template-columns: repeat(4, auto [col]);
+            grid-template-rows: repeat(2, auto [row]); 
 
-            @include xl {
-                top: -70px;
-                left: -50px;
+            h3 {
+                grid-column: 1 / span 4;
+                grid-row: 1 / span 1;
+                text-align: right;
+                margin-right: 3rem;
+                margin-bottom: $margin-xxl;
             }
 
-            @include lg {
-                top: -20px;
-                left: -70px;
+            .box {
+                height: auto;
+                opacity: 1;
+                position: initial;
+                justify-self: center;
+                align-self: center;
             }
 
-            @include md {
-                top: 0px;
-                left: -50px;
+            .box:first-of-type {
+                grid-column: 2 / span 1;
+                grid-row: 2 / span 1; 
             }
+
+            .box:nth-of-type(2) {
+                grid-column: 3 / span 1;
+                grid-row: 2 / span 1; 
+            }
+
         }
+    }
 
-        picture:nth-of-type(2) {
-            bottom: 100px;
-            right: -105px;
-            transform: rotate(180deg);
-
-            @include xl {
-                bottom: 80px;
-                right: -50px;
-            }
-
-            @include breakpoint($bp: 500px) {
-                right: -20px;
-            }
-        }
+    figure.quote {
+        padding: $padding-lg;
 
         figcaption {
-            font-size: 20px;
-            font-weight: $font-weight-lg;
+            color: $color-font-light;
+            font-size: $base-font-size;
+            font-weight: $font-weight-sm;
             text-align: right;
             padding-top: 3rem;
             line-height: $line-heigh-md;
-
+    
             @include xl {
                 font-size: $base-font-size;
             }
-
+    
             @include md {
                 font-size: $base-font-size;
             }
-        }
-
+        }    
     }
 
+
+    .box {
+        position: relative;
+        transition: $transition;
+        opacity: 0;
+
+        article {
+            width: 80%;
+            position: relative;
+
+            &.grid {
+                grid-template-columns: [col] auto [col] 50%;
+                grid-template-rows: repeat(2, auto [row]); 
+                margin-top: 3rem;
+    
+                h3 {
+                    text-align: left;
+                    margin-right: 3rem;
+                    grid-column: 1 / span 1;
+                    grid-row: 1 / span 1;
+                }
+        
+                p {
+                    grid-column: 1 / span 1;
+                    grid-row: 2 / span 1;
+                }    
+            }
+
+            &.border {
+                
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border: $border-heigh solid $color-hover-highlight;
+                    border-bottom: none;
+                    animation-name: border-animation-width, border-animation-heigh;
+                    animation-delay: 0s, $border-animation-duration;
+                    @include border-animation;
+                }
+            }  
+                        
+            .border-bottom {
+
+                &.active {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: $border-heigh;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: $border-heigh;
+                        background-color: $color-hover-highlight;
+                        animation-name: border-animation-width-bottom-left;
+                        animation-delay: 2 * $border-animation-duration;
+                        @include border-animation;  
+                    }    
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: $border-heigh;
+                        background-color: $color-hover-highlight;
+                        animation-name: border-animation-width-bottom-right;
+                        animation-delay: 2 * $border-animation-duration;
+                        @include border-animation;   
+                    }     
+                }
+            }
+
+            h3 {
+                margin-right: 0;
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+            }
+    
+            p {
+                grid-column: 1 / span 1;
+                grid-row: 2 / span 1;
+            }
+        } 
+
+        picture {
+            position: absolute;
+            top: -30px;
+            right: 175px;
+
+            img {
+                width: 500px;
+            }
+        }    
+    }
 }
+
+@keyframes border-animation-width {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    50% {
+        left: 40%;
+        width: 25%;
+    }
+
+    100% {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@keyframes border-animation-heigh {
+    0% {
+        height: 0;
+    }
+
+    50% {
+        height: 50%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes border-animation-width-bottom-left {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 15%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes border-animation-width-bottom-right {
+    0% {
+        left: 100%;
+        width: 0%;
+    }
+
+    50% {
+        left: 75%;
+        width: 25%;
+    }
+
+    100% {
+        left: 50%;
+        width: 50%;
+    }
+}
+
+@keyframes point1-animation {
+    0% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+
+    50% {
+        width: $point-dim*2;
+        height: $point-dim*2;
+        top: $point-top - 2%;
+        left: $point-left - 2%;
+    }
+
+    100% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+}
+
+@keyframes point2-animation {
+    0% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+
+    50% {
+        width: $point-dim*2;
+        height: $point-dim*2;
+        top: $point-top-id2 - 2%;
+        left: $point-left - 2%;
+    }
+
+    100% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+}
+
+@keyframes point3-animation {
+    0% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+
+    50% {
+        width: $point-dim*2;
+        height: $point-dim*2;
+        top: $point-top-id3 - 2%;
+        left: $point-left - 2%;
+    }
+
+    100% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+}
+
+@keyframes point4-animation {
+    0% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+
+    50% {
+        width: $point-dim*2;
+        height: $point-dim*2;
+        top: $point-top-id4 - 2%;
+        left: $point-left - 2%;
+    }
+
+    100% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+}
+
+@keyframes point5-animation {
+    0% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+
+    50% {
+        width: $point-dim*2;
+        height: $point-dim*2;
+        top: $point-top-id5 - 2%;
+        left: $point-left - 2%;
+    }
+
+    100% {
+        width: $point-dim;
+        height: $point-dim;
+    }
+}
+
+@keyframes line-animation {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 15%;
+    }
+}
+
+@keyframes line-animation-longer {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 19%;
+    }
+}
+
+
+
+

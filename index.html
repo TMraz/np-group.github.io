@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="google-site-verification" content="iGBGq6TR_ivZjJnGFvkYrUweC_Q2cMSlKLyvN2gM-xU" />
     <title>No Problem Group</title>
-    <meta name="description" content="No Problem Group s.r.o. │ Poskytovatel popredních technických řešení. Poskytujeme služby v oblasti engineeringu, konstrukce a elektrozařízení. │ www.np-group.cz">
+    <meta name="description" content="No Problem Group s.r.o. │ Poskytovatel popredních technických řešení. Poskytujeme služby v oblasti technického engineeringu a fitness zařízení. │ www.np-group.cz">
     <link rel="shortcut icon" href="./img/NP-main_logo-ico.png" type="image/png">
     <link rel="stylesheet" href="scss/normalize.css">
     <link rel="stylesheet" href="scss/style.css">
@@ -16,279 +16,92 @@
 </head>
 <body>
 
-    <header class="container">
-        <div class="wrap flex">
-            <a href="index.html" class="site-logo">
+    <header class="site-header flex" role="banner" aria-label="site header">
+        <div class="site-header__container flex">
+            <a href="index.html" class="site-header__logo">
                 <img src="./img/NP-main_logo_white.png" alt="np-group_logo" width="100"> 
             </a>
     
-            <!-- <ul class="contact">
-                <li>
-                    <i>
-                        <svg xmlns="http://www.w3.org/2000/svg" id="Vrstva_2" viewBox="0 0 10 10" width="12" x="0px" y="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
-                            <path style="fill:none;stroke:#F7931E;stroke-width:0.75;stroke-miterlimit:10;" id="XMLID_4_" d="M 4.3 5.7 c -0.4 -0.4 -0.8 -1.1 -1.2 -2 L 3.8 3 c 0 0 0.3 -0.4 0 -0.9 s -0.9 -1 -0.9 -1 S 2.1 0.2 1.1 1.2 S 1.2 5 1.2 5 s 0.4 1.1 1.6 2.3" />
-                            <path style="fill:none;stroke:#F7931E;stroke-width:0.75;stroke-miterlimit:10;" id="XMLID_5_" d="M 4.2 5.6 c 0.4 0.4 1.1 0.8 2 1.2 l 0.7 -0.7 c 0 0 0.4 -0.3 0.9 0 s 1 0.9 1 0.9 s 0.9 0.8 -0.1 1.8 S 4.9 8.7 4.9 8.7 S 3.8 8.3 2.6 7.1" />
-                        </svg>
-                    </i>
-                    <a href="tel:+420605883085">+420 605 883 085</a>
-                </li>
-                <li>
-                    <i>
-                        <svg xmlns="http://www.w3.org/2000/svg" id="Vrstva_2" viewBox="0 0 10 10" width="12" x="0px" y="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
-                            <circle style="fill:none;stroke:#FF9900;stroke-miterlimit:10;" id="XMLID_6_" cx="5" cy="5" r="2.5" />
-                            <path style="fill:none;stroke:#FF9900;stroke-miterlimit:10;" id="XMLID_11_" d="M 7.5 8.7" />
-                            <path style="fill:none;stroke:#FF9900;stroke-miterlimit:10;" id="XMLID_7_" d="M 7.5 8.7 C 6.8 9.2 5.9 9.5 5 9.5 c -2.5 0 -4.5 -2 -4.5 -4.5 s 2 -4.5 4.5 -4.5 s 4.5 2 4.5 4.5 c 0 0.9 -0.2 1.7 -0.7 2.3" />
-                            <line style="fill:none;stroke:#FF9900;stroke-miterlimit:10;" id="XMLID_10_" x1="7.5" y1="6.6" x2="7.5" y2="2.5" />
-                            <path style="fill:none;stroke:#FF9900;stroke-miterlimit:10;" id="XMLID_9_" d="M 9.2 6.6" />
-                            <path style="fill:none;stroke:#FF9900;stroke-miterlimit:10;" id="XMLID_8_" d="M 7.5 6.6 c 0 0.5 0.4 0.9 0.9 0.9 c 0.2 0 0.4 -0.1 0.5 -0.2" />
-                        </svg>                    
-                    </i>
-                    <a href="mailto:info@np-group.cz">info@np-group.cz</a>
-                </li>
-            </ul> -->
-    
-            <nav>
-                <ul class="main-nav">
-                    <!-- <li>
-                        <a href="#home" class="home">Domů</a>
+            <nav class="site-navigation" role="navigation" aria-label="site">
+                <ul class="primary-menu">
+                    <li class="menu-item">
+                        <a href="./about.html" class="menu-item-link">O společnosti</a>
                     </li>
-                    <li class="division">
-                        <a href="#home" class="division">
-                            Divize
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="drop-down">
-                            <li><a href="motorsport.html">Motorsport</a></li>
-                            <li><a href="#">SmartMedic</a></li>
-                            <li><a href="#">WebDevelopment</a></li>
-                        </ul>
-                    </li> -->
-                    <li>
-                        <a href="#about" class="about">O společnosti</a>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-item-link">Kontakt</a>
                     </li>
-                    <li>
-                        <a href="#contact" class="contact">Kontakt</a>
-                    </li>
-                    <li>
-                        <a href="index.html" class="cz">CZ</a>/<a href="index_en.html" class="en">EN</a>
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-item-link cz">CZ</a>/<a href="index_en.html" class="menu-item-link en">EN</a>
                     </li>
                 </ul>
             </nav>
         </div>
 
-        <nav id="site-nav-hamburger">
-            <ul class="toggle">
-              <li></li>
-              <li></li>
-              <li></li>
+        <nav id="site-menu-nav">
+            <ul class="site-menu-toggle">
+              <li class="site-menu-toggle__item"></li>
+              <li class="site-menu-toggle__item"></li>
+              <li class="site-menu-toggle__item"></li>
             </ul>    
         </nav>
+
+        <aside id="sidebar" class="sidebar">   
+            <div class="site-header__container flex">
+                <a href="index.html" class="site-header__logo">
+                    <img src="./img/NP-main_logo_white.png" alt="np-group_logo" width="100"> 
+                </a>
+            </div>
+     
+            <ul class="primary-menu">
+                <li class="menu-item"><a href="#" class="menu-item-link">NP-TECH</a></li>
+                <li class="menu-item"><a href="#" class="menu-item-link">NP-FITNESS</a></li>
+                <li class="menu-item"><a href="about.html" class="menu-item-link">O společnosti</a></li>
+                <li class="menu-item"><a href="contact.html" class="menu-item-link">Kontakt</a></li>
+                <li class="menu-item">
+                    <a href="index.html" class="menu-item-link cz">CZ</a>/<a href="index_en.html" class="menu-item-link en">EN</a>
+                </li>
+            </ul>
+
+            <footer class="site-navigation__footer"> 
+                <ul class="copyright__list">
+                    <li class="copyright__item">
+                        <a href="download/vseobecne_obchodni_podminky_NPG.pdf" class="menu-item-link" download="obchodni_podminky_NPG" target="_blank">Obchodní podmínky</a>
+                    </li>
+                    <li class="copyright__item">
+                        No Problem Group s.r.o. © <time datetime="2000"> 2021</time> 
+                    </li>
+                </div>
+            </footer>  
+    
+        </aside>    
     </header>
 
-    <aside class="sidebar" id="sidebar">
-        <ul class="main-nav">
-            <li class="menu-item"><a href="#home">Domů</a></li>
-            <li class="menu-item division">
-                <a href="#home" class="division">
-                    Divize
-                    <span class="arrow"></span>
-                </a>
-                <ul class="drop-down">
-                    <li><a href="motorsport.html">Motorsport</a></li>
-                    <li><a href="#">SmartMedic</a></li>
-                    <li><a href="#">WebDevelopment</a></li>
-                </ul>
-            </li>
-            <li class="menu-item"><a href="#about">O společnosti</a></li>
-            <li class="menu-item"><a href="#contact">Kontakt</a></li>
-            <li class="menu-item">
-                <a href="index.html" class="cz">CZ</a>/<a href="index_en.html" class="en">EN</a>
-            </li>
-        </ul>
-    </aside>
-
-    <main>
-        <section id="home" class="container">
-            <div id="intro-slider" class="wrap flex">
+    <main class="main-content" role="main" aria-label="site content">
+        <section id="home" class="section flex">
+            <div id="intro-slider" class="section__content-wrap flex">
+                <div class="line"></div>
                 <div class="image-slider"></div>
                 <input type="range" value="50" max="100">
 
-                <div id="intro-tech" class="intro-slogan pos-abs">
-                    <h1>NP - TECH</h1>
-                    <h2>Poskytovatel předních technických řešení</h2>
-                    <button class="btn" role="button"><span class="text">zjistit více</span></button>
+                <div id="intro-tech" class="intro">
+                    <div class="intro__content">
+                        <h1>NP - TECH</h1>
+                        <h2>Poskytovatel předních technických řešení</h2>
+                        <a href="#" class="btn" role="button"><span class="text">zjistit více</span></a>
+                    </div>
                 </div>
     
-                <div id="intro-fitness" class="intro-slogan pos-abs">
-                    <h1>np - fitness</h1>
-                    <h2>Poskytovatel předních fitness řešení</h2>
-                    <button class="btn" role="button"><span class="text">zjistit více</span></button>
-                    <div class="cover"></div>
+                <div id="intro-fitness" class="intro">
+                    <div class="intro__content">
+                        <h1>np - fitness</h1>
+                        <h2>Poskytovatel předních fitness řešení</h2>
+                        <a href="#" class="btn" role="button"><span class="text">zjistit více</span></a>
+                        <div class="cover"></div>
+                    </div>
                 </div>    
             </div>
         </section>
-
-        <!-- <section id="about" class="container">
-            <div class="wrap">
-                <div class="wrap-sm">
-                    <h1 class="main-title">O společnosti</h1>
-                </div>
-
-                <figure class="quote">
-                    <picture>
-                        <img src="img/quote_icon.svg" alt="quote" width="80">
-                        <img src="img/quote_icon.svg" alt="quote" width="80">
-                    </picture>
-                    
-                    <blockquote>
-                        <p class="paragraph">
-                            Jsme mladí lidé s kreativním a pozitivním myšlením a přístupem k problémům, které jsme objevovali v průběhu našich pracovních životů. V roce 2021 jsme se setkali a založili společnost <span>No Problem Group</span>. Od tohoto bodu jsme team mladých osobností, jejichž kreativita se posiluje vzájemnou spoluprací. 
-                        </p>
-        
-                        <p class="paragraph">
-                            Jako tým se podporujeme a objevujeme nové obzory napříč technickými odvětvími, ve kterých má každý člen našeho týmu několikaleté zkušenosti, Vidíme problémy, se kterými se na nás naši zákazníci obracejí, ale to co nás baví a odlišuje je hledání nových cest, jak tyto problémy řešit. 
-                            Problém pro nás není stopper, je to příležitost posunout možnosti techniky i nás samotných na novou úroveň.
-                        </p>
-        
-                        <p class="paragraph">
-                            <span>Nevidíme problém</span>, vidíme spokojeného zákazníka a funkční řešení.
-                        </p>    
-                    </blockquote>
-
-                    <figcaption>
-                        &mdash; Patrik Toman, Jakub Mráz │ Zakladatele společnosti
-                    </figcaption>
-
-                    <picture>
-                        <img src="img/quote_icon.svg" alt="quote" width="80">
-                        <img src="img/quote_icon.svg" alt="quote" width="80">
-                    </picture>
-                </figure>
-
-            </div>
-        </section> -->
-
-        <section id="reference" class="container">
-            <div class="wrap flex">
-                <h1>
-                    Spolupracujeme
-                </h1>
-
-                <div class="card">
-                    <img src="img/Praga-Main-Logo.png" alt="praga-logo" width="200" class="praga">
-                </div>
-
-                <div class="card">
-                    <img src="img/brainspin-logo-black.png" alt="brainspin-logo" width="200" class="brainspin">
-                </div>
-            </div>
-        </section> 
-
-        <section id="contact" class="container">
-            <div class="wrap">
-                <div class="wrap-sm">
-                    <h1 class="main-title">
-                        Kontakt
-                    </h1>
-                </div>
-
-                <div class="wrap-sm flex">
-                    <div class="card">
-                        <!-- <img src="img/phone_icon.svg" alt="phone_icon" width="125"> -->
-    
-                        <h2>Volejte</h2>
-    
-                        <ul class="contact-phone">
-                            <li>
-                                <a href="tel:+420605883085">+420 605 883 085</a>
-                                <p>Jakub Mráz</p>
-                            </li>
-    
-                            <li>
-                                <a href="tel:+420737386041">+420 737 386 041</a>
-                                <p>Patrik Toman</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <!-- <img src="img/email_icon.svg" alt="email_icon" width="125"> -->
-    
-                        <h2>Email</h2>
-    
-                        <ul class="contact-email">
-                            <li>
-                                <a href="mailto:jakub.mraz@np-group.cz">jakub.mraz@np-group.cz</a>
-                            </li>
-    
-                            <li>
-                                <a href="mailto:patrik.toman@np-group.cz">patrik.toman@np-group.cz</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <!-- <img src="img/location_icon.svg" alt="address_icon" width="125"> -->
-    
-                        <h2>Adresa</h2>
-    
-                        <ul class="contact-address">
-                            <li>No Problem Group s.r.o.</li>
-                            <li>Na výsluní 201/13</li>
-                            <li>Strašnice</li>
-                            <li>100 00 Praha</li>
-                        </ul>
-                    </div>
-
-                    <div class="card contact-company">
-                        <!-- <img src="img/company_icon.svg" alt="company_icon" width="125"> -->
-    
-                        <h2>No Problem Group s.r.o.</h2>
-    
-                        <ul class="contact-company">
-                            <li>IČO: 11981954</li>
-                            <li>DIČ (VAT): CZ11981954</li>
-                            <li>DUNS: 496883576</li>
-                            <li>Značka: C 357470 vedená u Městského soudu v Praze</li>
-                        </ul>
-                    </div>  
-                </div>
-            </div>
-        </section>
-
-        <footer class="site-footer container">
-            <!-- <div class="wrap flex">
-                <a href="#home" class="site-logo">
-                    <img src="./img/noproblem-full_logo.png" alt="np-group_logo" width="300"> 
-                </a>        
-    
-                <ul class="company-address">
-                    <li>No Problem Group s.r.o.</li>
-                    <li>Na výsluní 201/13</li>
-                    <li>Strašnice</li>
-                    <li>100 00 Praha</li>
-                </ul>
-                <ul class="company-data">
-                    <li>IČO: 11981954</li>
-                    <li>DIČ (VAT): CZ11981954</li>
-                    <li>DUNS: 496883576</li>
-                    <li>Značka: C 357470</li>
-                </ul>
-                <ul class="navigation">
-                    <li><a href="#home">Domů</a></li>
-                    <li><a href="#division">Divize</a></li>
-                    <li><a href="#about">O společnosti</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                </ul>    
-            </div> -->
-            <div class="container copyright">
-                No Problem Group s.r.o. © <time datetime="2000"> 2021 │</time> <a href="download/vseobecne_obchodni_podminky_NPG.pdf" download="obchodni_podminky_NPG" target="_blank">Obchodní podmínky</a>
-            </div>
-        </footer> 
-
     </main>
-
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
     integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="

@@ -1,0 +1,11 @@
+/* === SITE HEADER === */
+@import 'navigation';
+@import 'breakpoints';
+
+header {
+    &.container {
+        background: $color-bg-about;
+        border-bottom: 1px solid darken($color: $color-font-light, $amount: 80);
+    }
+}
+

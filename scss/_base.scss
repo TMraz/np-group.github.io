@@ -44,7 +44,16 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: $base-font-size + .2rem;
+    font-weight: $font-weight-xl;
+
+    @include md {
+        font-size: $base-font-size;
+    }
+}
+
+h4 {
+    font-size: $base-font-size + .1rem;
     font-weight: $font-weight-xl;
 
     @include md {
@@ -54,7 +63,7 @@ h3 {
 
 p {
     @include md {
-        font-size: .8rem;
+        font-size: $base-font-size - .2rem;
     }
 }
 
@@ -86,6 +95,10 @@ ul li {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
 }
 
 .card {
@@ -163,206 +176,4 @@ span.arrow {
     transition: .2s;
 }
 
-/* === ul.toggle === */
-.toggle{
-    position: fixed;
-    top: 5px;  
-    right: 20px;
-    width: 50px;   
-    height: 50px;
-    z-index: 30;
-    cursor: $base-cursor;
-    display: none;
-
-    li {
-        position: absolute;
-        left: 5%;
-        transform: translateY(-50%);
-        height: 5px;  width: 90%;
-        background: rgb(145, 145, 145);
-        transition: .9s;
-        padding: 0;
-    }
-
-    @include lg {
-        display: initial;
-    }
-}
-
-ul.toggle {
-    li:nth-of-type(1) {
-        top: 20%;
-    }
-
-    li:nth-of-type(2) {
-        top: 50%;
-    }
-
-    li:nth-of-type(3) {
-        top: 80%;
-    }
-
-    &.active {
-        li:nth-of-type(1){
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-        }
-
-        li:nth-of-type(2){
-            left: -100%;
-            opacity: 0;
-        }
-
-        li:nth-of-type(3){
-            top: 50%;
-            transform: translateY(-50%) rotate(-45deg);
-        }
-    }
-}
-
-/* === sidebar === */
-.sidebar{
-    position: fixed;
-    top: 0;  left: -670px;
-    background: $color-bg-sidebar;
-    width: 80vw;   
-    height: 100vh;
-    overflow-y: scroll;
-    box-sizing: border-box;
-    padding: 50px $padding-xxl;
-    margin: $margin-center-horizontal;
-    text-align: center;
-    transition: .9s;
-    z-index: 10;
-    display: none;
-    &.active {
-        left: 0;
-    }
-
-    ul.main-nav {
-        position: relative;
-        text-align: center;
-        width: 100%;
-        margin-top: 60px;
-
-        & > li {
-            display: block;
-
-            span.arrow {
-                transition: all .5s ease-out;
-
-                &::after {
-                    content: "";
-                    display: inline-block;
-                    position: absolute;
-                    top: 35px;
-                    left: 70%;
-                    width: 7px;
-                    height: 7px;
-                    border-top: 1px solid $color-font;
-                    border-right: 1px solid $color-font;
-                    transform: rotate(135deg);
-                    transition: all .5s;
-
-                    @include sm {
-                        left: 80%;
-                    }
-                }
-            }
-
-            span.arrow.active {
-                &::after {
-                    transform: rotate(-45deg);
-                    transition: all .5s;
-                }
-            }
-
-            &.inactive {
-                display: none;
-            }
-
-            &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
-                background-color: $color-logo-orange;
-                color: $color-font-light;
-                transition: 0.4s;
-
-                a {
-                    color: $color-font-light;
-
-                    span.arrow {
-                        transition: all .5s ease-out;
-                                
-                        &::after {
-                            border-top: 1px solid $color-font-light
-                            ;
-                            border-right: 1px solid $color-font-light;
-                        }
-                    }      
-                }
-
-                .drop-down {
-                    li {                        
-                        &:hover, &:focus {
-                            a {
-                                background-color: $color-logo-orange;
-                                color: $color-font-light;
-                                transition: 0.4s;
-                            }
-                        }
-
-                        a {
-                            color: $color-font;
-                            font-size: $base-font-size;
-                        }
-                    }
-                }
-            }
-
-            &:last-child {
-                width: 100%;
-                padding: 20px 0;
-
-                a {
-                    display: inline;
-                    font-size: .8rem;
-                    padding: 10px 5px;
-                }
-            }
-
-            a {
-                display: inline-block;
-                position: relative;
-                text-decoration: none;  
-                text-transform: uppercase;
-                color: $color-font;
-                width: 100%;  
-                padding: $padding-xl 0;
-                box-sizing: border-box;
-                font-size: 20px;
-
-                @include sm {
-                    font-size: 18px;
-                }
-            }
-        }
-    }
-
-    ul.drop-down {
-        background-color: $color-bg;
-
-        li {
-            a {
-                font-size: 20px;
-
-                @include lg {
-                    font-size: $base-font-size;
-                }
-            }
-        }
-    }
-
-    @include lg {
-        display: initial;
-    }
-}
 

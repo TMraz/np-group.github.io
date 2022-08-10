@@ -1,48 +1,47 @@
-const slider = document.querySelector('#intro-slider')
-const sliderImg = document.querySelector('#intro-slider .image-slider')
-const sliderInput = document.querySelector('#intro-slider input')
-const introButtonTech = document.querySelector('#intro-tech .btn')
-const introButtonFitness = document.querySelector('#intro-fitness .btn')
 
-//z-index on tech hover
-introButtonTech.addEventListener('mousemove', function() {
-  const introSubtitle = document.querySelector('#intro-tech h2')
-  const introTitle = document.querySelector('#intro-tech h1')
-  const introFitness = document.querySelector('#intro-fitness.pos-abs .cover')
+// ** HOME **
+const slider = document.querySelector('#home #intro-slider')
+const sliderImg = document.querySelector('#home #intro-slider .image-slider')
+const sliderInput = document.querySelector('#home #intro-slider input')
+const introButtonTech = document.querySelector('#home #intro-tech .btn')
+const introButtonFitness = document.querySelector('#home #intro-fitness .btn')
+
+// const line = document.querySelector('#intro-slider .image-slider')
+const line = document.querySelector('#home .line')
+
+function introTechAnimationOpen() {
+  const introSubtitle = document.querySelector('#home #intro-tech h2')
+  const introTitle = document.querySelector('#home #intro-tech h1')
+  const introFitness = document.querySelector('#home #intro-fitness .cover')
 
   introSubtitle.style.opacity = '1'
   introTitle.style.transform = 'translateY(0)'
 
-  sliderImg.style.width = '20%'
+  sliderImg.style.width = '18%'
 
-  introFitness.style.visibility = 'visible'
-  introFitness.style.width = '90%'
-})
+  introFitness.classList.add('active')
+  line.classList.add('active-tech')
+}
 
-introButtonTech.addEventListener('mouseleave', function() {
-  const introSubtitle = document.querySelector('#intro-tech h2')
-  const introTitle = document.querySelector('#intro-tech h1')
-  const introFitness = document.querySelector('#intro-fitness.pos-abs .cover')
+function introTechAnimationClose() {
+  const introSubtitle = document.querySelector('#home #intro-tech h2')
+  const introTitle = document.querySelector('#home #intro-tech h1')
+  const introFitness = document.querySelector('#home #intro-fitness .cover')
 
   introSubtitle.style.opacity = '0'
   introTitle.style.transform = 'translateY(45px)'
 
   sliderImg.style.width = '60%'
 
-  setTimeout(function(){
-    introFitness.style.visibility = 'hidden'
-  }, 500)
+  introFitness.classList.remove('active')
+  line.classList.remove('active-tech')
+}
 
-  introFitness.style.width = '0%'
-
-})
-
-//z-index on fitness hover
-introButtonFitness.addEventListener('mousemove', function() {
-  const introSubtitle = document.querySelector('#intro-fitness h2')
-  const introTitle = document.querySelector('#intro-fitness h1')
-  const introTech = document.querySelector('#intro-tech')
-  const introImgSlider = document.querySelector('#intro-slider .image-slider')
+function introFitAnimationOpen() {
+  const introSubtitle = document.querySelector('#home #intro-fitness h2')
+  const introTitle = document.querySelector('#home #intro-fitness h1')
+  const introTech = document.querySelector('#home #intro-tech')
+  const introImgSlider = document.querySelector('#home #intro-slider .image-slider')
 
   introSubtitle.style.opacity = '1'
   introTitle.style.transform = 'translateY(0)'
@@ -51,12 +50,14 @@ introButtonFitness.addEventListener('mousemove', function() {
 
   introImgSlider.style.zIndex = '5'
   introTech.style.zIndex = '4'
-})
 
-introButtonFitness.addEventListener('mouseleave', function() {
-  const introSubtitle = document.querySelector('#intro-fitness h2')
-  const introTitle = document.querySelector('#intro-fitness h1')
-  const introTech = document.querySelector('#intro-tech')
+  line.classList.add('active-fit')
+}
+
+function introFitAnimationClose() {
+  const introSubtitle = document.querySelector('#home #intro-fitness h2')
+  const introTitle = document.querySelector('#home #intro-fitness h1')
+  const introTech = document.querySelector('#home #intro-tech')
 
   introSubtitle.style.opacity = '0'
   introTitle.style.transform = 'translateY(45px)'
@@ -66,7 +67,21 @@ introButtonFitness.addEventListener('mouseleave', function() {
   setTimeout(function(){
     introTech.style.zIndex = '20'
   }, 500)
-})
+
+  line.classList.remove('active-fit')
+}
+
+//z-index on tech hover
+introButtonTech.addEventListener('mousemove', introTechAnimationOpen)
+
+introButtonTech.addEventListener('mouseleave', introTechAnimationClose)
+
+//z-index on fitness hover
+introButtonFitness.addEventListener('mousemove', introFitAnimationOpen)
+
+introButtonFitness.addEventListener('mouseleave', introFitAnimationClose)
+
+// ** GENERAL **
 
 // === scroll reveal ===
 ScrollReveal({
@@ -77,18 +92,16 @@ ScrollReveal({
 });
 
   ScrollReveal().reveal('.main-title, .post-title, .paragraph, #reference, #contact .wrap-sm .card', { origin: 'bottom'});
-  // ScrollReveal().reveal('#work.container', { origin: 'bottom', distance: '0'});
-  // ScrollReveal().reveal('.right', { origin: 'right', distance: '60px'});
-  // ScrollReveal().reveal('.left', { origin: 'left', distance: '60px'});
-  // ScrollReveal().reveal('.line:not(first-child)', { origin: 'top', distance: '60px', delay: '800'});
 
-// === on scroll navigation bar change ===
-window.addEventListener('scroll', function () {
-  const navigationBar = document.querySelector('header.container')
-  let windowPosition = window.scrollY 
 
-  console.log(windowPosition)
+// === toggle menu ===
 
-  navigationBar.classList.toggle('scroll-active', windowPosition)
+document.querySelector('#site-menu-nav ul.site-menu-toggle').addEventListener('click', function () {
+  // toggle navigation button
+  this.classList.toggle('active')
+
+  // toggle sidebar navigation pannel
+  document.querySelector('#sidebar').classList.toggle('active')
+
 })
 
