@@ -354,6 +354,25 @@ ul.site-menu-toggle {
     }
 }
 
+@media (max-width: 900px) and (max-height: 500px) {
+    .sidebar {
+        overflow: scroll;
+
+        ul.primary-menu {
+            & > li.menu-item {
+                padding: $base-padding*.5 $base-padding;
+            }
+        }
+
+        .site-navigation__footer {
+
+            .copyright__list {
+                position: initial;
+            }
+        }
+    }
+}
+
 @media (max-height: 600px) {
     .sidebar {
         ul.primary-menu {
