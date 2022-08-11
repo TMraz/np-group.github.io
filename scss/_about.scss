@@ -98,13 +98,23 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
 
-    &.container {
+    &.section {
+        width: 100vw;
         margin-top: -80px;
         background: $color-bg-about;
-        padding-top: 80px;
+        padding-top: $base-padding*8;
+        overflow: hidden;
     }
 
-    .wrap {
+    .section__content-wrap {
+        padding: 0 $base-padding*3;
+        width: 98%;
+        max-width: 1400px;
+    
+        @include sm {
+            padding: 0 $base-padding*2;
+        }
+    
         & > article {
             padding: $padding-xl $padding-lg;
             margin: $margin-xxl*3 0 $margin-xxl;
@@ -424,12 +434,12 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             padding-bottom: $padding-xl + $padding-xxl;
             position: relative;
 
-            .box-text.left {
+            .content-card-text.left {
                 grid-column: 1 / span 1;
                 grid-row: 2 / span 1;
             }
 
-            .box-text.right {
+            .content-card-text.right {
                 grid-column: 2 / span 1;
                 grid-row: 2 / span 1;
             }
@@ -493,7 +503,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 margin-bottom: $margin-xxl;
             }
 
-            .box {
+            .content-card {
                 height: auto;
                 opacity: 1;
                 position: initial;
@@ -501,12 +511,12 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 align-self: center;
             }
 
-            .box:first-of-type {
+            .content-card:first-of-type {
                 grid-column: 2 / span 1;
                 grid-row: 2 / span 1; 
             }
 
-            .box:nth-of-type(2) {
+            .content-card:nth-of-type(2) {
                 grid-column: 3 / span 1;
                 grid-row: 2 / span 1; 
             }
@@ -536,7 +546,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
 
-    .box {
+    .content-card {
         position: relative;
         transition: $transition;
         opacity: 0;
@@ -629,12 +639,12 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
         } 
 
-        picture {
+        .content-card__image {
             position: absolute;
             top: -30px;
             right: 175px;
 
-            img {
+            .content-card-item__image {
                 width: 500px;
             }
         }    

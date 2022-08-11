@@ -1,9 +1,9 @@
 // ** ABOUT **
 
 document.addEventListener('scroll', function () {
-    const textMission = document.querySelector('#about .box:first-of-type')
-    const borderArticle = document.querySelector('#about .box:first-of-type article')
-    const borderArticleBottom = document.querySelector('#about .box:first-of-type article span')
+    const textMission = document.querySelector('#about .content-card:first-of-type')
+    const borderArticle = document.querySelector('#about .content-card:first-of-type article')
+    const borderArticleBottom = document.querySelector('#about .content-card:first-of-type article span')
 
 
     textMission.style.opacity = '1'
@@ -25,30 +25,30 @@ ScrollReveal().reveal('.reveal-rght', { origin: 'right',  distance: '60px'})
 ScrollReveal().reveal('.reveal-offset', { viewOffset: {bottom: 80} })
 
 //track textMission
-const storyLinePointId1 = document.querySelector('#about .wrap > article:first-of-type .grid .point[data-id="1"]')
-const storyLinePointId2 = document.querySelector('#about .wrap > article:first-of-type .grid .point[data-id="2"]')
-const storyLinePointId3 = document.querySelector('#about .wrap > article:first-of-type .grid .point[data-id="3"]')
-const storyLinePointId4 = document.querySelector('#about .wrap > article:first-of-type .grid .point[data-id="4"]')
-const storyLinePointId5 = document.querySelector('#about .wrap > article:first-of-type .grid .point[data-id="5"]')
+const storyLinePointId1 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="1"]')
+const storyLinePointId2 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="2"]')
+const storyLinePointId3 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="3"]')
+const storyLinePointId4 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="4"]')
+const storyLinePointId5 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="5"]')
 
-const storyLineId1 = document.querySelector('#about .wrap > article:first-of-type .grid .line[data-id="1"]')
-const storyLineId2 = document.querySelector('#about .wrap > article:first-of-type .grid .line[data-id="2"]')
-const storyLineId3 = document.querySelector('#about .wrap > article:first-of-type .grid .line[data-id="3"]')
-const storyLineId4 = document.querySelector('#about .wrap > article:first-of-type .grid .line[data-id="4"]')
-const storyLineId5 = document.querySelector('#about .wrap > article:first-of-type .grid .line[data-id="5"]')
+const storyLineId1 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="1"]')
+const storyLineId2 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="2"]')
+const storyLineId3 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="3"]')
+const storyLineId4 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="4"]')
+const storyLineId5 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="5"]')
 
-const storyLineTextId1 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="1"]')
-const storyLineTextId2 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="2"]')
-const storyLineTextId3 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="3"]')
-const storyLineTextId4 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="4"]')
-const storyLineTextId5 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="5"]')
-const storyLineTextId6 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="6"]')
-const storyLineTextId7 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="7"]')
-const storyLineTextId8 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="8"]')
-const storyLineTextId9 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="9"]')
-const storyLineTextId10 = document.querySelector('#about .wrap > article:first-of-type .grid p[data-id="10"]')
+const storyLineTextId1 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="1"]')
+const storyLineTextId2 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="2"]')
+const storyLineTextId3 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="3"]')
+const storyLineTextId4 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="4"]')
+const storyLineTextId5 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="5"]')
+const storyLineTextId6 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="6"]')
+const storyLineTextId7 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="7"]')
+const storyLineTextId8 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="8"]')
+const storyLineTextId9 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="9"]')
+const storyLineTextId10 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="10"]')
 
-const observeMe = document.querySelector('#about .wrap > article:first-of-type .grid')
+const observeMe = document.querySelector('#about .section__content-wrap > article:first-of-type .grid')
 
 const observerAnimation = function(entries) {
     entries.forEach(entry => {
@@ -88,3 +88,15 @@ const observer = new IntersectionObserver(observerAnimation, {
 })
 
 observer.observe(observeMe)
+
+// === toggle menu ===
+
+document.querySelector('#site-menu-nav ul.site-menu-toggle').addEventListener('click', function () {
+    // toggle navigation button
+    this.classList.toggle('active')
+  
+    // toggle sidebar navigation pannel
+    document.querySelector('#sidebar').classList.toggle('active')
+  
+  })
+  
