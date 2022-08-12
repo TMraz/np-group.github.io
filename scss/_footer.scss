@@ -9,6 +9,16 @@
     background-position: center;
     overflow: hidden;
 
+    .site-footer__wrap {
+        padding: 0 $base-padding*3;
+        width: 98%;
+        max-width: 1400px;
+
+        &.flex {
+            justify-content: space-between;
+        }
+    }
+
     .flex {
         justify-content: space-between;
         gap: 20px;
@@ -31,7 +41,7 @@
         }
     }
 
-    .site-logo {
+    .site-footer__logo {
         @include md {
             margin-right: 0;
         }
@@ -44,17 +54,17 @@
 
     }
 
-    ul.company-address {
+    ul.site-footer__company-address {
         li:first-child {
             font-weight: $font-weight-xl;    
         }
     }
 
-    ul.navigation {
-        li {
+    ul.site-footer__nav {
+        li.site-footer__nav-item {
             position: relative;
 
-            a { 
+            a.site-footer-item-link { 
                 color: $color-font-light;
 
                 &:hover, &:active, &:focus  {
@@ -72,13 +82,11 @@
         }
     }
 
-    .container.copyright {
+    .copyright {
         flex-direction: row;
         justify-content: center;
         padding: 10px 0;
-    }
 
-    .copyright {
         padding: $padding-xl;
         margin: $margin-center-horizontal;
         padding-bottom: $padding-xxl;

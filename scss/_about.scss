@@ -87,11 +87,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         line-height: $line-heigh-md;
         font-weight: $font-weight-sm;
 
-        @include md {
-            padding: 2rem 0 1rem;
-            font-size: $base-font-size;
-        }
-
         span {
             color: $color-hover-highlight;
             font-weight: $font-weight-lg;
@@ -110,11 +105,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         padding: 0 $base-padding*3;
         width: 98%;
         max-width: 1400px;
-    
-        @include sm {
-            padding: 0 $base-padding*2;
-        }
-    
+        
         & > article {
             padding: $padding-xl $padding-lg;
             margin: $margin-xxl*3 0 $margin-xxl;
@@ -216,18 +207,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                         font-weight: $font-weight-lg;
                     }
                 }
-    
-                // p[data-year] {
-                //     margin-right: $margin-xxl;
-                //     font-size: $font-size-md;
-                // }
-
-                // p[data-actualYear] {
-                //     margin-right: $margin-xxl;
-                //     font-size: $font-size-md;
-                //     font-weight: $font-weight-lg;
-                // }
-    
+        
                 .line {
                     width: 4px;
                     height: 15%;
@@ -434,12 +414,12 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             padding-bottom: $padding-xl + $padding-xxl;
             position: relative;
 
-            .content-card-text.left {
+            .article-content__container.left {
                 grid-column: 1 / span 1;
                 grid-row: 2 / span 1;
             }
 
-            .content-card-text.right {
+            .article-content__container.right {
                 grid-column: 2 / span 1;
                 grid-row: 2 / span 1;
             }
@@ -448,7 +428,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 grid-column: 1 / span 2;
                 grid-row: 1 / span 1;
                 text-align: left;
-                // margin-right: 3rem;
             }
 
             h4 {
@@ -499,11 +478,11 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 grid-column: 1 / span 4;
                 grid-row: 1 / span 1;
                 text-align: right;
-                margin-right: 3rem;
+                margin-right: $base-font-size*3;
                 margin-bottom: $margin-xxl;
             }
 
-            .content-card {
+            .article-content__container {
                 height: auto;
                 opacity: 1;
                 position: initial;
@@ -511,12 +490,12 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 align-self: center;
             }
 
-            .content-card:first-of-type {
+            .article-content__container:first-of-type {
                 grid-column: 2 / span 1;
                 grid-row: 2 / span 1; 
             }
 
-            .content-card:nth-of-type(2) {
+            .article-content__container:nth-of-type(2) {
                 grid-column: 3 / span 1;
                 grid-row: 2 / span 1; 
             }
@@ -534,14 +513,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             text-align: right;
             padding-top: 3rem;
             line-height: $line-heigh-md;
-    
-            @include xl {
-                font-size: $base-font-size;
-            }
-    
-            @include md {
-                font-size: $base-font-size;
-            }
         }    
     }
 
@@ -551,7 +522,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         transition: $transition;
         opacity: 0;
 
-        article {
+        .content-card-item {
             width: 80%;
             position: relative;
 
@@ -590,7 +561,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 }
             }  
                         
-            .border-bottom {
+            .content-card-item__border-bottom {
 
                 &.active {
                     position: absolute;
@@ -648,6 +619,85 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 width: 500px;
             }
         }    
+    }
+
+    @media (max-width: 500px) and (max-height: 900px) {
+        $line-left: 65%;
+
+        h2, h3 {
+            font-size: $base-font-size*1.5;
+        }
+
+        p { 
+            padding: $base-padding*3;
+            font-size: $base-font-size;
+        }
+
+        .section__content-wrap {
+            padding: 0 $base-padding*2;
+            width: 100%;
+
+            & > article:first-of-type {
+                margin: 0;
+                display: initial;
+
+                h3 {
+                    margin: 0;
+                    padding: $base-padding*3;
+                    text-align: left;
+                }
+
+                .grid {
+                    grid-template-columns: [col] 57% [col] auto;
+
+                    p, p[data-year] { 
+                        font-size: $base-font-size;
+                    }  
+                    
+                    .line[data-id="1"] {
+                        left: $line-left;
+                    }
+                }
+            }
+        }
+
+        figure.quote {
+            padding: 0;
+            margin-bottom: $base-margin*10;
+
+            h2 {
+                padding: $base-padding*1.5 0;
+            }
+
+            figcaption {
+                font-size: $base-font-size*0.7;
+            }
+        }
+
+        .content-card {
+            .content-card__image {
+                top: -70px;
+                right: -25%;
+                .content-card-item__image {
+                    width: 250px;
+                }
+            }
+
+            .content-card-item {
+                &.grid {
+                    display: initial;
+
+                    h3 {
+                        padding-top: $base-padding*12;
+                        padding-bottom: $base-font-size;
+                    }
+                }
+
+                &.border::before {
+                    border-width: 4px;
+                }
+            }
+        }  
     }
 }
 
