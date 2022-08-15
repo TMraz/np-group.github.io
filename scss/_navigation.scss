@@ -21,16 +21,16 @@ header {
                 filter: invert(100%);
             }
 
-            ul.primary-menu {
-                & > li.menu-item {
-                    &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
-                        a {
-                            font-weight: $font-weight-xl;
-                            transition: .1s;
-                        }
-                    }
-                }
-            }
+            // ul.primary-menu {
+            //     & > li.menu-item {
+            //         &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+            //             a {
+            //                 font-weight: $font-weight-xl;
+            //                 transition: .1s;
+            //             }
+            //         }
+            //     }
+            // }
 
             .primary-menu a {
                 color: $color-font;
@@ -50,7 +50,8 @@ header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        z-index: 5;
+        z-index: 50;
+        // position: relative;
     } 
 
     ul {
@@ -74,10 +75,17 @@ header {
 
 
     .site-navigation {
+        position: absolute;
+        top: 0;
+        right: 50px;
         text-transform: uppercase;
 
         ul.primary-menu {
+            margin-top: $base-margin*1.4;
+            margin-right: $base-margin*5;
             & > li.menu-item {
+                margin-right: 50px;
+
                 &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
                     cursor: $base-cursor;
                     background-color: $color-font-light;
@@ -147,20 +155,21 @@ header {
 
 /* === mobile navigation === */
 .site-menu-toggle{
-    position: fixed;
-    top: 5px;  
-    right: 20px;
-    width: 50px;   
-    height: 50px;
-    z-index: 30;
+    // position: fixed;
+    position: absolute;
+    top: 20px;  
+    right: $base-padding*2;
+    width: 30px;   
+    height: 40px;
+    z-index: 300;
     cursor: $base-cursor;
-    display: none;
+    // display: none;
 
     li.site-menu-toggle__item {
         position: absolute;
         left: 5%;
         transform: translateY(-50%);
-        height: 5px;  
+        height: 2px;  
         width: 90%;
         background: $color-font-light;
         transition: .9s;
@@ -174,11 +183,11 @@ ul.site-menu-toggle {
     }
 
     li.site-menu-toggle__item:nth-of-type(2) {
-        top: 50%;
+        top: 40%;
     }
 
     li.site-menu-toggle__item:nth-of-type(3) {
-        top: 80%;
+        top: 60%;
     }
 
     &.active {
@@ -203,9 +212,11 @@ ul.site-menu-toggle {
 .sidebar {
     position: fixed;
     top: 0; 
-    left: -670px;
+    // left: -670px;
+    right: -670px;
     background: #000;
-    width: 100vw;   
+    // width: 100vw; 
+    width: 20vw;  
     height: 100vh;
     box-sizing: border-box;
     margin: $margin-center-horizontal;
@@ -214,7 +225,8 @@ ul.site-menu-toggle {
     z-index: 10;
 
     &.active {
-        left: 0;
+        // left: 0;
+        right: 0;
     }
 
     .site-header__container {
@@ -223,26 +235,31 @@ ul.site-menu-toggle {
 
     ul.primary-menu {
         position: relative;
-        text-align: left;
+        text-align: right;
         width: 100%;
         padding: $base-padding*4 $base-padding*3;
+        margin-top: $base-margin*5;
 
         & > li.menu-item {
             display: block;
             color: $color-font-light;
+            margin-right: $base-margin*5;
+            border-bottom: 1px solid darken($color: $color-font-light, $amount: 50);
 
             a.menu-item-link {
                 display: inline-block;
                 position: relative;
                 text-decoration: none;  
                 color: $color-font-light;
-                font-size: $base-font-size*1.8;
+                font-size: $base-font-size*1.2;
                 width: 100%;  
                 padding: $base-padding 0;
                 box-sizing: border-box;
             }
 
-            &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+            // &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
+
+            &:active, &:focus, &:hover {
 
                 a.menu-item-link {
                     color: darken($color: $color-font-light, $amount: 40);
@@ -250,28 +267,28 @@ ul.site-menu-toggle {
                 }
             }
 
-            &:first-child, &:nth-child(2) {
-                font-weight: $font-weight-xxl;
-            }
+            // &:first-child, &:nth-child(2) {
+            //     font-weight: $font-weight-xxl;
+            // }
 
-            &:last-child {
-                width: 100%;
-                padding: $base-padding*2 0;
+            // &:last-child {
+            //     // width: 100%;
+            //     // padding: $base-padding*2 0;
 
-                a.menu-item-link.en {
-                    opacity: .5;
+            //     a.menu-item-link.en {
+            //         opacity: .5;
 
-                    &:active, &:focus, &:hover {
-                        opacity: 1;
-                    }
-                }
+            //         &:active, &:focus, &:hover {
+            //             opacity: 1;
+            //         }
+            //     }
 
-                a {
-                    display: inline;
-                    font-size: $base-font-size - .2rem;
-                    padding: $base-padding $base-padding/2;
-                }
-            }
+            //     a {
+            //         display: inline;
+            //         font-size: $base-font-size - .2rem;
+            //         padding: $base-padding $base-padding/2;
+            //     }
+            // }
         }
     }
 
@@ -302,7 +319,10 @@ ul.site-menu-toggle {
 // mediaQuery
 @media (min-width: 1024px) {
     .sidebar {
-        display: none;
+        // display: none;
+        .site-header__container {
+            display: none;
+        }
     }
 }
 

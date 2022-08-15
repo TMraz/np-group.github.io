@@ -86,20 +86,87 @@ introButtonFitness.addEventListener('mouseleave', introFitAnimationClose)
 // === scroll reveal ===
 ScrollReveal({
   // reset: true,
-  distance:'40px',
-  duration: 1500,
-  delay: 0
-});
+  distance:'60px',
+  duration: 2000,
+  delay: 100
+})
 
-  ScrollReveal().reveal('.main-title, .post-title, .paragraph, #reference, #contact .wrap-sm .card', { origin: 'bottom'});
+ScrollReveal().reveal('.reveal-btm', { origin: 'bottom'})
+ScrollReveal().reveal('.reveal-rght', { origin: 'right',  distance: '60px'})
 
+ScrollReveal().reveal('.reveal-offset', { viewOffset: {bottom: 80} })
+
+//track textMission
+const storyLinePointId1 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="1"]')
+const storyLinePointId2 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="2"]')
+const storyLinePointId3 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="3"]')
+const storyLinePointId4 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="4"]')
+const storyLinePointId5 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="5"]')
+
+const storyLineId1 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="1"]')
+const storyLineId2 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="2"]')
+const storyLineId3 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="3"]')
+const storyLineId4 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="4"]')
+const storyLineId5 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .line[data-id="5"]')
+
+const storyLineTextId1 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="1"]')
+const storyLineTextId2 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="2"]')
+const storyLineTextId3 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="3"]')
+const storyLineTextId4 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="4"]')
+const storyLineTextId5 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="5"]')
+const storyLineTextId6 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="6"]')
+const storyLineTextId7 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="7"]')
+const storyLineTextId8 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="8"]')
+const storyLineTextId9 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="9"]')
+const storyLineTextId10 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="10"]')
+
+const observeMe = document.querySelector('#about .section__content-wrap > article:first-of-type .grid')
+
+const observerAnimation = function(entries) {
+  entries.forEach(entry => {
+      //if the element is visible
+
+      if (entry.isIntersecting) {
+          storyLinePointId1.classList.add('active')
+          storyLineId1.classList.add('active')
+          storyLineTextId1.classList.add('active')
+          storyLineTextId6.classList.add('active')
+
+          storyLinePointId2.classList.add('active')
+          storyLineId2.classList.add('active')
+          storyLineTextId2.classList.add('active')
+          storyLineTextId7.classList.add('active')
+
+          storyLinePointId3.classList.add('active')
+          storyLineId3.classList.add('active')
+          storyLineTextId3.classList.add('active')
+          storyLineTextId8.classList.add('active')
+
+          storyLinePointId4.classList.add('active')
+          storyLineId4.classList.add('active')
+          storyLineTextId4.classList.add('active')
+          storyLineTextId9.classList.add('active')
+
+          storyLinePointId5.classList.add('active')
+          storyLineId5.classList.add('active')
+          storyLineTextId5.classList.add('active')
+          storyLineTextId10.classList.add('active')
+      }
+  })
+}
+
+const observer = new IntersectionObserver(observerAnimation, {
+  threshold: .3
+})
+
+observer.observe(observeMe)
 
 // === toggle menu ===
 
-document.querySelector('#site-menu-nav ul.site-menu-toggle').addEventListener('click', function () {
+document.querySelector('#site-navigation ul.site-menu-toggle').addEventListener('click', function () {
   // toggle navigation button
   this.classList.toggle('active')
-
+  document.querySelector('#menu-close').classList.toggle('menu-close')
   // toggle sidebar navigation pannel
   document.querySelector('#sidebar').classList.toggle('active')
 
