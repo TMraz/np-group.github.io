@@ -2,57 +2,11 @@
 @import 'breakpoints';
 
 #contact {
-    h1 {
-        font-size: $font-size-xl;
-        color: $color-font-light;
-        padding: $padding-xxl;
-        margin-top: $base-font-size*8;
-        text-align: center;
-
-        span {
-            color: $color-hover-highlight;
-            font-weight: $font-weight-lg;
-        }
-    }
-
-    h3 {
-        color: $color-font-light;
-        font-size: $font-size-lg;
-        font-weight: $font-weight-lg;
-        line-height: $line-heigh-md;
-        padding: $padding-xxl;
-    }
-
-    p {
-        padding: $padding-xxl;
-        font-size: $font-size-md;
-        color: $color-font-light;
-        line-height: $line-heigh-md;
-        font-weight: $font-weight-sm;
-
-        @include md {
-            padding: 2rem 0 1rem;
-            font-size: $base-font-size;
-        }
-
-        span {
-            a {
-                font-size: $font-size-md;
-                color: $color-hover-highlight;
-            }
-
-            &:hover, &:active, &:focus {
-                a {
-                    color: darken($color: $color-hover-highlight, $amount: 20);
-                }
-            }   
-        }
-    }
-
     &.container {
-        margin-top: -80px;
-        background: $color-bg-about;
-        padding-top: 80px;
+        background: url(../img/background_contact.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 80px 0;
 
         @include breakpoint($bp: 720px) {
             background-size: 300%;
@@ -61,7 +15,6 @@
     }
 
     .wrap {
-        height: 100%;
         margin-bottom: 100px;
 
         @include md {
@@ -69,33 +22,132 @@
         }
     }
 
-    .article-header__tools {
-        width: 100%;
-        margin: 0 $margin-center-horizontal;
+    .wrap-sm {
+        text-align: center;
+    }
 
-        ul.social-share__list {
-            text-align: center;
+    h1 {
+        text-align: center;
+        display: inline-block;
+        padding: 1rem 0;
+        font-size: $font-size-xl;
+        text-transform: uppercase;
+        font-weight: $font-weight-xxl;
+        letter-spacing: .1rem;
+        margin-bottom: 4rem;
+        position: relative;
 
-            li.social-share__item {
-                display: inline-block;
-                margin: 0 $margin-sm*2;
+        &::after {
+            content: '';
+            width: 75px;
+            height: 8px;
+            background-color: $color-hover;
+            position: absolute;
+            bottom: 5px;
+            left: 0;
 
-                i {
-                    filter: invert(1);
-                }
-
-                &:hover, &:active, &:focus {
-                    i {
-                        color: darken($color: $color-font-light, $amount: 50);
-                    }
-                }   
-
+            @include md {
+                width: 35px;
+                height: 5px;
+                bottom: 10px;
             }
+        }
 
+        @include md {
+            margin-bottom: 2rem;
+        }
+
+        @include sm {
+            font-size: $font-size-lg;
         }
     }
 
-    .article-content {
-        margin-bottom: $base-margin*8;
+    .card {
+        width: 300px;
+        height: 420px;
+        background-color: $color-bg;
+        text-align: center;
+        box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.25);
+
+        @include md {
+            height: 380px;
+        }
+
+        img {
+            @include md {
+                width: 100px;
+            }
+        }
+
+
+        h2 {
+            color: $color-font;
+            font-size: $font-size-md;
+            font-weight: $font-weight-lg;
+            text-transform: uppercase;
+            padding: 20px 0;
+        }
+
+        &.contact-company {
+            h2 {
+                font-size: 20px;
+                text-transform: initial;
+            }
+        }
+
+        li {
+            margin: 2rem 0;
+            a {
+                font-size: $font-size-md;
+
+                @include md {
+                    font-size: 1.3rem;
+                }
+            }
+
+            p {
+                font-size: $base-font-size;
+                line-height: $line-heigh-md;
+            }
+        }
+
+        ul.contact-phone {
+            li {
+                @include md {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        ul.contact-email {
+            margin-top: 40px;
+
+            li {
+                a {
+                    font-size: $base-font-size;
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+        ul.contact-address {
+            margin-top: 40px;
+
+            li {
+                font-size: $base-font-size;
+                margin: .5rem 0;
+            }    
+        }
+
+        ul.contact-company {
+            margin-top: 30px;
+
+            li {
+                font-size: $base-font-size;
+                margin: .5rem 0;
+                line-height: $line-heigh-md;
+            }    
+        }
+
     }
 }

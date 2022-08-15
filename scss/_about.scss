@@ -477,7 +477,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             h3 {
                 grid-column: 1 / span 4;
                 grid-row: 1 / span 1;
-                text-align: right;
+                text-align: left;
                 margin-right: $base-font-size*3;
                 margin-bottom: $margin-xxl;
             }
