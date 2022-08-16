@@ -57,8 +57,9 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         margin-top: 8rem;
 
         span {
-            color: $color-hover-highlight;
+            color: $color-font-light;
             font-weight: $font-weight-lg;
+            text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
         }
     }
 
@@ -86,15 +87,16 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         font-weight: $font-weight-sm;
 
         span {
-            color: $color-hover-highlight;
+            color: $color-font-light;
             font-weight: $font-weight-lg;
+            text-shadow: 0 0 10px #00b3ff;
         }
     }
 
     &.section {
         width: 100vw;
         margin-top: -80px;
-        background: $color-bg-about;
+        background: $color-bg;
         padding-top: $base-padding*8;
         overflow: hidden;
     }
