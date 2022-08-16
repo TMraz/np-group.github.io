@@ -10,36 +10,17 @@ header {
         top: 0;
         z-index: 999; 
         overflow: initial;
-        transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: .8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         
-        &.scroll-active {
-            background: $color-bg;
-            box-shadow: 0 3px 1rem rgba(0,0,0,.1);
-            height: 60px;
-
-            a.site-header__logo {
-                filter: invert(100%);
-            }
-
-            // ul.primary-menu {
-            //     & > li.menu-item {
-            //         &:active:not(:last-child), &:focus:not(:last-child), &:hover:not(:last-child) {
-            //             a {
-            //                 font-weight: $font-weight-xl;
-            //                 transition: .1s;
-            //             }
-            //         }
-            //     }
-            // }
-
-            .primary-menu a {
-                color: $color-font;
-            }
-
-            ul li.menu-item {
-                color: $color-font;
-            }
+        &.scroll-down {
+            transform: translateY(-100%);
         }
+
+        &.site-header__styled {
+            background: $color-bg-about;
+            border-bottom: 1px solid darken($color: $color-font-light, $amount: 50);
+        }
+
     } 
 
     .site-header__container {

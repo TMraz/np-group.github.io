@@ -1,3 +1,42 @@
+// ** HEADER **
+
+// === toggle menu ===
+document.querySelector('#site-navigation ul.site-menu-toggle').addEventListener('click', function () {
+  // toggle navigation button
+  this.classList.toggle('active')
+  document.querySelector('#menu-close').classList.toggle('menu-close')
+  // toggle sidebar navigation pannel
+  document.querySelector('#sidebar').classList.toggle('active')
+})
+
+// === hide/ show menu on scroll ===
+let lastScroll = 200
+
+window.addEventListener('scroll', function () {
+  const currentScroll = window.pageYOffset
+
+  if (currentScroll > lastScroll && !document.querySelector('header.site-header').classList.contains('scroll-down')) {
+    document.querySelector('header.site-header').classList.add('scroll-down')
+  }
+
+  if (currentScroll < lastScroll && document.querySelector('header.site-header').classList.contains('scroll-down')) {
+    document.querySelector('header.site-header').classList.remove('scroll-down')
+  }
+
+  if (currentScroll > document.querySelector('#home').offsetHeight) {
+    document.querySelector('header.site-header').classList.add('site-header__styled')
+  }
+
+  if (currentScroll < document.querySelector('#home').offsetHeight) {
+    document.querySelector('header.site-header').classList.remove('site-header__styled')
+  }
+
+
+
+  lastScroll = currentScroll
+})
+
+
 
 // ** HOME **
 const slider = document.querySelector('#home #intro-slider')
@@ -96,6 +135,9 @@ ScrollReveal().reveal('.reveal-rght', { origin: 'right',  distance: '60px'})
 
 ScrollReveal().reveal('.reveal-offset', { viewOffset: {bottom: 80} })
 
+
+// ** ABOUT **
+
 //track textMission
 const storyLinePointId1 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="1"]')
 const storyLinePointId2 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid .point[data-id="2"]')
@@ -155,20 +197,4 @@ const observerAnimation = function(entries) {
   })
 }
 
-const observer = new IntersectionObserver(observerAnimation, {
-  threshold: .3
-})
-
-observer.observe(observeMe)
-
-// === toggle menu ===
-
-document.querySelector('#site-navigation ul.site-menu-toggle').addEventListener('click', function () {
-  // toggle navigation button
-  this.classList.toggle('active')
-  document.querySelector('#menu-close').classList.toggle('menu-close')
-  // toggle sidebar navigation pannel
-  document.querySelector('#sidebar').classList.toggle('active')
-
-})
 

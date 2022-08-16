@@ -62,7 +62,7 @@
                 <li class="menu-item"><a href="#" class="menu-item-link">NP-TECH</a></li>
                 <li class="menu-item"><a href="#" class="menu-item-link">NP-FITNESS</a></li>
                 <li class="menu-item"><a href="#about" class="menu-item-link">O společnosti</a></li>
-                <li class="menu-item"><a href="contact.html" class="menu-item-link">Kontakt</a></li>
+                <li class="menu-item"><a href="#contact" class="menu-item-link">Kontakt</a></li>
                 <!-- <li class="menu-item">
                     <a href="index.html" class="menu-item-link cz">CZ</a>/<a href="index_en.html" class="menu-item-link en">EN</a>
                 </li> -->
@@ -166,21 +166,17 @@
             </div>            
         </section>
 
-        <section id="contact" class="container">
-            <div class="wrap">
-                <div class="wrap-sm">
-                    <h1 class="main-title">
-                        Kontakt
-                    </h1>
-                </div>
+        <section id="contact" class="section flex">
+            <div class="section__content-wrap">
+                <h3 class="reveal-btm reveal-offset">Kontakt</h3>
 
-                <div class="wrap-sm flex">
-                    <div class="card">
-                        <img src="img/phone_icon.svg" alt="phone_icon" width="125">
+                <div class="content__container flex reveal-offset">
+                    <div class="content-card">
+                        <img src="img/phone_icon.svg" alt="Phone icon." width="125" class="content-item__image">
     
                         <h2>Volejte</h2>
     
-                        <ul class="contact-phone">
+                        <ul class="content-item__phone">
                             <li>
                                 <a href="tel:+420605883085">+420 605 883 085</a>
                                 <p>Jakub Mráz</p>
@@ -193,12 +189,12 @@
                         </ul>
                     </div>
 
-                    <div class="card">
-                        <img src="img/email_icon.svg" alt="email_icon" width="125">
+                    <div class="content-card">
+                        <img src="img/email_icon.svg" alt="Email icon." width="125" class="content-item__image">
     
                         <h2>Email</h2>
     
-                        <ul class="contact-email">
+                        <ul class="content-item__email">
                             <li>
                                 <a href="mailto:jakub.mraz@np-group.cz">jakub.mraz@np-group.cz</a>
                             </li>
@@ -209,12 +205,12 @@
                         </ul>
                     </div>
 
-                    <div class="card">
-                        <img src="img/location_icon.svg" alt="address_icon" width="125">
+                    <div class="content-card">
+                        <img src="img/location_icon.svg" alt="Address icon." width="125" class="content-item__image">
     
                         <h2>Adresa</h2>
     
-                        <ul class="contact-address">
+                        <ul class="content-item__address">
                             <li>No Problem Group s.r.o.</li>
                             <li>Na výsluní 201/13</li>
                             <li>Strašnice</li>
@@ -222,12 +218,12 @@
                         </ul>
                     </div>
 
-                    <div class="card contact-company">
-                        <img src="img/company_icon.svg" alt="company_icon" width="125">
+                    <div class="content-card content-card__company">
+                        <img src="img/company_icon.svg" alt="Company icon." width="125" class="content-item__image">
     
                         <h2>No Problem Group s.r.o.</h2>
     
-                        <ul class="contact-company">
+                        <ul class="content-item__company">
                             <li>IČO: 11981954</li>
                             <li>DIČ (VAT): CZ11981954</li>
                             <li>DUNS: 496883576</li>
@@ -238,10 +234,10 @@
             </div>
         </section>
 
-        <footer class="site-footer container"> 
-            <div class="wrap flex">
-                <a href="#home" class="site-logo">
-                    <img src="./img/noproblem-full_logo.png" alt="np-group_logo" width="300"> 
+        <footer class="site-footer flex"> 
+            <div class="site-footer__wrap flex">
+                <a href="#home" class="site-footer__logo">
+                    <img src="./img/noproblem-full_logo.png" alt="np-group_logo" width="500"> 
                 </a>        
     
                 <ul class="services__list">
@@ -271,7 +267,7 @@
                         <a href="index.html">Domů</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="about.html">O společnosti</a>
+                        <a href="#about">O společnosti</a>
                     </li>
                     <li class="navigation__item">
                         <a href="#contact">Kontakt</a>
@@ -279,7 +275,7 @@
                 </ul>    
             </div>
 
-            <div class="footer-link__social">
+            <div class="footer-link__social flex">
                 <ul class="social-share__list">
                     <li class="social-share__item">
                         <a href="#" data-social="Share" data-social-action="Instagram" class="share-link">
@@ -294,8 +290,8 @@
                 </ul>
             </div>
 
-            <div class="copyright">
-                No Problem Group s.r.o. © <time datetime="2000"> 2021 │</time>
+            <div class="copyright flex">
+                No Problem Group s.r.o. © <time datetime="2000"> 2021</time>
             </div>
         </footer>  
 
