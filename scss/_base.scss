@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;800;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap);
-@import 'breakpoints';
 
 *,
 *:before,
@@ -34,61 +33,47 @@ a {
 }
 
 h1 {
-    font-size: $font-size-lg;
+    font-size: $base-font-size*2;
     font-weight: $font-weight-lg;
 }
 
 h2 {
-    font-size: $font-size-md;
+    font-size: $base-font-size*1.5;
     font-weight: $font-weight-lg;
 }
 
 h3 {
     font-size: $base-font-size + .2rem;
     font-weight: $font-weight-xl;
-
-    @include md {
-        font-size: $base-font-size;
-    }
 }
 
 h4 {
     font-size: $base-font-size + .1rem;
     font-weight: $font-weight-xl;
-
-    @include md {
-        font-size: $base-font-size;
-    }
-}
-
-p {
-    @include md {
-        font-size: $base-font-size - .2rem;
-    }
 }
 
 ul li {
     list-style-type: none;
 }
 
-.container {
-    width: 100vw;
-    background-color: $color-bg;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-}
+// .container {
+//     width: 100vw;
+//     background-color: $color-bg;
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     overflow: hidden;
+// }
 
-.wrap {
-    padding: 0 30px;
-    width: 98%;
-    max-width: 1400px;
+// .wrap {
+//     padding: 0 30px;
+//     width: 98%;
+//     max-width: 1400px;
 
-    @include sm {
-        padding: 0 20px;
-    }
-}
+//     @include sm {
+//         padding: 0 20px;
+//     }
+// }
 
 .flex {
     display: flex;
@@ -101,14 +86,14 @@ ul li {
     display: grid;
 }
 
-.card {
-    width: 300px;
-	height: 280px;
-    padding: $padding-xl $base-padding;
-    margin: $base-margin;
-	border-radius: 2px;
-    transition: $base-transition;
-}
+// .card {
+//     width: 300px;
+// 	height: 280px;
+//     padding: $padding-xl $base-padding;
+//     margin: $base-margin;
+// 	border-radius: 2px;
+//     transition: $base-transition;
+// }
 
 .pos-abs {
     position: absolute;
@@ -125,10 +110,10 @@ ul li {
     background-color: transparent;
     border: 1px solid $color-font-light;
     color: $color-font-light;
-    font-size: 1rem;
+    font-size: $base-font-size;
     font-weight: $font-weight-lg;
     letter-spacing: .15em;
-    padding: 18px 35px;
+    padding: $base-padding*1.8 $base-padding*3.5;
     text-transform: uppercase;
     transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
 
@@ -138,42 +123,55 @@ ul li {
         transition: $animation-hover;
         color: $color-font-hover;
     }
-
-    @include md {
-        padding: 16px 18px;
-    }
-
-    @include breakpoint($bp: 370px) {
-        padding: 14px 16px;
-    }
 }
 
-span.arrow {
-    transition: all .5s ease-out;
+// span.arrow {
+//     transition: all .5s ease-out;
     
-    &::after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        top: 45%;
-        right: 13px;
-        width: 7px;
-        height: 7px;
-        border-top: 1px solid $color-font;
-        border-right: 1px solid $color-font;
-        transform: rotate(135deg);
-        transition: all .5s;
+//     &::after {
+//         content: "";
+//         display: inline-block;
+//         position: absolute;
+//         top: 45%;
+//         right: 13px;
+//         width: 7px;
+//         height: 7px;
+//         border-top: 1px solid $color-font;
+//         border-right: 1px solid $color-font;
+//         transform: rotate(135deg);
+//         transition: all .5s;
 
-        @include xl {
-            top: 41%;
-            right: 11px;
-        }
+//         @include xl {
+//             top: 41%;
+//             right: 11px;
+//         }
+//     }
+// }
+
+// .flip {
+//     transform: rotate(180deg);
+//     transition: .2s;
+// }
+
+@media (max-width: 600px) {
+    h3, h4 {
+        font-size: $base-font-size;
+    }
+
+    p {
+        font-size: $base-font-size - .2rem;
+    }
+
+    .btn {
+        padding: $base-padding*1.6 $base-padding*1.8;
+
     }
 }
 
-.flip {
-    transform: rotate(180deg);
-    transition: .2s;
-}
+@media (max-width: 370px) {
+    .btn {
+        padding: $base-padding*1.4 $base-padding*1.6;
 
+    }
+}
 

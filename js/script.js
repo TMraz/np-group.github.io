@@ -197,4 +197,9 @@ const observerAnimation = function(entries) {
   })
 }
 
+const observer = new IntersectionObserver(observerAnimation, {
+  threshold: .3
+})
+
+observer.observe(observeMe)
 
