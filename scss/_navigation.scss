@@ -194,6 +194,7 @@ ul.site-menu-toggle {
     // left: -670px;
     right: -670px;
     background: #000;
+    border-left: 1px solid darken($color: $color-font-light, $amount: 80);
     // width: 100vw; 
     width: 20vw;  
     height: 100vh;

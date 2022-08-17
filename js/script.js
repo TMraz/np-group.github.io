@@ -1,3 +1,27 @@
+// ** GENERAL **
+
+// === scroll reveal ===
+ScrollReveal({
+  // reset: true,
+  distance:'60px',
+  duration: 2000,
+  delay: 100
+})
+
+ScrollReveal().reveal('.reveal-btm', { origin: 'bottom'})
+ScrollReveal().reveal('.reveal-rght', { origin: 'right',  distance: '60px'})
+
+ScrollReveal().reveal('.reveal-offset', { viewOffset: {bottom: 80} })
+
+// === scroll parallax ===
+window.addEventListener('scroll', function () {
+  const parallax = document.querySelector('#home .parallax')
+  let scrollPosition = window.pageYOffset
+
+  parallax.style.transform = 'translateY(' + scrollPosition * .4 + 'px)'
+})
+
+
 // ** HEADER **
 
 // === toggle menu ===
@@ -31,11 +55,8 @@ window.addEventListener('scroll', function () {
     document.querySelector('header.site-header').classList.remove('site-header__styled')
   }
 
-
-
   lastScroll = currentScroll
 })
-
 
 
 // ** HOME **
@@ -120,20 +141,23 @@ introButtonFitness.addEventListener('mousemove', introFitAnimationOpen)
 
 introButtonFitness.addEventListener('mouseleave', introFitAnimationClose)
 
-// ** GENERAL **
+// === hide/ show intro on scroll ===
+let lastScrollHome = 600
 
-// === scroll reveal ===
-ScrollReveal({
-  // reset: true,
-  distance:'60px',
-  duration: 2000,
-  delay: 100
+window.addEventListener('scroll', function () {
+  const currentScroll = window.pageYOffset*.5
+
+  if (currentScroll > lastScrollHome && !document.querySelector('#home .intro#intro-fitness').classList.contains('scroll-down')) {
+    document.querySelector('#home .intro#intro-fitness').classList.add('scroll-down')
+  }
+
+  if (currentScroll < lastScrollHome && document.querySelector('#home .intro#intro-fitness').classList.contains('scroll-down')) {
+    document.querySelector('#home .intro#intro-fitness').classList.remove('scroll-down')
+  }
+
+  console.log(currentScroll)
+  lastScrollHome = currentScroll
 })
-
-ScrollReveal().reveal('.reveal-btm', { origin: 'bottom'})
-ScrollReveal().reveal('.reveal-rght', { origin: 'right',  distance: '60px'})
-
-ScrollReveal().reveal('.reveal-offset', { viewOffset: {bottom: 80} })
 
 
 // ** ABOUT **

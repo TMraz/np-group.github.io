@@ -34,9 +34,12 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         width: 100%;
         height: 100vh;
         padding: 0;
-        background: linear-gradient(0deg, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 100%), linear-gradient(63deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 91%), url(../img/np_tech.jpg) no-repeat;
-        background-size: 125%;
-        background-position: left 123% center;
+        background-color: #000;
+        // background-image: url(../img/np_tech.png);
+        // background-repeat: no-repeat;
+        // background-size: contain;
+        // background-size: 125%;
+        // background-position: left 123% center;
         position: relative;
 
         .line {
@@ -61,19 +64,29 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
         }    
 
-        input {
-            -webkit-appearance: none;
-            width: 100%;
-            background: none;
-            z-index: 10;
+        // input {
+        //     -webkit-appearance: none;
+        //     width: 100%;
+        //     background: none;
+        //     z-index: 10;
 
-            &::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                width: 2px;
-                height: min(900px, 950px);
-                background: transparent;
-                cursor: col-resize;
-            }
+        //     &::-webkit-slider-thumb {
+        //         -webkit-appearance: none;
+        //         width: 2px;
+        //         height: min(900px, 950px);
+        //         background: transparent;
+        //         cursor: col-resize;
+        //     }
+        // }
+        .intro-slider__image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-image: url(../img/np_tech.png);
+            background-repeat: no-repeat;
+            background-size: contain;    
         }
 
         .image-slider {
@@ -82,11 +95,25 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(0deg, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 100%), linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 86%), url(../img/np-fitness.jpg) no-repeat;
-            background-position: right center;
-            background-size: cover;
+            background-color: #000;
+            // background-image: linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 95%), url(../img/np-fitness.png);
+            // background-position: right bottom;
+            // background-size: cover;
             clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
-            transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);                  
+            transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            
+            .image-slider__image {
+                width: 100%;
+                max-width: 1400px;
+                height: 100%;
+                max-height: 1150px;
+                background-image: linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 95%), url(../img/np-fitness.png);
+                background-position: right bottom;
+                background-size: cover; 
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
         }
     }
 
@@ -123,6 +150,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             top: 50%;
             left: 55%;
             z-index: 20;
+            transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
 
             .cover {
                 content: '';
@@ -132,7 +160,7 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 clip-path: polygon(0% 0, 100% 0, 78% 100%, 0% 100%);
                 width: 0%;
                 height: 90%;
-                background: linear-gradient(114deg, rgb(1, 4, 10) 0%, rgba(0,0,0,1) 100%);
+                background: #000;
                 z-index: 30;
                 visibility: hidden;
                 transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -142,15 +170,19 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
                     width: 90%;
                 }
             }
-        }
 
+            &.scroll-down {
+                opacity: 0;
+                transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
+            }
+        }
     }
 
     // mediaQuery
     @media (min-width: 2048px) and (min-height: 1535px) {
         .section__content-wrap {
-            background-size: cover;
-            background-position: left 100% center;
+            // background-size: cover;
+            // background-position: left 100% center;
 
             .line {
                 transform: rotate(17.5deg);
@@ -178,7 +210,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             &#intro-fitness {
                 .cover {
                     clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #02060e 0%, #000 111%);
                     transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
 
                     &.active {
@@ -196,8 +227,8 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 960px) {
         .section__content-wrap {
-            background-size: 90%;
-            background-position: left -180% center;
+            // background-size: 90%;
+            // background-position: left -180% center;
 
             .line {
                 transform: rotate(25.5deg);
@@ -228,7 +259,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             &#intro-fitness {
                 .cover {
                     clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #010204 0%, #000 111%);
                     transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
 
                     &.active {
@@ -246,8 +276,8 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 1199px) {
         .section__content-wrap {
-            background-size: cover;
-            background-position: left 200% center;
+            // background-size: cover;
+            // background-position: left 200% center;
 
             .line {
                 transform: rotate(21deg);
@@ -265,7 +295,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         .intro {
             &#intro-fitness {
                 .cover {
-                    background: linear-gradient(114deg, #02060e 0%, #000 111%);
                     transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
                 }
             }    
@@ -279,8 +308,8 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 1439px) {
         .section__content-wrap {
-            background-size: cover;
-            background-position: left 50% center;
+            // background-size: cover;
+            // background-position: left 50% center;
 
             .line {
                 transform: rotate(17.5deg);
@@ -298,7 +327,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         .intro {
             &#intro-fitness {
                 .cover {
-                    background: linear-gradient(114deg, #02060e 0%, #000 111%);
                     transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
                 }
             }    
@@ -307,8 +335,8 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     @media (min-width: 1880px) and (max-width: 1919px) and (min-height: 850px) {
         .section__content-wrap {
-            background-size: 90%;
-            background-position: left -180% center;
+            // background-size: 90%;
+            // background-position: left -180% center;
 
             .line {
                 transform: rotate(26.5deg);
@@ -329,7 +357,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         .intro {
             &#intro-fitness {
                 .cover {
-                    background: linear-gradient(114deg, #010204 0%, #000 111%);
                     transition: .55s cubic-bezier(0.39, 0.575, 0.565, 1);
                 }
             }    
@@ -368,7 +395,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             &#intro-fitness {
                 .cover {
                     clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #010308 0%, #000 111%);
                     transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
 
                     &.active {
@@ -406,7 +432,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             &#intro-fitness {
                 .cover {
                     clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #02060e 0%, #000 111%);
                     transition: .85s cubic-bezier(0.39, 0.575, 0.565, 1);
 
                     &.active {
