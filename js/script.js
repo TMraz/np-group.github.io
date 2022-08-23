@@ -12,13 +12,17 @@ ScrollReveal().reveal('.reveal-btm', { origin: 'bottom'})
 ScrollReveal().reveal('.reveal-rght', { origin: 'right',  distance: '60px'})
 
 ScrollReveal().reveal('.reveal-offset', { viewOffset: {bottom: 80} })
+ScrollReveal().reveal('.reveal-delay-2', { delay: '200' })
+ScrollReveal().reveal('.reveal-delay-3', { delay: '300' })
+ScrollReveal().reveal('.reveal-delay-4', { delay: '400' })
 
 // === scroll parallax ===
 window.addEventListener('scroll', function () {
-  const parallax = document.querySelector('#home .parallax')
+  const parallaxHome = document.querySelector('#home .parallax')
+
   let scrollPosition = window.pageYOffset
 
-  parallax.style.transform = 'translateY(' + scrollPosition * .4 + 'px)'
+  parallaxHome.style.transform = 'translateY(' + scrollPosition * .4 + 'px)'
 })
 
 
@@ -32,31 +36,35 @@ document.querySelector('#site-navigation ul.site-menu-toggle').addEventListener(
   // toggle sidebar navigation pannel
   document.querySelector('#sidebar').classList.toggle('active')
 })
+  // on scroll hide sidebar navigation pannel
+window.addEventListener('scroll', function () {
+  document.querySelector('#sidebar').classList.remove('active')
+})
 
 // === hide/ show menu on scroll ===
 let lastScroll = 200
 
-window.addEventListener('scroll', function () {
-  const currentScroll = window.pageYOffset
+// window.addEventListener('scroll', function () {
+//   const currentScroll = window.pageYOffset
 
-  if (currentScroll > lastScroll && !document.querySelector('header.site-header').classList.contains('scroll-down')) {
-    document.querySelector('header.site-header').classList.add('scroll-down')
-  }
+//   if (currentScroll > lastScroll && !document.querySelector('header.site-header').classList.contains('scroll-down')) {
+//     document.querySelector('header.site-header').classList.add('scroll-down')
+//   }
 
-  if (currentScroll < lastScroll && document.querySelector('header.site-header').classList.contains('scroll-down')) {
-    document.querySelector('header.site-header').classList.remove('scroll-down')
-  }
+//   if (currentScroll < lastScroll && document.querySelector('header.site-header').classList.contains('scroll-down')) {
+//     document.querySelector('header.site-header').classList.remove('scroll-down')
+//   }
 
-  if (currentScroll > document.querySelector('#home').offsetHeight) {
-    document.querySelector('header.site-header').classList.add('site-header__styled')
-  }
+//   if (currentScroll > document.querySelector('#home').offsetHeight) {
+//     document.querySelector('header.site-header').classList.add('site-header__styled')
+//   }
 
-  if (currentScroll < document.querySelector('#home').offsetHeight) {
-    document.querySelector('header.site-header').classList.remove('site-header__styled')
-  }
+//   if (currentScroll < document.querySelector('#home').offsetHeight) {
+//     document.querySelector('header.site-header').classList.remove('site-header__styled')
+//   }
 
-  lastScroll = currentScroll
-})
+//   lastScroll = currentScroll
+// })
 
 
 // ** HOME **
@@ -155,7 +163,7 @@ window.addEventListener('scroll', function () {
     document.querySelector('#home .intro#intro-fitness').classList.remove('scroll-down')
   }
 
-  console.log(currentScroll)
+  // console.log(currentScroll)
   lastScrollHome = currentScroll
 })
 
@@ -186,12 +194,14 @@ const storyLineTextId8 = document.querySelector('#about .section__content-wrap >
 const storyLineTextId9 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="9"]')
 const storyLineTextId10 = document.querySelector('#about .section__content-wrap > article:first-of-type .grid p[data-id="10"]')
 
-const observeMe = document.querySelector('#about .section__content-wrap > article:first-of-type .grid')
+// const observeMe = document.querySelector('#about .section__content-wrap > article:first-of-type .grid')
 
+const sections = document.querySelectorAll('section')
+
+// observe if visible
 const observerAnimation = function(entries) {
   entries.forEach(entry => {
       //if the element is visible
-
       if (entry.isIntersecting) {
           storyLinePointId1.classList.add('active')
           storyLineId1.classList.add('active')
@@ -220,10 +230,38 @@ const observerAnimation = function(entries) {
       }
   })
 }
+// observe navbar
+const options = {
+  // root: document.body,
+  rootMargin: '0px',
+  threshold: 0
+}
 
-const observer = new IntersectionObserver(observerAnimation, {
-  threshold: .3
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (entry.target.id == 'about') {
+        document.querySelector('header.site-header').classList.add('changeColor')
+      } else {
+        document.querySelector('header.site-header').classList.remove('changeColor')
+      }
+      // console.log(entry.target.id)
+      // document.querySelector('header.site-header').classList.add('changeColor')
+    } 
+    // else {
+    //   document.querySelector('header.site-header').classList.remove('changeColor')
+    // }
+  })
+}, options)
+
+
+// const observer = new IntersectionObserver(observerAnimation, {
+//   threshold: .3
+// })
+
+
+// observer.observe(observeMe)
+
+sections.forEach((section) => {
+  observer.observe(section)
 })
-
-observer.observe(observeMe)
-

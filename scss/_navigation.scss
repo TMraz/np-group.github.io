@@ -14,9 +14,22 @@ header {
             transform: translateY(-100%);
         }
 
-        &.site-header__styled {
-            background: $color-bg;
-            border-bottom: 1px solid darken($color: $color-font-light, $amount: 50);
+        // &.site-header__styled {
+        //     background: $color-bg;
+        //     border-bottom: 1px solid darken($color: $color-font-light, $amount: 50);
+        // }
+
+        // &.site-header__styled-light {
+        //     background: $color-bg-light;
+        //     border-bottom: none;
+        //     color: $color-font;
+        // }
+
+        &.changeColor {
+            background: $color-bg-light;
+            background: red;
+            border-bottom: none;
+            color: $color-font;
         }
 
     } 
@@ -244,6 +257,7 @@ ul.site-menu-toggle {
                 a.menu-item-link {
                     color: darken($color: $color-font-light, $amount: 40);
                     transition: 0.4s;
+                    transform: translateX(1%);
                 }
             }
 
