@@ -2,22 +2,7 @@
 /* == transition == */
 $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-#menu-close {
-    visibility: hidden;
-    transition: $transition;
-
-    &.menu-close {
-        visibility: visible;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,.4);
-        z-index: 30;
-        transition: $transition;
-    }    
-}
+$line-rotation: rotate(0deg);
 
 #home {
     &.section {
@@ -35,11 +20,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         height: 100vh;
         padding: 0;
         background-color: #000;
-        // background-image: url(../img/np_tech.png);
-        // background-repeat: no-repeat;
-        // background-size: contain;
-        // background-size: 125%;
-        // background-position: left 123% center;
         position: relative;
 
         .line {
@@ -64,20 +44,6 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
         }    
 
-        // input {
-        //     -webkit-appearance: none;
-        //     width: 100%;
-        //     background: none;
-        //     z-index: 10;
-
-        //     &::-webkit-slider-thumb {
-        //         -webkit-appearance: none;
-        //         width: 2px;
-        //         height: min(900px, 950px);
-        //         background: transparent;
-        //         cursor: col-resize;
-        //     }
-        // }
         .intro-slider__image {
             width: 100%;
             height: 100%;
@@ -96,9 +62,8 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             width: 60%;
             height: 100%;
             background-color: #000;
-            // background-image: linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 95%), url(../img/np-fitness.png);
-            // background-position: right bottom;
-            // background-size: cover;
+
+            background-color: red;
             clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
             transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
             
@@ -181,11 +146,8 @@ $transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     // mediaQuery
     @media (min-width: 2048px) and (min-height: 1535px) {
         .section__content-wrap {
-            // background-size: cover;
-            // background-position: left 100% center;
-
             .line {
-                transform: rotate(17.5deg);
+                transform: $line-rotation;
 
                 &.active-tech {
                     left: calc(100vw - 14.5%);

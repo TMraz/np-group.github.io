@@ -8,30 +8,41 @@ header {
         top: 0;
         z-index: 999; 
         overflow: initial;
-        transition: .8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        
+        &.site-header__styled {
+            background: $color-bg-light;
+            box-shadow: darken($color: $color-bg-light, $amount: 3) 0px 0px 14px;
+
+            ul {
+                li.menu-item {
+                    color: $color-font;
+
+                    a {
+                        color: $color-font;
+                    }
+                }
+            }
+
+            img {
+                filter: invert(1);
+                transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            .site-menu-toggle {
+                li.site-menu-toggle__item {
+                    background: $color-font;
+
+                    &.active_styled {
+                        background: $color-font-light;
+                    }            
+                }
+            }
+        }
         
         &.scroll-down {
             transform: translateY(-100%);
         }
-
-        // &.site-header__styled {
-        //     background: $color-bg;
-        //     border-bottom: 1px solid darken($color: $color-font-light, $amount: 50);
-        // }
-
-        // &.site-header__styled-light {
-        //     background: $color-bg-light;
-        //     border-bottom: none;
-        //     color: $color-font;
-        // }
-
-        &.changeColor {
-            background: $color-bg-light;
-            background: red;
-            border-bottom: none;
-            color: $color-font;
-        }
-
     } 
 
     .site-header__container {
@@ -64,7 +75,6 @@ header {
             }
         }
     } 
-
 
     .site-navigation {
         position: absolute;
@@ -204,22 +214,22 @@ ul.site-menu-toggle {
 .sidebar {
     position: fixed;
     top: 0; 
-    // left: -670px;
     right: -670px;
     background: #000;
     border-left: 1px solid darken($color: $color-font-light, $amount: 80);
-    // width: 100vw; 
     width: 20vw;  
     height: 100vh;
     box-sizing: border-box;
     margin: $margin-center-horizontal;
     text-align: center;
+    visibility: hidden;
+    z-index: 30;
     transition: .9s;
-    z-index: 10;
 
     &.active {
-        // left: 0;
+        visibility: visible;
         right: 0;
+        transition: .9s;
     }
 
     .site-header__container {
