@@ -9,6 +9,7 @@ $line-rotation: rotate(0deg);
         width: 100vw;
         height: 100vh;
         min-height: 500px;
+        max-height: 1440px;
         margin-top: -80px;
         background-color: #000;
         overflow: hidden;
@@ -17,7 +18,9 @@ $line-rotation: rotate(0deg);
 
     .section__content-wrap {
         width: 100%;
+        max-width: 2560px;
         height: 100vh;
+        max-height: 100%;
         padding: 0;
         background-color: #000;
         position: relative;
@@ -62,8 +65,6 @@ $line-rotation: rotate(0deg);
             width: 60%;
             height: 100%;
             background-color: #000;
-
-            background-color: red;
             clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
             transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
             
@@ -144,495 +145,231 @@ $line-rotation: rotate(0deg);
     }
 
     // mediaQuery
-    @media (min-width: 2048px) and (min-height: 1535px) {
+    // *******
+    @media (max-aspect-ratio: 9/3) { 
         .section__content-wrap {
             .line {
-                transform: $line-rotation;
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(5.6deg);
-                }
+                transform: rotate(26deg);
+                height: 135%;
+                top: -17%;
 
                 &.active-fit {
-                    transform: rotate(26.5deg);
+                    transform: rotate(36.8deg);
+                    left: 25.4%;
                 }
-            }
-        }
-
-        .intro {
-            h1 {
-                font-size: $base-font-size*4.3;
-                margin-bottom: $base-font-size;
-            }
-
-            h2 {
-                margin-bottom: $base-font-size*4;
-            }
-            &#intro-fitness {
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 107%;
-                    }
-                }
-            }    
-        }
-
-        .btn {
-            font-size: $base-font-size*1.2;
-        }
-
-    }
-
-    @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 960px) {
-        .section__content-wrap {
-            // background-size: 90%;
-            // background-position: left -180% center;
-
-            .line {
-                transform: rotate(25.5deg);
-                height: 130%;
-                top: -15%;
 
                 &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(7.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(36.5deg);
+                    transform: rotate(9deg);
+                    left: 85.5%;
                 }
             }
-        }
-
-        .intro {
-            h1 {
-                font-size: $base-font-size*4.3;
-                margin-bottom: $base-font-size;
-            }
-
-            h2 {
-                margin-bottom: $base-font-size*4;
-            }
-
-            &#intro-fitness {
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 107%;
-                    }
-                }
-            }    
-        }
-
-        .btn {
-            font-size: $base-font-size*1.2;
-        }
-
-    }
-
-    @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 1199px) {
-        .section__content-wrap {
-            // background-size: cover;
-            // background-position: left 200% center;
-
-            .line {
-                transform: rotate(21deg);
-
-                &.active-tech {
-                    transform: rotate(5.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(30.5deg);
-                }
-            }
-        }
-
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
-        }
-
-        .btn {
-            font-size: $base-font-size*1.2;
-        }
-
-    }
-
-    @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 1439px) {
-        .section__content-wrap {
-            // background-size: cover;
-            // background-position: left 50% center;
-
-            .line {
-                transform: rotate(17.5deg);
-
-                &.active-tech {
-                    transform: rotate(5.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(26.5deg);
-                }
-            }
-        }
-
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
         }
     }
 
-    @media (min-width: 1880px) and (max-width: 1919px) and (min-height: 850px) {
+    @media (max-aspect-ratio: 4/2) { 
         .section__content-wrap {
-            // background-size: 90%;
-            // background-position: left -180% center;
-
             .line {
-                transform: rotate(26.5deg);
-                height: 130%;
-                top: -15%;
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(8.6deg);
-                }
+                transform: rotate(25deg);
+                height: 125%;
+                top: -13%;
 
                 &.active-fit {
-                    transform: rotate(37.8deg);
+                    transform: rotate(35.8deg);
+                    left: 25.8%;
+                }
+
+                &.active-tech {
+                    transform: rotate(8deg);
+                    left: 85.5%;
                 }
             }
-        }
-
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    transition: .55s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
         }
     }
 
-    @media (min-width: 1600px) and (max-width: 1919px) and (min-height: 1023px) {
+    @media (max-aspect-ratio: 17/9) { //1,9
         .section__content-wrap {
-            background-size: 120%;
-            background-position: left 150% center;
-
-            .line {
-                transform: rotate(21deg);
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(6.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(30.5deg);
-                }
-            }
-        }
-
-        .intro {
-            h1 {
-                font-size: $base-font-size*3.5;
-                margin-bottom: $base-font-size;
-            }
-
-            h2 {
-                margin-bottom: $base-font-size*4;
-            }
-
-            &#intro-fitness {
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 103%;
-                    }
-                }
-            }    
-        }
-
-    }
-
-    @media (min-width: 1600px) and (max-width: 1919px) and (min-height: 1199px) {
-        .section__content-wrap {
-            background-size: cover;
-            background-position: left 100% center;
-
-            .line {
-                transform: rotate(18deg);
-
-                &.active-tech {
-                    transform: rotate(5.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(26.5deg);
-                }
-            }
-        }
-
-        .intro {
-            h1 {
-                font-size: $base-font-size*3.7;
-            }
-
-            &#intro-fitness {
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    transition: .85s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 107%;
-                    }
-                }
-            }    
-        }
-
-    }
-
-    @media (min-width: 1360px) and (max-width: 1599px) and (min-height: 765px) {
-        .section__content-wrap {
-            background-size: 120%;
-            background-position: left 150% center;
-
             .line {
                 transform: rotate(23deg);
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(6.6deg);
-                }
+                height: 125%;
+                top: -13%;
 
                 &.active-fit {
-                    transform: rotate(33.5deg);
+                    transform: rotate(33.8deg);
+                    left: 25.8%;
                 }
-            }
-        }
-
-        .intro {
-            &#intro-tech {
-                left: 30%;
-            }
-
-            &#intro-fitness {
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #010308 0%, #000 111%);
-                    transition: .88s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 89%;
-                    }
-                }
-            }    
-        }
-
-    }
-
-    @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 765px) {
-        .section__content-wrap {
-            background-size: cover;
-            background-position: left 400% center;
-
-            .line {
-                transform: rotate(22deg);
 
                 &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(6.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(32deg);
+                    transform: rotate(7.6deg);
+                    left: 85.5%;
                 }
             }
         }
-
-        .intro {
-            &#intro-tech {
-                left: 30%;
-            }
-
-            &#intro-fitness {
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #01050c 0%, #000 111%);
-                    transition: .88s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 89%;
-                    }
-                }
-            }    
-        }
-
     }
 
-    @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 799px) {
-        .section__content-wrap {
-            background-position: left 200% center;
+    // @media (max-aspect-ratio: 16/9) { //1,8
+    //     .section__content-wrap {
+    //         .line {
+    //             // transform: rotate(23deg);
 
+    //             // &.active-fit {
+    //             //     transform: rotate(33.8deg);
+    //             //     left: 25.8%;
+    //             // }
+
+    //             // &.active-tech {
+    //             //     transform: rotate(7.6deg);
+    //             //     left: 85.5%;
+    //             // }
+    //         }
+    //     }
+    // }
+
+    @media (max-aspect-ratio: 17/10) { //1,7
+        .section__content-wrap {
             .line {
                 transform: rotate(21deg);
 
                 &.active-fit {
-                    transform: rotate(31deg);
+                    transform: rotate(30.8deg);
+                }
+
+                &.active-tech {
+                    transform: rotate(6.6deg);
+                    // left: 85.5%;
                 }
             }
         }
-
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    transition: .9s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
-        }
-
     }
 
-    @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 959px) {
+    // @media (max-aspect-ratio: 16/10) { //1,6
+    //     .section__content-wrap {
+    //         .line {
+    //             // transform: rotate(21deg);
+
+    //             // &.active-fit {
+    //             //     transform: rotate(30.8deg);
+    //             // }
+
+    //             // &.active-tech {
+    //             //     transform: rotate(6.6deg);
+    //             //     left: 85.5%;
+    //             // }
+    //         }
+    //     }
+    // }
+
+    @media (max-aspect-ratio: 9/6) { //1,5
         .section__content-wrap {
-            background-position: left 100% center;
-
             .line {
-                transform: rotate(17deg);
-
-                &.active-tech {
-                    transform: rotate(5.6deg);
-                }
+                transform: rotate(19deg);
 
                 &.active-fit {
-                    transform: rotate(26deg);
+                    transform: rotate(27.8deg);
                 }
-            }
-        }
-
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    transition: .9s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
-        }
-
-    }
-
-    @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 1023px) {
-        .section__content-wrap {
-            background-position: left 100% center;
-
-            .line {
-                transform: rotate(17deg);
 
                 &.active-tech {
                     transform: rotate(5.6deg);
+                    // left: 85.5%;
                 }
+            }
+        }
+    }
+
+    @media (max-aspect-ratio: 4/3) { //1,3
+        .section__content-wrap {
+            .line {
+                transform: rotate(16.5deg);
 
                 &.active-fit {
                     transform: rotate(25deg);
                 }
+
+                // &.active-tech {
+                //     transform: rotate(5.6deg);
+                //     left: 85.5%;
+                // }
             }
         }
-
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    transition: .9s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
-        }
-
     }
 
-    @media (min-width: 1024px) and (max-width: 1279px) {
+    @media (max-aspect-ratio: 5/4) { //1,25
         .section__content-wrap {
-            background-size: cover;
-            background-position: left 90% center;
-
             .line {
-                transform: rotate(17deg);
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(5.6deg);
-                }
+                // transform: rotate(16.5deg);
 
                 &.active-fit {
-                    transform: rotate(26.5deg);
+                    transform: rotate(24.5deg);
+                }
+
+                &.active-tech {
+                    transform: rotate(5deg);
+                    // left: 85.5%;
                 }
             }
         }
+    }
 
-        .intro {
-            &#intro-tech {
-                left: 29%;
-            }
+    @media (max-aspect-ratio: 6/5) { //1,25
+        .section__content-wrap {
+            .line {
+                transform: rotate(15.5deg);
 
-            &#intro-fitness {
-                left: 51%;
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #010610 0%, #000 111%);
-                    transition: .95s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 89%;
-                    }
+                &.active-fit {
+                    transform: rotate(23.5deg);
                 }
-            }    
-        }
 
+                // &.active-tech {
+                //     transform: rotate(5deg);
+                //     left: 85.5%;
+                // }
+            }
+        }
     }
 
-    @media (max-width: 1023px) {
-        &.section {
-            margin-top: -60px;
+    // @media (max-aspect-ratio: 7/6) { //1,17
+    //     .section__content-wrap {
+    //         .line {
+    //             transform: rotate(15.5deg);
+
+    //             &.active-fit {
+    //                 transform: rotate(23.5deg);
+    //             }
+
+    //             &.active-tech {
+    //                 transform: rotate(5deg);
+    //                 left: 85.5%;
+    //             }
+    //         }
+    //     }
+    // }
+
+    @media (max-aspect-ratio: 1/1) { 
+        .section__content-wrap {
+            .line {
+                transform: rotate(13.5deg);
+
+                &.active-fit {
+                    transform: rotate(20.5deg);
+                }
+
+                &.active-tech {
+                    transform: rotate(4deg);
+                }
+            }
         }
-
-        .intro {
-            h1 {
-                font-size: $base-font-size + .8rem;
-                transform: translate(0);
-            }
-
-            h2 {
-                font-size: $base-font-size - .2rem;
-                opacity: 1;
-            }
-
-            &#intro-tech {
-                left: 24%;
-            }
-        }    
-
-        .btn {
-            font-size: $base-font-size - .2rem;
-        }
-
     }
 
-    @media (max-width: 900px) and (min-height: 851px) {
+    @media (max-aspect-ratio: 8/9) {
         .section__content-wrap {
             display: grid;
             grid-template-columns: [col] 100%;
             grid-template-rows: [row-1] 55% [row-2] 45%; 
             background: #000;
+
+            .intro-slider__image {
+                background-size: 35%;
+            }
+    
         }
 
         .line {
@@ -655,9 +392,6 @@ $line-rotation: rotate(0deg);
 
                 grid-column: 1 / span 1;
                 grid-row: 1 / span 1;
-                background: linear-gradient(0deg, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 100%), linear-gradient(63deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 91%), url(../img/np_tech.jpg) no-repeat;
-                background-size: cover;
-                background-position: left 44% center;
                 border-bottom: 3px solid #afafaf;
 
                 display: flex;
@@ -687,7 +421,9 @@ $line-rotation: rotate(0deg);
 
                 grid-column: 1 / span 1;
                 grid-row: 2 / span 1;
-                background: linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,1) 100%), linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 86%), url(../img/np-fitness.jpg) no-repeat;
+                background: linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,1) 100%), linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 86%), url(../img/np-fitness.png) no-repeat;
+
+                background-color: #000;
                 background-position: left 53% center;
                 background-size: cover;
 
@@ -720,241 +456,1028 @@ $line-rotation: rotate(0deg);
 
     }
 
-    @media (max-width: 1023px) and (max-height: 850px) {
-        .intro {
-            &#intro-tech {
-                left: 29%;
-            }
-
-            &#intro-fitness {
-                .cover {
-                    top: 11%;
-                    clip-path: polygon(0% 0, 100% 0, 85% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #000712 0%, #000 111%);
-                    height: 108%;
-                    transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 115%;
-                    }
-                }
-            }    
-        }
-
+    @media (max-width: 1024px) {
         .section__content-wrap {
-            background-size: cover;
-            background-position: left 80% center;
-
             .line {
-                transform: rotate(17deg);
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(5.6deg);
-                }
+                transform: rotate(17.5deg);
 
                 &.active-fit {
-                    transform: rotate(25.5deg);
+                    transform: rotate(26deg);
+                }
+            }
+        }
+
+        .intro#intro-fitness .cover {
+            clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+
+            &.active {
+                transition-duration: .9s;
+                width: 95%;
+            }
+        }
+
+        .intro {
+            h1 {
+                font-size: $base-font-size * 2.3;
+            }
+
+            h2 {
+                font-size: $base-font-size * 1.2;
+            }
+        }
+
+        .intro#intro-tech {
+            left: 34.5%;
+        }    
+
+        .btn {
+            font-size: $base-font-size * .8;
+            padding: $base-padding*1.5 $base-padding*3.2;
+        }
+    }
+
+    @media (max-width: 1600px) {
+        .section__content-wrap {
+            .image-slider {
+                .image-slider__image {
+                    background-size: auto 100%;
+                    background-repeat: no-repeat;
+
                 }
             }
         }
     }
 
-    @media (max-width: 900px) and (max-height: 850px) {
-        .intro {
-            &#intro-tech {
-                left: 27%;
+    @media (max-width: 900px) {
+        .section__content-wrap {
+            .line {
+                transform: rotate(15.5deg);
+
+                &.active-fit {
+                    transform: rotate(23deg);
+                }
+            }
+
+            .image-slider {
+                .image-slider__image {
+                    background-size: auto 88%;
+                }
             }
         }
 
-        .section__content-wrap {
-            background-position: left 70% center;
+        .intro#intro-fitness {
+            left: 52%;
+        }
 
+        .intro#intro-tech {
+            left: 30%;
+        }  
+    }
+
+    @media (max-width: 800px) {
+        .section__content-wrap {
             .line {
-                transform: rotate(15deg);
+                transform: rotate(13.5deg);
+
+                &.active-fit {
+                    transform: rotate(20deg);
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .intro#intro-fitness .cover {
+            clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+
+            &.active {
+                transition-duration: .9s;
+                width: 90%;
+            }
+        }
+    }
+
+    @media (min-width: 1300px) {
+        .intro#intro-fitness .cover {
+            clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+
+            &.active {
+                transition-duration: .9s;
+                width: 105%;
+            }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .intro#intro-fitness .cover {
+            transition-duration: .9s;
+            clip-path: polygon(0% 0, 100% 0, 85% 100%, 0% 100%);
+
+            &.active {
+                transition-duration: .9s;
+                width: 120%;
+            }
+        }
+
+        .intro#intro-tech {
+            left: 37%;
+        }    
+    }
+
+    @media (min-width: 1700px) {
+        .intro#intro-fitness .cover {
+            transition-duration: .8s;
+            clip-path: polygon(0% 0, 100% 0, 90% 100%, 0% 100%);
+
+            &.active {
+                transition-duration: .9s;
+                width: 150%;
+            }
+        }
+
+        .intro#intro-tech {
+            left: 37%;
+        }    
+    }
+
+    @media (min-width: 2500px) {
+        .intro#intro-fitness .cover {
+            transition-duration: .9s;
+            clip-path: polygon(0% 0, 100% 0, 90% 100%, 0% 100%);
+
+            &.active {
+                width: 150%;
+            }
+        }
+
+        .intro#intro-tech {
+            left: 40%;
+        }    
+    }
+
+    @media (min-width: 2561px) {
+        .section__content-wrap {
+            .line {
+                transform: rotate(15.5deg);
+
+                &.active-fit {
+                    transform: rotate(24deg);
+                }
 
                 &.active-tech {
                     transform: rotate(4.6deg);
                 }
 
-                &.active-fit {
-                    transform: rotate(22.4deg);
-                }
             }
         }
     }
 
-    @media (max-width: 1023px) and (max-height: 700px) {
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    top: 11%;
-                    clip-path: polygon(0% 0, 100% 0, 88% 100%, 0% 100%);
-                    height: 108%;
-                    transition: .7s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 115%;
-                    }
-                }
-            }    
-        }
-
+    @media (min-width: 3001px) {
         .section__content-wrap {
             .line {
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(6.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(29deg);
-                }
-            }
-        }
-    }
-
-    @media (max-width: 900px) and (max-height: 700px) {
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    clip-path: polygon(0% 0, 100% 0, 85% 100%, 0% 100%);
-                    background: linear-gradient(114deg, #01060e 0%, #000 111%);
-                    transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
-        }
-
-        .section__content-wrap {
-            background-size: cover;
-            background-position: left 100% center;
-
-            .line {
-                transform: rotate(17deg);
-
-                &.active-tech {
-                    transform: rotate(5.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(25.4deg);
-                }
-            }
-        }
-    }
-
-    @media (max-width: 1023px) and (max-height: 600px) {
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    top: 11%;
-                    clip-path: polygon(0% 0, 100% 0, 88% 100%, 0% 100%);
-                    height: 108%;
-                    transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 115%;
-                    }
-                }
-            }    
-        }
-
-        .section__content-wrap {
-            .line {
-                transform: rotate(22deg);
-                height: 130%;
-                top: -16%;
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(7.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(33deg);
-                }
-            }
-        }
-    }
-
-    @media (max-width: 900px) and (max-height: 600px) {
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    transition: .85s cubic-bezier(0.39, 0.575, 0.565, 1);
-                }
-            }    
-        }
-
-        .section__content-wrap {
-            .line {
-                transform: rotate(20deg);
-                &.active-fit {
-                    transform: rotate(29.4deg);
-                }
-            }
-        }
-    }
-    
-    @media (max-width: 1023px) and (max-height: 500px) {
-        .intro {
-            &#intro-fitness {
-                .cover {
-                    top: 11%;
-                    clip-path: polygon(0% 0, 100% 0, 88% 100%, 0% 100%);
-                    height: 108%;
-                    transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                    &.active {
-                        width: 115%;
-                    }
-                }
-            }    
-        }
-
-        .section__content-wrap {
-            .line {
-                transform: rotate(26deg);
-                height: 130%;
-                top: -16%;
-
-                &.active-tech {
-                    left: calc(100vw - 14.5%);
-                    transform: rotate(7.6deg);
-                }
-
-                &.active-fit {
-                    transform: rotate(38deg);
-                }
-            }
-        }
-    }
-
-    @media (max-width: 900px) and (max-height: 500px) {
-        .section {
-            height: auto;
-            min-height: 100vh;
-        }
-
-        .section__content-wrap {
-            height: 100%;
-
-            .line {
-                transform: rotate(22deg);
+                transform: rotate(15.5deg);
 
                 &.active-fit {
                     transform: rotate(34deg);
                 }
+
+                &.active-tech {
+                    transform: rotate(4.6deg);
+                }
+
+            }
+        }
+
+        .intro#intro-fitness .cover {
+            transition-duration: 1s;
+
+            &.active {
+                transition-duration: .5s;
+                width: 120%;
             }
         }
     }
 
-    @media (max-width: 800px) {
+
+    // *******
+
+
+    //     @media (min-width: 2048px) and (min-height: 1535px) {
+    //     .section__content-wrap {
+    //         .line {
+    //             transform: $line-rotation;
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(26.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         h1 {
+    //             font-size: $base-font-size*4.3;
+    //             margin-bottom: $base-font-size;
+    //         }
+
+    //         h2 {
+    //             margin-bottom: $base-font-size*4;
+    //         }
+    //         &#intro-fitness {
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+    //                 transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 107%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    //     .btn {
+    //         font-size: $base-font-size*1.2;
+    //     }
+
+    // }
+
+    // @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 960px) {
+    //     .section__content-wrap {
+    //         // background-size: 90%;
+    //         // background-position: left -180% center;
+
+    //         .line {
+    //             transform: rotate(25.5deg);
+    //             height: 130%;
+    //             top: -15%;
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(7.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(36.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         h1 {
+    //             font-size: $base-font-size*4.3;
+    //             margin-bottom: $base-font-size;
+    //         }
+
+    //         h2 {
+    //             margin-bottom: $base-font-size*4;
+    //         }
+
+    //         &#intro-fitness {
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+    //                 transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 107%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    //     .btn {
+    //         font-size: $base-font-size*1.2;
+    //     }
+
+    // }
+
+    // @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 1199px) {
+    //     .section__content-wrap {
+    //         // background-size: cover;
+    //         // background-position: left 200% center;
+
+    //         .line {
+    //             transform: rotate(21deg);
+
+    //             &.active-tech {
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(30.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+
+    //     .btn {
+    //         font-size: $base-font-size*1.2;
+    //     }
+
+    // }
+
+    // @media (min-width: 1920px) and (max-width: 2047px) and (min-height: 1439px) {
+    //     .section__content-wrap {
+    //         // background-size: cover;
+    //         // background-position: left 50% center;
+
+    //         .line {
+    //             transform: rotate(17.5deg);
+
+    //             &.active-tech {
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(26.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+    // }
+
+    // @media (min-width: 1880px) and (max-width: 1919px) and (min-height: 850px) {
+    //     .section__content-wrap {
+    //         // background-size: 90%;
+    //         // background-position: left -180% center;
+
+    //         .line {
+    //             transform: rotate(26.5deg);
+    //             height: 130%;
+    //             top: -15%;
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(8.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(37.8deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 transition: .55s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+    // }
+
+    // @media (min-width: 1600px) and (max-width: 1919px) and (min-height: 1023px) {
+    //     .section__content-wrap {
+    //         background-size: 120%;
+    //         background-position: left 150% center;
+
+    //         .line {
+    //             transform: rotate(21deg);
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(6.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(30.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         h1 {
+    //             font-size: $base-font-size*3.5;
+    //             margin-bottom: $base-font-size;
+    //         }
+
+    //         h2 {
+    //             margin-bottom: $base-font-size*4;
+    //         }
+
+    //         &#intro-fitness {
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+    //                 transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 103%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (min-width: 1600px) and (max-width: 1919px) and (min-height: 1199px) {
+    //     .section__content-wrap {
+    //         background-size: cover;
+    //         background-position: left 100% center;
+
+    //         .line {
+    //             transform: rotate(18deg);
+
+    //             &.active-tech {
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(26.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         h1 {
+    //             font-size: $base-font-size*3.7;
+    //         }
+
+    //         &#intro-fitness {
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+    //                 transition: .85s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 107%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (min-width: 1360px) and (max-width: 1599px) and (min-height: 765px) {
+    //     .section__content-wrap {
+    //         background-size: 120%;
+    //         background-position: left 150% center;
+
+    //         .line {
+    //             transform: rotate(23deg);
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(6.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(33.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-tech {
+    //             left: 30%;
+    //         }
+
+    //         &#intro-fitness {
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+    //                 background: linear-gradient(114deg, #010308 0%, #000 111%);
+    //                 transition: .88s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 89%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 765px) {
+    //     .section__content-wrap {
+    //         background-size: cover;
+    //         background-position: left 400% center;
+
+    //         .line {
+    //             transform: rotate(22deg);
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(6.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(32deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-tech {
+    //             left: 30%;
+    //         }
+
+    //         &#intro-fitness {
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+    //                 background: linear-gradient(114deg, #01050c 0%, #000 111%);
+    //                 transition: .88s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 89%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 799px) {
+    //     .section__content-wrap {
+    //         background-position: left 200% center;
+
+    //         .line {
+    //             transform: rotate(21deg);
+
+    //             &.active-fit {
+    //                 transform: rotate(31deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 transition: .9s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 959px) {
+    //     .section__content-wrap {
+    //         background-position: left 100% center;
+
+    //         .line {
+    //             transform: rotate(17deg);
+
+    //             &.active-tech {
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(26deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 transition: .9s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (min-width: 1280px) and (max-width: 1359px) and (min-height: 1023px) {
+    //     .section__content-wrap {
+    //         background-position: left 100% center;
+
+    //         .line {
+    //             transform: rotate(17deg);
+
+    //             &.active-tech {
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(25deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 transition: .9s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (min-width: 1024px) and (max-width: 1279px) {
+    //     .section__content-wrap {
+    //         background-size: cover;
+    //         background-position: left 90% center;
+
+    //         .line {
+    //             transform: rotate(17deg);
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(26.5deg);
+    //             }
+    //         }
+    //     }
+
+    //     .intro {
+    //         &#intro-tech {
+    //             left: 29%;
+    //         }
+
+    //         &#intro-fitness {
+    //             left: 51%;
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 95% 100%, 0% 100%);
+    //                 background: linear-gradient(114deg, #010610 0%, #000 111%);
+    //                 transition: .95s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 89%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    // }
+
+    // @media (max-width: 1023px) {
+    //     &.section {
+    //         margin-top: -60px;
+    //     }
+
+    //     .intro {
+    //         h1 {
+    //             font-size: $base-font-size + .8rem;
+    //             transform: translate(0);
+    //         }
+
+    //         h2 {
+    //             font-size: $base-font-size - .2rem;
+    //             opacity: 1;
+    //         }
+
+    //         &#intro-tech {
+    //             left: 24%;
+    //         }
+    //     }    
+
+    //     .btn {
+    //         font-size: $base-font-size - .2rem;
+    //     }
+
+    // }
+
+    // @media (max-width: 900px) and (min-height: 851px) {
+    //     .section__content-wrap {
+    //         display: grid;
+    //         grid-template-columns: [col] 100%;
+    //         grid-template-rows: [row-1] 55% [row-2] 45%; 
+    //         background: #000;
+    //     }
+
+    //     .line {
+    //         display: none;
+    //     }
+
+    //     .intro {
+    //         h1 {
+    //             font-size: $base-font-size + .8rem;
+    //         }
+
+    //         h2 {
+    //             font-size: $base-font-size;
+    //         }
+    
+    //         &#intro-tech {
+    //             position: initial;
+    //             width: 100%;
+    //             height: 100%;
+
+    //             grid-column: 1 / span 1;
+    //             grid-row: 1 / span 1;
+    //             background: linear-gradient(0deg, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 100%), linear-gradient(63deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 91%), url(../img/np_tech.jpg) no-repeat;
+    //             background-size: cover;
+    //             background-position: left 44% center;
+    //             border-bottom: 3px solid #afafaf;
+
+    //             display: flex;
+    //             align-items: end;
+
+    //             .intro__content {
+    //                 width: 100%;
+    //                 height: auto;
+    //                 margin-bottom: $base-font-size*3;
+    //                 padding-right: $base-padding*3;
+    //                 text-align: right;
+
+    //                 h1 {
+    //                     transform: translateY(0);
+    //                 }
+
+    //                 h2 {
+    //                     opacity: 1;
+    //                 }
+    //             }
+    //         }
+
+    //         &#intro-fitness {
+    //             position: initial;
+    //             width: 100%;
+    //             height: 100%;
+
+    //             grid-column: 1 / span 1;
+    //             grid-row: 2 / span 1;
+    //             background: linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,1) 100%), linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 86%), url(../img/np-fitness.jpg) no-repeat;
+    //             background-position: left 53% center;
+    //             background-size: cover;
+
+    //             .cover {
+    //                 display: none;
+    //             }
+
+    //             .intro__content {
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 margin-top: $base-font-size*3;
+    //                 padding-left: $base-padding*3;
+    //                 text-align: left;
+
+    //                 h1 {
+    //                     transform: translateY(0);
+    //                 }
+
+    //                 h2 {
+    //                     opacity: 1;
+    //                 }
+    //             }
+
+    //         }
+    //     }
+
+    //     .btn {
+    //         font-size: $base-font-size - .1rem;
+    //     }
+
+    // }
+
+    // @media (max-width: 1023px) and (max-height: 850px) {
+    //     .intro {
+    //         &#intro-tech {
+    //             left: 29%;
+    //         }
+
+    //         &#intro-fitness {
+    //             .cover {
+    //                 top: 11%;
+    //                 clip-path: polygon(0% 0, 100% 0, 85% 100%, 0% 100%);
+    //                 background: linear-gradient(114deg, #000712 0%, #000 111%);
+    //                 height: 108%;
+    //                 transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 115%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    //     .section__content-wrap {
+    //         background-size: cover;
+    //         background-position: left 80% center;
+
+    //         .line {
+    //             transform: rotate(17deg);
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(25.5deg);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // @media (max-width: 900px) and (max-height: 850px) {
+    //     .intro {
+    //         &#intro-tech {
+    //             left: 27%;
+    //         }
+    //     }
+
+    //     .section__content-wrap {
+    //         background-position: left 70% center;
+
+    //         .line {
+    //             transform: rotate(15deg);
+
+    //             &.active-tech {
+    //                 transform: rotate(4.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(22.4deg);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // @media (max-width: 1023px) and (max-height: 700px) {
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 top: 11%;
+    //                 clip-path: polygon(0% 0, 100% 0, 88% 100%, 0% 100%);
+    //                 height: 108%;
+    //                 transition: .7s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 115%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    //     .section__content-wrap {
+    //         .line {
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(6.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(29deg);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // @media (max-width: 900px) and (max-height: 700px) {
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 clip-path: polygon(0% 0, 100% 0, 85% 100%, 0% 100%);
+    //                 background: linear-gradient(114deg, #01060e 0%, #000 111%);
+    //                 transition: .8s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+
+    //     .section__content-wrap {
+    //         background-size: cover;
+    //         background-position: left 100% center;
+
+    //         .line {
+    //             transform: rotate(17deg);
+
+    //             &.active-tech {
+    //                 transform: rotate(5.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(25.4deg);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // @media (max-width: 1023px) and (max-height: 600px) {
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 top: 11%;
+    //                 clip-path: polygon(0% 0, 100% 0, 88% 100%, 0% 100%);
+    //                 height: 108%;
+    //                 transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 115%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    //     .section__content-wrap {
+    //         .line {
+    //             transform: rotate(22deg);
+    //             height: 130%;
+    //             top: -16%;
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(7.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(33deg);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // @media (max-width: 900px) and (max-height: 600px) {
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 transition: .85s cubic-bezier(0.39, 0.575, 0.565, 1);
+    //             }
+    //         }    
+    //     }
+
+    //     .section__content-wrap {
+    //         .line {
+    //             transform: rotate(20deg);
+    //             &.active-fit {
+    //                 transform: rotate(29.4deg);
+    //             }
+    //         }
+    //     }
+    // }
+    
+    // @media (max-width: 1023px) and (max-height: 500px) {
+    //     .intro {
+    //         &#intro-fitness {
+    //             .cover {
+    //                 top: 11%;
+    //                 clip-path: polygon(0% 0, 100% 0, 88% 100%, 0% 100%);
+    //                 height: 108%;
+    //                 transition: .75s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    //                 &.active {
+    //                     width: 115%;
+    //                 }
+    //             }
+    //         }    
+    //     }
+
+    //     .section__content-wrap {
+    //         .line {
+    //             transform: rotate(26deg);
+    //             height: 130%;
+    //             top: -16%;
+
+    //             &.active-tech {
+    //                 left: calc(100vw - 14.5%);
+    //                 transform: rotate(7.6deg);
+    //             }
+
+    //             &.active-fit {
+    //                 transform: rotate(38deg);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // @media (max-width: 900px) and (max-height: 500px) {
+    //     .section {
+    //         height: auto;
+    //         min-height: 100vh;
+    //     }
+
+    //     .section__content-wrap {
+    //         height: 100%;
+
+    //         .line {
+    //             transform: rotate(22deg);
+
+    //             &.active-fit {
+    //                 transform: rotate(34deg);
+    //             }
+    //         }
+    //     }
+    // }
+
+    @media (max-width: 700px) {
         .section__content-wrap {
             display: grid;
             grid-template-columns: [col] 100%;
             grid-template-rows: [row-1] 55% [row-2] 45%; 
             background: #000;
+
+            .intro-slider__image {
+                background-size: 35%;
+            }
+    
         }
 
         .line {
@@ -977,9 +1500,6 @@ $line-rotation: rotate(0deg);
 
                 grid-column: 1 / span 1;
                 grid-row: 1 / span 1;
-                background: linear-gradient(0deg, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 100%), linear-gradient(63deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 91%), url(../img/np_tech.jpg) no-repeat;
-                background-size: cover;
-                background-position: left 44% center;
                 border-bottom: 3px solid #afafaf;
 
                 display: flex;
@@ -1009,7 +1529,106 @@ $line-rotation: rotate(0deg);
 
                 grid-column: 1 / span 1;
                 grid-row: 2 / span 1;
-                background: linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,1) 100%), linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 86%), url(../img/np-fitness.jpg) no-repeat;
+                background: linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,1) 100%), linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 86%), url(../img/np-fitness.png) no-repeat;
+
+                background-color: #000;
+                background-position: left 53% center;
+                background-size: cover;
+
+                .cover {
+                    display: none;
+                }
+
+                .intro__content {
+                    width: 100%;
+                    height: 100%;
+                    margin-top: $base-font-size*3;
+                    padding-left: $base-padding*3;
+                    text-align: left;
+
+                    h1 {
+                        transform: translateY(0);
+                    }
+
+                    h2 {
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+
+        .btn {
+            font-size: $base-font-size - .1rem;
+        }
+
+    }
+
+    @media (max-width: 1000px) and (max-height: 1200px) {
+        .section__content-wrap {
+            display: grid;
+            grid-template-columns: [col] 100%;
+            grid-template-rows: [row-1] 55% [row-2] 45%; 
+            background: #000;
+
+            .intro-slider__image {
+                background-size: 35%;
+            }
+    
+        }
+
+        .line {
+            display: none;
+        }
+
+        .intro {
+            h1 {
+                font-size: $base-font-size + .8rem;
+            }
+
+            h2 {
+                font-size: $base-font-size;
+            }
+    
+            &#intro-tech {
+                position: initial;
+                width: 100%;
+                height: 100%;
+
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+                border-bottom: 3px solid #afafaf;
+
+                display: flex;
+                align-items: end;
+
+                .intro__content {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: $base-font-size*3;
+                    padding-right: $base-padding*3;
+                    text-align: right;
+
+                    h1 {
+                        transform: translateY(0);
+                    }
+
+                    h2 {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &#intro-fitness {
+                position: initial;
+                width: 100%;
+                height: 100%;
+
+                grid-column: 1 / span 1;
+                grid-row: 2 / span 1;
+                background: linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,1) 100%), linear-gradient(250deg, rgba(0,0,0,0) -35%, rgba(0,0,0,1) 86%), url(../img/np-fitness.png) no-repeat;
+
+                background-color: #000;
                 background-position: left 53% center;
                 background-size: cover;
 
